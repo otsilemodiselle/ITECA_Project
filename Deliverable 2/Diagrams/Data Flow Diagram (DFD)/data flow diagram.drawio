@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" modified="2024-03-31T22:48:09.534Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" etag="pIR3RBAQ5XslOn8CPrvw" version="24.2.1" type="device">
+  <diagram name="Page-1" id="5kye0BfmGoE3RPmWMngK">
+    <mxGraphModel dx="1313" dy="677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-2" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="930" height="600" as="geometry">
+            <mxRectangle x="120" y="120" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-13" value="Product Information" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=-0.011;exitY=0.189;exitDx=0;exitDy=0;entryX=0.172;entryY=0.001;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" source="9_Nisc85x8kSFl2lh7D6-5" target="9_Nisc85x8kSFl2lh7D6-8">
+          <mxGeometry x="-0.1519" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-5" value="eCommerce&lt;div&gt;website&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="9_Nisc85x8kSFl2lh7D6-2">
+          <mxGeometry x="375" y="139" width="100" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-8" value="Customer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="9_Nisc85x8kSFl2lh7D6-2">
+          <mxGeometry x="80" y="379" width="150" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-9" value="Courier" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="9_Nisc85x8kSFl2lh7D6-2">
+          <mxGeometry x="760" y="379" width="90" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-10" value="Owner" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="9_Nisc85x8kSFl2lh7D6-2">
+          <mxGeometry x="720" y="89" width="90" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-14" value="Product Query Response" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.298;entryY=0.001;entryDx=0;entryDy=0;exitX=-0.004;exitY=0.339;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" source="9_Nisc85x8kSFl2lh7D6-5" target="9_Nisc85x8kSFl2lh7D6-8">
+          <mxGeometry x="-0.2221" y="-1" relative="1" as="geometry">
+            <mxPoint x="370" y="179" as="sourcePoint" />
+            <mxPoint x="145" y="369" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-15" value="Product Query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.431;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" source="9_Nisc85x8kSFl2lh7D6-5" target="9_Nisc85x8kSFl2lh7D6-8">
+          <mxGeometry x="-0.1117" relative="1" as="geometry">
+            <mxPoint x="370" y="200" as="sourcePoint" />
+            <mxPoint x="155" y="379" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="145" y="199" />
+              <mxPoint x="145" y="379" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-16" value="Shopping Cart" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=-0.008;exitY=0.687;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;entryX=0.54;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" source="9_Nisc85x8kSFl2lh7D6-5" target="9_Nisc85x8kSFl2lh7D6-8">
+          <mxGeometry x="-0.1117" relative="1" as="geometry">
+            <mxPoint x="380" y="210" as="sourcePoint" />
+            <mxPoint x="180" y="379" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="161" y="221" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-20" value="Delivery Details" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1.005;entryY=0.202;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" source="9_Nisc85x8kSFl2lh7D6-5" target="9_Nisc85x8kSFl2lh7D6-8">
+          <mxGeometry x="0.2391" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-23" value="Delivery&lt;div&gt;Request&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.833;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" source="9_Nisc85x8kSFl2lh7D6-5" target="9_Nisc85x8kSFl2lh7D6-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-25" value="Delivery Confirmation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.424;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" source="9_Nisc85x8kSFl2lh7D6-5" target="9_Nisc85x8kSFl2lh7D6-8">
+          <mxGeometry x="0.2895" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-27" value="Inventory Updates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.024;entryY=0.672;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" source="9_Nisc85x8kSFl2lh7D6-5" target="9_Nisc85x8kSFl2lh7D6-10">
+          <mxGeometry x="0.002" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-29" value="Inventory Updates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=-0.01;entryY=0.839;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="9_Nisc85x8kSFl2lh7D6-2" target="9_Nisc85x8kSFl2lh7D6-10">
+          <mxGeometry x="0.002" relative="1" as="geometry">
+            <mxPoint x="475" y="190" as="sourcePoint" />
+            <mxPoint x="722" y="191" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9_Nisc85x8kSFl2lh7D6-28" value="Context Diagram" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="90" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
