@@ -16,9 +16,9 @@
   {
     $pdo = new PDO($attr, $user, $pass, $opts);
   }
-  catch(PDOException $e)
+  catch(\PDOException $e)
   {
-    throw new PDOException($e->getMessage(), (int)$e->getCode());
+    throw new \PDOException($e->getMessage(), (int)$e->getCode());
   }
 
   function queryMysql($query)
@@ -47,6 +47,29 @@
       $var = stripslashes($var);
     $result = $pdo-> quote($var);
     return str_replace("'", "", $result);
+  }
+
+  function add_stakeholder($pdo, $em, $ad, $cn)
+  {
+    $stmt = $pdo->prepare('INSERT INTO stakeholders(email, address, contact_number) VALUES(?,?,?)');
+
+    $stmt->bindParam(1, $em, PDO::PARAM_STR, 128);
+    $stmt->bindParam(2, $ad, PDO::PARAM_STR, 255);
+    $stmt->bindParam(3, $cn, PDO::PARAM_STR, 10);
+
+    $stmt->execute([$em, $ad, $cn]);
+  }
+
+  function add_customer($pdo, $st, $nm, $sn, $pw)
+  {
+    $stmt = $pdo->prepare('INSERT INTO customer(stakeholder_id, name, surname, password) VALUES(?,?,?,?)');
+
+    $stmt->bindParam(1, $st, PDO::PARAM_STR, 10);
+    $stmt->bindParam(2, $nm, PDO::PARAM_STR, 68);
+    $stmt->bindParam(3, $sn, PDO::PARAM_STR, 68);
+    $stmt->bindParam(1, $pw, PDO::PARAM_STR, 255);
+
+    $stmt->execute([$st, $nm, $sn, $pw]);
   }
 
   
