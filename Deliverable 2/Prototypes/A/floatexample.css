@@ -1,0 +1,179 @@
+body {
+    background-color: #EBEFF0;
+}
+
+.card {
+    border: none;
+    background-color:white;    
+    height: 400px;
+    width: 250px;
+    margin-top: 5px;
+    margin-left: 60px;
+    margin-bottom: 60px;    
+    float:left;
+    box-shadow: -2px 2px 6px #999999;
+    cursor: pointer;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    
+}
+
+.container {
+    width: 1000px;
+    border: none;
+    margin: auto auto;
+}
+
+.thumbnail {
+    width: 250px;
+    height: 250px;
+    
+}
+
+.card-detail {
+    margin-left: 10px;
+    font: normal bold 16px/1.5 Arial, sans-serif;   
+    color: darkslategrey;
+}
+
+.price {
+    font-size: 24px;
+}
+
+.title-home {
+    font-family: 'Courgette', serif;
+    /* font-style: bold; */
+    font-size: 60px;
+    float: left;
+    color:darkslategrey;
+    /* display:inline-block;
+    margin-bottom: 35px; */
+}
+
+.title-icon {
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+
+#top-nav-div {
+    background-color: darkslategrey;
+}
+
+.title-link {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: darkslategrey;
+    font-weight: bold;
+}
+
+.nav-link{
+    font-family: impact;
+    font-style: none;
+    font-size: 30px;
+    color: #E7CE42;
+    display: inline-block;
+}
+
+.title-link, .title-link:active, .title-link:hover, .nav-link, .nav-link:active, .nav-link:hover{
+    text-decoration: none;
+}
+
+#top-nav {
+    /* border: solid black; */
+
+}
+
+header {
+    margin-bottom: 25px;
+}
+
+#top-title-div {
+    height: 80px;
+}
+
+.title-list {
+    height: 30px;
+}
+
+.title-options {
+    float: right;
+}
+
+.title-list {
+    list-style-type: none;
+    margin: 0px;    
+}
+
+.title-options {
+    margin-top: 55px;
+    padding-left: 35px;
+    padding-right: 35px;
+    display: inline-block;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: auto auto;
+    padding: 0;
+    display: inline-block;
+}
+
+.nav-options{
+    float: left;
+    /* border: solid black; */
+    padding-left: 15px;
+    padding-right: 15px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.title-options:nth-child(n-1){
+    /* border-left: solid black; */
+}
+
+.nav-options:nth-child(n+2){
+    border-left: 1px solid #A7B5CB;
+}
+
+#top-nav-div {
+    text-align: center;
+}
+
+#top-title-div, #top-nav-div {
+    border-bottom: 1px solid black;
+}
+
+
+
+
+.one {
+       
+}
+
+.two {
+    
+}
+
+.three {
+      
+}
+
+.four {
+      
+}
+
+.five {
+      
+}
+
+.main {
+    border: solid red;
+}
+
+.clearfix::after {
+    clear: both;
+    content: "";
+    display: block;
