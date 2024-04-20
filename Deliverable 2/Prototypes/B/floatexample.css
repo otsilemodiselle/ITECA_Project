@@ -23,17 +23,26 @@
     
 }
 
-.sub-container {
-    float: left;
+.wish-container {
+    height: 600px;
+    background-color: #9B9694;
+    width:962px;
+    margin: auto auto;
+    padding-top: 5px;
+    margin-bottom: 10px;
     /* border: 1px solid black; */
+}
+
+.wish-clear {
+    margin-left: 40px;
 }
 
 .banner {
     border: none;
     background-color: #F6F4F0;    
-    height: 215px;
-    width: 500px;
-    margin-top: 5px;
+    height: 50px;
+    width: 930px;
+    margin-top: 15px;
     margin-left: 17px;
     margin-right: 17px;
     margin-bottom: 25px; 
@@ -105,15 +114,27 @@
     font-weight: normal;
     margin-left: 15px;
     font-size: 16px;
-    margin-top: 40px;
+    margin-top: 15px;
 }
 
+.wish-cart, .wish-delete {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+}
 
 
 .thumbnail {
     float: left;
     width: 215px;
     height: 215px;
+    transition: background-color 0.3s ease;    
+}
+
+.small-thumbnail {
+    float: left;
+    width: 50px;
+    height: 50px;
     transition: background-color 0.3s ease;    
 }
 
