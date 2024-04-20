@@ -475,6 +475,11 @@ header {
   .fa-pinterest {
     background: red;
     color: white;
+    font-size: 16px;
+  }
+
+  .multiselect-wishlist-actions {
+    border: 1px solid black;
   }
 
 
