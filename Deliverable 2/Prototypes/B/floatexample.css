@@ -496,6 +496,21 @@ header {
     margin-left: 10px;
 }
 
+.message-div {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: -2px 2px 6px #999999;
+    width: 955px;
+    margin: auto auto;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    height: 200px;
+    padding-top: 50px;
+}
+
 .update-button {
     margin-left: 450px;
     cursor: pointer;
