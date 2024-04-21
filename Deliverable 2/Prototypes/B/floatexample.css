@@ -562,12 +562,13 @@ header {
     width: 15px;
 }
 
-.login-container {
+.login-container, .signup-container {
     padding-top: 100px;
+    /* border: 1px solid black; */
     /* padding-bottom: 100px; */
 }
 
-.login-email, .login-password {
+.login-email, .login-password, .signup-name, .signup-surname, .signup-email, .signup-password, .signup-number, .signup-confirm {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     color:#383B3E;
@@ -576,9 +577,21 @@ header {
     /* margin: auto auto; */
 }
 
-.login-email-input, .login-password-input {
+.login-email-input, .login-password-input, .signup-name-input, .signup-surname-input, .signup-email-input, .signup-password-input, .signup-number-input, .signup-confirm-input {
     display: inline-block;
     margin-right: 20px;
+}
+
+.signup-name-input {
+    margin-left: 25px;
+}
+
+.signup-email-input {
+    margin-left: 25px;
+}
+
+.signup-confirm-input{
+    margin-left: 6px;
 }
 
 .login-elements {
@@ -588,8 +601,34 @@ header {
     margin-top: 50px;
 }
 
+.signup-button {
+    margin-left: 250px;
+    margin-bottom: 30px;
+}
+
+.signup-elements {
+    margin: auto auto;
+    /* border: 1px solid black; */
+    width: 600px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.signup-window {
+    /* border: 1px solid black; */
+    box-shadow: -2px 2px 6px #999999;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    padding-top: 20px;
+    width: 700px;
+    margin: auto auto;
+}
+
 
 .login-window {
+    
     box-shadow: -2px 2px 6px #999999;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
