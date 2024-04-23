@@ -4,10 +4,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="3" >
+    <!-- <meta http-equiv="refresh" content="3" > -->
     <title>Order Checkout</title>
     <link rel="stylesheet" href="floatexample.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+
+<script>
+    function signupNameVerify(){
+        var name = document.getElementsByClassName("signup-name-input")[0].value;
+        var nameFeedback = "";
+        var alphabetical = /^[a-zA-Z]+$/;       
+        
+        if (name.length < 2){   
+            nameFeedback = "Name too short. ";}
+        if (name.length > 68){
+            nameFeedback = "Name too long. ";}
+        if (!alphabetical.test(name)){
+            nameFeedback += "\n Alphabetical characters only."}      
+        document.getElementsByClassName("signup-name-verify")[0].textContent = nameFeedback;
+        return nameFeedback
+        
+    }
+    function signupSurnameVerify(){
+        var surname = document.getElementsByClassName("signup-surname-input")[0].value;
+        var surnameFeedback = "";
+        var alphabetical = /^[a-zA-Z]+$/;       
+        
+        if (surname.length < 2){   
+            surnameFeedback = "Surname too short. ";}
+        if (surname.length > 68){
+            surnameFeedback = "Surname too long. ";}
+        if (!alphabetical.test(surname)){
+            surnameFeedback += "\n Alphabetical characters only."}      
+        document.getElementsByClassName("signup-surname-verify")[0].textContent = surnameFeedback;
+        return surnameFeedback;
+    }
+    function signupNumberVerify(){
+        var number = document.getElementsByClassName("signup-number-input")[0].value;
+        var numberFeedback = "";
+        var numerical = /^[\d/]+$/;       
+        
+        if (number.length < 10){   
+            numberFeedback = "Contact no. too short. ";}
+        if (!numerical.test(number)){
+            numberFeedback += "\n Numeric characters only."}      
+        document.getElementsByClassName("signup-number-verify")[0].textContent = numberFeedback;
+        return numberFeedback;
+    }
+    function signupEmailVerify(){
+        var email = document.getElementsByClassName("signup-email-input")[0].value;
+        var emailFeedback = "";
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;       
+        
+        if (!emailPattern.test(email)){
+            emailFeedback = "\n Email format incorrect."}      
+        document.getElementsByClassName("signup-email-verify")[0].textContent = emailFeedback;
+        return emailFeedback;
+    }
+    function signupPasswordVerify(){
+        var password = document.getElementsByClassName("signup-password-input")[0].value;
+        var passwordFeedback = "";
+        var passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W\_])[A-Za-z\d\W\_]{8,}$/;     
+        
+        
+        if (password.length < 6){   
+            passwordFeedback = "Six characters minimum. ";}
+        if (password.length > 255){   
+            passwordFeedback = "Password too long. ";}
+        if (!passPattern.test(password)){
+            passwordFeedback +=  "Must contain a lowercase, uppercase, numeric, and symbol character. ";}
+        document.getElementsByClassName("signup-password-verify")[0].textContent = passwordFeedback;
+        return passwordFeedback;
+    }
+    function signupConfirmVerify(){
+        var confirm = document.getElementsByClassName("signup-confirm-input")[0].value;
+        var password = document.getElementsByClassName("signup-password-input")[0].value;
+        var confirmFeedback = "";
+             
+        
+        if (!(confirm == password)){   
+            confirmFeedback = "Passwords must match. ";}
+            
+        document.getElementsByClassName("signup-confirm-verify")[0].textContent = confirmFeedback;
+        return confirmFeedback;
+    }
+    function signupValidate(){
+        var checker = "";
+        var success = "Sign up processing"
+        var failure = "Please review sign info"
+        checker += signupNameVerify();
+        checker += signupSurnameVerify();
+        checker += signupNumberVerify();
+        checker += signupEmailVerify();
+        checker += signupPasswordVerify();
+        checker += signupConfirmVerify();
+
+        if (checker == ""){
+            alert(success);
+            return true;
+        }
+        else {
+            alert(failure);
+            return false;
+        }
+       
+
+    }
+</script>
 </head>
 <body>  
     <header>
@@ -62,18 +165,30 @@
         <div class='signup-container clearfix'>
             <div class="signup-window">
                 <div class="signup-elements">
-                    <h3 class="signup-name">Name: </h3>
-                    <input class="signup-name-input" type="text">
-                    <h3 class="signup-surname">Surname: </h3>
-                    <input class="signup-surname-input" type="text"> <br>
-                    <h3 class="signup-number">Contact #: </h3>
-                    <input class="signup-number-input" type="text">
-                    <h3 class="signup-email">Email:</h3>
-                    <input class="signup-email-input" type="text"> <br>
-                    <h3 class="signup-password">Password:</h3>
-                    <input class="signup-password-input" type="password"> 
-                    <h3 class="signup-confirm">Confirm: </h3> <input class="signup-confirm-input" type="password"><br><br>
-                    <button class="signup-button">Signup</button>
+
+                    <label class="signup-name">Name: </label>
+                    <input onchange="signupNameVerify()" class="signup-name-input" type="text">
+                    <p class = "verify-prompt signup-name-verify"></p>
+
+                    <label class="signup-surname">Surname: </label>
+                    <input onchange="signupSurnameVerify()" class="signup-surname-input" type="text"> 
+                    <p class ="verify-prompt signup-surname-verify"></p>
+
+                    <label class="signup-number">Contact #: </label>
+                    <input onchange="signupNumberVerify()" class="signup-number-input" type="text" maxlength="10">
+                    <p class = "verify-prompt signup-number-verify"></p>
+
+                    <label class="signup-email">Email:</label>
+                    <input onchange="signupEmailVerify()" class="signup-email-input" type="text"> 
+                    <p class = "verify-prompt signup-email-verify"></p>
+
+                    <label class="signup-password">Password:</label>
+                    <input onchange="signupPasswordVerify()" class="signup-password-input" type="password"> 
+                    <p class = "verify-prompt signup-password-verify"></p>
+
+                    <label class="signup-confirm">Confirm: </label> 
+                    <input onchange="signupConfirmVerify()" class="signup-confirm-input" type="password"><p class = "verify-prompt signup-confirm-verify"></p><br>
+                    <button onclick="signupValidate()" class="signup-button">Signup</button>
                 </div>
             </div>
             

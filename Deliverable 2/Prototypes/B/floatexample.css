@@ -666,6 +666,7 @@ header {
     color:#383B3E;
     font-size: 16px;
     display: inline-block;
+    margin-left: 120px;
     /* margin: auto auto; */
 }
 
@@ -674,16 +675,33 @@ header {
     margin-right: 20px;
 }
 
+.verify-prompt {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color:red;
+    font-size: 10px;
+    margin-left: 120px;
+    /* display: inline-block; */
+}
+
+.signup-surname-verify {
+    
+}
+
 .signup-name-input {
     margin-left: 25px;
 }
 
 .signup-email-input {
-    margin-left: 25px;
+    margin-left: 31px;
+}
+
+.signup-surname-input {
+    margin-left: 3px;
 }
 
 .signup-confirm-input{
-    margin-left: 6px;
+    margin-left: 11px;
 }
 
 .login-elements {
@@ -694,16 +712,15 @@ header {
 }
 
 .signup-button {
-    margin-left: 250px;
+    margin-left: 210px;
     margin-bottom: 30px;
 }
 
 .signup-elements {
     margin: auto auto;
     /* border: 1px solid black; */
-    width: 600px;
+    width: 500px;
     margin-top: 0px;
-    margin-bottom: 20px;
 }
 
 .signup-window {
@@ -714,7 +731,7 @@ header {
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
     padding-top: 20px;
-    width: 700px;
+    width: 500px;
     margin: auto auto;
 }
 
