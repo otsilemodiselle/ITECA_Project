@@ -4,20 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="3" >
+    <!-- <meta http-equiv="refresh" content="3" > -->
     <title>Order Checkout</title>
     <link rel="stylesheet" href="floatexample.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <script>
+
+        function showEditName(){
+            document.getElementsByClassName("edit-elements-name")[0].hidden =false;
+            document.getElementsByClassName("edit-name")[0].hidden =true;
+        }
+        function hideEditName(){
+            document.getElementsByClassName("edit-elements-name")[0].hidden =true;
+            document.getElementsByClassName("edit-name")[0].hidden =false;
+        }
+
+        function showEditSurname(){
+            document.getElementsByClassName("edit-elements-surname")[0].hidden =false;
+            document.getElementsByClassName("edit-surname")[0].hidden =true;
+        }
+        function hideEditSurname(){
+            document.getElementsByClassName("edit-elements-surname")[0].hidden =true;
+            document.getElementsByClassName("edit-surname")[0].hidden =false;
+        }
+
+        function showEditNumber(){
+            document.getElementsByClassName("edit-elements-number")[0].hidden =false;
+            document.getElementsByClassName("edit-number")[0].hidden =true;
+        }
+        function hideEditNumber(){
+            document.getElementsByClassName("edit-elements-number")[0].hidden =true;
+            document.getElementsByClassName("edit-number")[0].hidden =false;
+        }
+
+        function showEditEmail(){
+            document.getElementsByClassName("edit-elements-email")[0].hidden =false;
+            document.getElementsByClassName("edit-email")[0].hidden =true;
+        }
+        function hideEditEmail(){
+            document.getElementsByClassName("edit-elements-email")[0].hidden =true;
+            document.getElementsByClassName("edit-email")[0].hidden =false;
+        }
+
+        function showEditCard(){
+            document.getElementsByClassName("edit-elements-card")[0].hidden =false;
+            document.getElementsByClassName("edit-card")[0].hidden =true;
+        }
+        function hideEditCard(){
+            document.getElementsByClassName("edit-elements-card")[0].hidden =true;
+            document.getElementsByClassName("edit-card")[0].hidden =false;
+        }
+
+        function showEditExpiry(){
+            document.getElementsByClassName("edit-elements-expiry")[0].hidden =false;
+            document.getElementsByClassName("edit-expiry")[0].hidden =true;
+        }
+        function hideEditExpiry(){
+            document.getElementsByClassName("edit-elements-expiry")[0].hidden =true;
+            document.getElementsByClassName("edit-expiry")[0].hidden =false;
+        }
+
+        function showEditAddress(){
+            document.getElementsByClassName("edit-elements-address")[0].hidden =false;
+            document.getElementsByClassName("edit-address")[0].hidden =true;
+        }
+        function hideEditAddress(){
+            document.getElementsByClassName("edit-elements-address")[0].hidden =true;
+            document.getElementsByClassName("edit-address")[0].hidden =false;
+        }
+
         function editName(){
-            var name = document.getElementByClassName(editname-input)[0].value;
+            var name = document.getElementByClassName("editname-input")[0].value;
             var nameFeedback = "";
         var alphabetical = /^[a-zA-Z]+$/;       
         
         if (name.length < 2){   
             nameFeedback = "Name too short. ";}
-        if (name.length > 68){
-            nameFeedback = "Name too long. ";}
         if (!alphabetical.test(name)){
             nameFeedback += "\n Alphabetical characters only."}      
         document.getElementsByClassName("editname-verify")[0].textContent = nameFeedback;
@@ -55,7 +117,7 @@
                     <a href="" class='title-link link'>Cart</a>
                 </li>
                 <li class='title-options'>
-                    <a href="" class='title-link'>Cart</a>
+                    <a href="" class='title-link'>Wishlist</a>
                 </li>
                 <li class='title-options'>
                     <a href="" class='title-link'>Login</a>
@@ -98,66 +160,101 @@
         <div class='profileview-container clearfix'>
            
             <div class="edit-div edit-name-div clearfix">
+                <label for="" class="edit-caption">Name: </label>
                 <label for="" class="current-data current-name">Otsile</label>
-                <button class="edit-button edit-name">Edit</button><br>
-                <input type="text" class="edit-input edit-name-input" hidden><br>
-                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <button class="save-edit save-name-edit" hidden>Save</button>
-                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+                <button class="edit-button edit-name" onclick="showEditName()">Edit</button><br><br>
+                <div class="edit-elements edit-elements-name" hidden>
+                    <input type="text" class="edit-input edit-name-input" maxlength="68" ><br>
+                    <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                    <button class="save-edit save-name-edit" >Save</button>
+                    <button class="cancel-edit cancel-name-edit" onclick="hideEditName()" >Cancel</button>
+                </div>
             </div>
 
-            <div class="edit-div edit-name-div clearfix">
-                <label for="" class="current-data current-name">Modiselle</label>
-                <button class="edit-button edit-name">Edit</button><br>
-                <input type="text" class="edit-input edit-name-input" hidden><br>
-                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <button class="save-edit save-name-edit" hidden>Save</button>
-                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            <div class="edit-div edit-surname-div clearfix">
+                <label for="" class="edit-caption">Surname: </label>
+                <label for="" class="current-data current-surname">Modiselle</label>
+                <button class="edit-button edit-surname" onclick="showEditSurname()">Edit</button><br><br>
+                <div  class="edit-elements edit-elements-surname" hidden>
+                    <input type="text" class="edit-input edit-surname-input" maxlength="68"><br>
+                    <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                    <button class="save-edit save-surname-edit" >Save</button>
+                    <button class="cancel-edit cancel-surname-edit" onclick="hideEditSurname()">Cancel</button>
+                </div>
             </div>
 
-            <div class="edit-div edit-name-div clearfix">
-                <label for="" class="current-data current-name">0615022558</label>
-                <button class="edit-button edit-name">Edit</button><br>
-                <input type="text" class="edit-input edit-name-input" hidden><br>
-                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <button class="save-edit save-name-edit" hidden>Save</button>
-                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            <div class="edit-div edit-number-div clearfix">
+                <label for="" class="edit-caption">Contact no: </label>
+                <label for="" class="current-data current-number">0615022558</label>
+                <button class="edit-button edit-number" onclick="showEditNumber()">Edit</button><br><br>
+                <div class="edit-elements edit-elements-number" hidden>
+                    <input type="text" class="edit-input edit-number-input" maxlength="10"><br>
+                    <label for="" class="edit-verify-feedback edit-number-verify"></label><br>
+                    <button class="save-edit save-number-edit" >Save</button>
+                    <button class="cancel-edit cancel-number-edit" onclick="hideEditNumber()">Cancel</button>
+                </div>
             </div>
 
-            <div class="edit-div edit-name-div clearfix">
-                <label for="" class="current-data current-name">iamotsile@gmail.com</label>
-                <button class="edit-button edit-name">Edit</button><br>
-                <input type="text" class="edit-input edit-name-input" hidden><br>
-                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <button class="save-edit save-name-edit" hidden>Save</button>
-                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            <div class="edit-div edit-email-div clearfix">
+                <label for="" class="edit-caption">Email: </label>
+                <label for="" class="current-data current-email">iamotsile@gmail.com</label>
+                <button class="edit-button edit-email" onclick="showEditEmail()">Edit</button><br><br>
+                <div  class="edit-elements edit-elements-email" hidden>
+                    <input type="text" class="edit-input edit-email-input" maxlength="128"><br>
+                    <label for="" class="edit-verify-feedback edit-email-verify"></label><br>
+                    <button class="save-edit save-email-edit" >Save</button>
+                    <button class="cancel-edit cancel-email-edit" onclick="hideEditEmail()">Cancel</button>
+                </div>
             </div>
 
-            <div class="edit-div edit-name-div clearfix">
-                <label for="" class="current-data current-name">Otsile</label>
-                <button class="edit-button edit-name">Edit</button><br>
-                <input type="text" class="edit-input edit-name-input" hidden><br>
-                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <button class="save-edit save-name-edit" hidden>Save</button>
-                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            <div class="edit-div edit-card-div clearfix">
+                <label for="" class="edit-caption">Card no: </label>
+                <label for="" class="current-data current-card">4480 **** **** 6000</label>
+                <button class="edit-button edit-card" onclick="showEditCard()">Edit</button><br><br>
+                <div  class="edit-elements edit-elements-card" hidden>
+                    <input type="text" class="edit-input edit-card-input" ><br>
+                    <label for="" class="edit-verify-feedback edit-card-verify"></label><br>    
+                    <button class="save-edit save-card-edit" >Save</button>
+                    <button class="cancel-edit cancel-card-edit" onclick="hideEditCard()" >Cancel</button>
+                </div>
             </div>
 
-            <div class="edit-div edit-name-div clearfix">
-                <label for="" class="current-data current-name">Otsile</label>
-                <button class="edit-button edit-name">Edit</button><br>
-                <input type="text" class="edit-input edit-name-input" hidden><br>
-                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <button class="save-edit save-name-edit" hidden>Save</button>
-                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            <div class="edit-div edit-expiry-div clearfix">
+                <label for="" class="edit-caption">Expiry Date: </label>
+                <label for="" class="current-data current-expiry">03/29</label>
+                <button class="edit-button edit-expiry" onclick="showEditExpiry()">Edit</button><br><br>
+                <div class="edit-elements edit-elements-expiry" hidden>
+                    <input type="text" class="edit-input edit-expiry-input" maxlength="4"><br>
+                    <label for="" class="edit-verify-feedback edit-expiry-verify"></label><br>
+                    <button class="save-edit save-expiry-edit" >Save</button>
+                    <button class="cancel-edit cancel-expiry-edit" onclick="hideEditExpiry()">Cancel</button>
+                </div>
             </div>
 
-            <div class="edit-div edit-name-div clearfix">
-                <label for="" class="current-data current-name">Otsile</label>
-                <button class="edit-button edit-name">Edit</button><br>
-                <input type="text" class="edit-input edit-name-input" hidden><br>
-                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <button class="save-edit save-name-edit" hidden>Save</button>
-                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            <div class="edit-div edit-address-div clearfix">
+                <label for="" class="edit-caption">Delivery Address: </label><br>
+                <label for="" class="current-data current-address">447 Acorn Road, Lynnwood Glen, Pretoria, 0081, 447 Acorn Road, Lynnwood Glen, Pretoria, 0081</label>
+                <button class="edit-button edit-address" onclick="showEditAddress()">Edit</button><br><br>
+                <div class="edit-elements edit-elements-address" hidden>
+                    <div class="edit-captions-address-div">
+                        <label for="" class="edit-caption">Street Address: </label><br>
+                        <label for="" class="edit-caption">Suburb: </label><br>
+                        <label for="" class="edit-caption">City: </label><br>
+                        <label for="" class="edit-caption">Area Code: </label><br>
+                    
+                    </div>
+                    <div class="edit-inputs-address-div">
+                        <input type="text" class="edit-input edit-street-input" ><br>
+                        <input type="text" class="edit-input edit-street-input" ><br>
+                        <input type="text" class="edit-input edit-street-input" ><br>
+                        <input maxlength="4" type="text" class="edit-input edit-street-input" ><br>
+                    </div>
+                    <br><br><br><br>                
+                <label for="" class="edit-verify-feedback edit-name-verify"><label><br>
+                <button class="save-edit save-name-edit" >Save</button>
+                <button class="cancel-edit cancel-name-edit" onclick="hideEditAddress()">Cancel</button>
+                </div>    
+                
             </div>
             
             
