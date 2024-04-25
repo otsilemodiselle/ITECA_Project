@@ -675,13 +675,20 @@ header {
     margin-right: 20px;
 }
 
-.verify-prompt {
+.verify-prompt{
+    margin-left: 120px;
+}
+
+.edit-verify-feedback {
+    margin-left: 15px;
+}
+
+.edit-verify-feedback, .verify-prompt {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     color:red;
     font-size: 10px;
-    margin-left: 120px;
-    /* display: inline-block; */
+    
 }
 
 .signup-surname-verify {
@@ -771,8 +778,24 @@ header {
     margin: auto auto;    
 }
 
-.edit-captions-address-div, .edit-inputs-address-div {
+.edit-captions-address-div, .edit-inputs-address-div, .edit-captions-password-div, .edit-inputs-password-div, .edit-password-verification-div, .edit-password-buttons-div  {
     float: left;
+}
+
+.edit-inputs-password-div{
+    padding-bottom: 2px;
+}
+
+.edit-password-verification-div {
+    width: 350px;
+}
+
+.edit-password-buttons-div {
+    margin-left: 50px;
+}
+
+.edit-captions-password-div, .edit-inputs-password-div, .edit-password-verification-div, .edit-password-buttons-div  {
+    border: 1px solid black;
 }
 
 .profileview-container {

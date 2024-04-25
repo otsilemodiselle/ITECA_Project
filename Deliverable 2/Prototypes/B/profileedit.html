@@ -73,37 +73,120 @@
             document.getElementsByClassName("edit-address")[0].hidden =false;
         }
 
+        function showEditPassword(){
+            document.getElementsByClassName("edit-elements-password")[0].hidden =false;
+            document.getElementsByClassName("edit-password")[0].hidden =true;
+        }
+        function hideEditPassword(){
+            document.getElementsByClassName("edit-elements-password")[0].hidden =true;
+            document.getElementsByClassName("edit-password")[0].hidden =false;
+        }
+
         function editName(){
-            var name = document.getElementByClassName("editname-input")[0].value;
+            var name = document.getElementByClassName("edit-name-input")[0].value;
             var nameFeedback = "";
-        var alphabetical = /^[a-zA-Z]+$/;       
-        
-        if (name.length < 2){   
-            nameFeedback = "Name too short. ";}
-        if (!alphabetical.test(name)){
-            nameFeedback += "\n Alphabetical characters only."}      
-        document.getElementsByClassName("editname-verify")[0].textContent = nameFeedback;
+            var alphabetical = /^[a-zA-Z]+$/;       
+            
+            if (name.length < 2){   
+                nameFeedback = "Name too short. ";}
+            if (!alphabetical.test(name)){
+                nameFeedback += "\n Alphabetical characters only."}      
+            document.getElementsByClassName("edit-name-verify")[0].textContent = nameFeedback;
         }
+
         function editSurname(){
+            var surname = document.getElementByClassName("edit-surname-input")[0].value;
+            var surnameFeedback = "";
+            var alphabetical = /^[a-zA-Z]+$/;       
+            
+            if (surname.length < 2){   
+                surnameFeedback = "Same too short. ";}
+            if (!alphabetical.test(surname)){
+                surnameFeedback += "\n Alphabetical characters only."}      
+            document.getElementsByClassName("edit-surname-verify")[0].textContent = surnameFeedback;
+            }
 
-        }
         function editNumber(){
-
+            var name = document.getElementByClassName("edit-number-input")[0].value;
+            var numberFeedback = "";
+            var numerical = /^[\d/]+$/;       
+        
+            if (number.length < 10){   
+                numberFeedback = "Contact no. too short. ";}
+            if (!numerical.test(number)){
+                numberFeedback += "\n Numeric characters only."}      
+            document.getElementsByClassName("edit-number-verify")[0].textContent = numberFeedback;
         }
+
         function editEmail(){
-
+            var email = document.getElementsByClassName("edit-email-input")[0].value;
+            var emailFeedback = "";
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;       
+        
+            if (!emailPattern.test(email)){
+                emailFeedback = "\n Email format incorrect."}      
+            document.getElementsByClassName("edit-email-verify")[0].textContent = emailFeedback;
         }
+
         function editPassword(){
+            var password = document.getElementsByClassName("edit-password-input")[0].value;
+            var confirm = document.getElementsByClassName("edit-confirm-input")[0].value;
+            var passwordFeedback = "";
+            var passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W\_])[A-Za-z\d\W\_]{8,}$/;     
+        
+        
+            if (password.length < 6){   
+                passwordFeedback = "Six characters minimum. ";}
+            if (password.length > 255){   
+                passwordFeedback = "Password too long. ";}
+            if (!passPattern.test(password)){
+                passwordFeedback +=  "Must contain a lowercase, uppercase, numeric, and symbol character. ";}
+            if (!password==confirm){
+                passwordFeedback += "New password not successfully confirmed.";}
+        document.getElementsByClassName("edit-password-verify")[0].textContent = passwordFeedback;
 
         }
         function editCard(){
+            var card = document.getElementByClassName("edit-card-input")[0].value;
+            var cardFeedback ="";
+            var numerical = /^[\d/]+$/; 
 
+            if (card.length < 16){   
+                cardFeedback = "Contact no. too short. ";}
+            if (!numerical.test(card)){
+                cardFeedback += "\n Numeric characters only."}      
+            document.getElementsByClassName("edit-card-verify")[0].textContent = cardFeedback;
         }
+
         function editExpiry(){
+            var expiry = document.getElementByClassName("edit-expiry-input")[0].value;
+            var expiryFeedback ="";
+            var numerical = /^[\d/]+$/; 
 
+            if (expiry.length < 4){   
+                expiryFeedback = "Expiry date must be four digits. ";}
+            if (!numerical.test(expiry)){
+                expiryFeedback += "\n Numeric characters only."}      
+            document.getElementsByClassName("edit-expiry-verify")[0].textContent = expiryFeedback;
         }
-        function editAddress(){
 
+        function editAddress(){
+            var street = document.getElementByClassName("edit-street-input")[0].value;
+            var suburb = document.getElementByClassName("edit-suburb-input")[0].value;
+            var city = document.getElementByClassName("edit-city-input")[0].value;
+            var code = document.getElementByClassName("edit-code-input")[0].value;
+            var expiryFeedback ="";
+            var alphanumeric = /^[\w\s]*$/;
+            var numerical = /^[\d/]+$/;  
+            var alphabetical = /^[a-zA-Z]+$/;
+
+            if (!alphanumeric.test(street)){
+                expiryFeedback += "\n Street address not alphanumeric.\n"} 
+            if (expiry.length < 4){   
+                expiryFeedback = "Postal code must be four digits. \n";}
+            if (!numeric.test(code)){
+                expiryFeedback += "\n Postal code must be numeric."}      
+            document.getElementsByClassName("edit-address-verify")[0].textContent = expiryFeedback;
         }
     </script>
 </head>
@@ -164,7 +247,7 @@
                 <label for="" class="current-data current-name">Otsile</label>
                 <button class="edit-button edit-name" onclick="showEditName()">Edit</button><br><br>
                 <div class="edit-elements edit-elements-name" hidden>
-                    <input type="text" class="edit-input edit-name-input" maxlength="68" ><br>
+                    <input type="text" class="edit-input edit-name-input" maxlength="68" onchange="editName()"><br>
                     <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
                     <button class="save-edit save-name-edit" >Save</button>
                     <button class="cancel-edit cancel-name-edit" onclick="hideEditName()" >Cancel</button>
@@ -176,8 +259,8 @@
                 <label for="" class="current-data current-surname">Modiselle</label>
                 <button class="edit-button edit-surname" onclick="showEditSurname()">Edit</button><br><br>
                 <div  class="edit-elements edit-elements-surname" hidden>
-                    <input type="text" class="edit-input edit-surname-input" maxlength="68"><br>
-                    <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                    <input type="text" class="edit-input edit-surname-input" maxlength="68" onchange="editSurname()"><br>
+                    <label for="" class="edit-verify-feedback edit-surname-verify"></label><br>
                     <button class="save-edit save-surname-edit" >Save</button>
                     <button class="cancel-edit cancel-surname-edit" onclick="hideEditSurname()">Cancel</button>
                 </div>
@@ -188,7 +271,7 @@
                 <label for="" class="current-data current-number">0615022558</label>
                 <button class="edit-button edit-number" onclick="showEditNumber()">Edit</button><br><br>
                 <div class="edit-elements edit-elements-number" hidden>
-                    <input type="text" class="edit-input edit-number-input" maxlength="10"><br>
+                    <input type="text" class="edit-input edit-number-input" maxlength="10" onchange="editNumber()"><br>
                     <label for="" class="edit-verify-feedback edit-number-verify"></label><br>
                     <button class="save-edit save-number-edit" >Save</button>
                     <button class="cancel-edit cancel-number-edit" onclick="hideEditNumber()">Cancel</button>
@@ -200,7 +283,7 @@
                 <label for="" class="current-data current-email">iamotsile@gmail.com</label>
                 <button class="edit-button edit-email" onclick="showEditEmail()">Edit</button><br><br>
                 <div  class="edit-elements edit-elements-email" hidden>
-                    <input type="text" class="edit-input edit-email-input" maxlength="128"><br>
+                    <input type="text" class="edit-input edit-email-input" maxlength="128" onchange="editEmail()"><br>
                     <label for="" class="edit-verify-feedback edit-email-verify"></label><br>
                     <button class="save-edit save-email-edit" >Save</button>
                     <button class="cancel-edit cancel-email-edit" onclick="hideEditEmail()">Cancel</button>
@@ -212,7 +295,7 @@
                 <label for="" class="current-data current-card">4480 **** **** 6000</label>
                 <button class="edit-button edit-card" onclick="showEditCard()">Edit</button><br><br>
                 <div  class="edit-elements edit-elements-card" hidden>
-                    <input type="text" class="edit-input edit-card-input" ><br>
+                    <input type="text" class="edit-input edit-card-input" maxlength="16" onchange="editCard()"><br>
                     <label for="" class="edit-verify-feedback edit-card-verify"></label><br>    
                     <button class="save-edit save-card-edit" >Save</button>
                     <button class="cancel-edit cancel-card-edit" onclick="hideEditCard()" >Cancel</button>
@@ -225,7 +308,7 @@
                 <button class="edit-button edit-expiry" onclick="showEditExpiry()">Edit</button><br><br>
                 <div class="edit-elements edit-elements-expiry" hidden>
                     <input type="text" class="edit-input edit-expiry-input" maxlength="4"><br>
-                    <label for="" class="edit-verify-feedback edit-expiry-verify"></label><br>
+                    <label for="" class="edit-verify-feedback edit-expiry-verify" onchange="editExpiry()"></label><br>
                     <button class="save-edit save-expiry-edit" >Save</button>
                     <button class="cancel-edit cancel-expiry-edit" onclick="hideEditExpiry()">Cancel</button>
                 </div>
@@ -233,7 +316,7 @@
 
             <div class="edit-div edit-address-div clearfix">
                 <label for="" class="edit-caption">Delivery Address: </label><br>
-                <label for="" class="current-data current-address">447 Acorn Road, Lynnwood Glen, Pretoria, 0081, 447 Acorn Road, Lynnwood Glen, Pretoria, 0081</label>
+                <label for="" class="current-data current-address">447 Acorn Road, Lynnwood Glen, Pretoria, 0081</label>
                 <button class="edit-button edit-address" onclick="showEditAddress()">Edit</button><br><br>
                 <div class="edit-elements edit-elements-address" hidden>
                     <div class="edit-captions-address-div">
@@ -245,16 +328,41 @@
                     </div>
                     <div class="edit-inputs-address-div">
                         <input type="text" class="edit-input edit-street-input" ><br>
-                        <input type="text" class="edit-input edit-street-input" ><br>
-                        <input type="text" class="edit-input edit-street-input" ><br>
-                        <input maxlength="4" type="text" class="edit-input edit-street-input" ><br>
+                        <input type="text" class="edit-input edit-suburb-input" ><br>
+                        <input type="text" class="edit-input edit-city-input" ><br>
+                        <input maxlength="4" type="text" class="edit-input edit-code-input" onchange="editAddress()"><br>
                     </div>
                     <br><br><br><br>                
-                <label for="" class="edit-verify-feedback edit-name-verify"><label><br>
+                <label for="" class="edit-verify-feedback edit-address-verify"><label><br>
                 <button class="save-edit save-name-edit" >Save</button>
                 <button class="cancel-edit cancel-name-edit" onclick="hideEditAddress()">Cancel</button>
                 </div>    
                 
+            </div>
+
+            <div class="edit-div edit-password-div clearfix">
+                <label for="" class="edit-caption">Password: </label>
+                <label for="" class="current-data current-password">******</label>
+                <button class="edit-button edit-password" onclick="showEditPassword()">Edit</button><br><br>
+                <div class="edit-elements edit-elements-password" hidden>
+                    <div class="edit-captions-password-div">
+                        <label for="" class="edit-caption">New Password: </label><br>
+                        <label for="" class="edit-caption">Confirm Password:</label>
+                    </div>
+                    <div class="edit-inputs-password-div">
+                        <input type="password" class="edit-input edit-password-input" maxlength="255" onchange="editPassword()"><br>
+                        <input type="password" class="edit-input edit-confirm-input" maxlength="255" onchange="editPassword()"><br>
+                        
+                    </div>
+                    <div class="edit-password-verification-div">
+                        <label for="" class="edit-verify-feedback edit-password-verify"></label><br>
+                    </div>
+                    <div class="edit-password-buttons-div">
+                        <button class="save-edit save-password-edit" >Save</button>
+                        <button class="cancel-edit cancel-password-edit" onclick="hideEditPassword()">Cancel</button>
+                    </div>
+                    
+                </div>
             </div>
             
             
