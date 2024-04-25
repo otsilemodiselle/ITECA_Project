@@ -8,6 +8,42 @@
     <title>Order Checkout</title>
     <link rel="stylesheet" href="floatexample.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <script>
+        function editName(){
+            var name = document.getElementByClassName(editname-input)[0].value;
+            var nameFeedback = "";
+        var alphabetical = /^[a-zA-Z]+$/;       
+        
+        if (name.length < 2){   
+            nameFeedback = "Name too short. ";}
+        if (name.length > 68){
+            nameFeedback = "Name too long. ";}
+        if (!alphabetical.test(name)){
+            nameFeedback += "\n Alphabetical characters only."}      
+        document.getElementsByClassName("editname-verify")[0].textContent = nameFeedback;
+        }
+        function editSurname(){
+
+        }
+        function editNumber(){
+
+        }
+        function editEmail(){
+
+        }
+        function editPassword(){
+
+        }
+        function editCard(){
+
+        }
+        function editExpiry(){
+
+        }
+        function editAddress(){
+
+        }
+    </script>
 </head>
 <body>  
     <header>
@@ -60,23 +96,70 @@
             <h3 class="cat-heading">Edit Profile</h3>
         </div>
         <div class='profileview-container clearfix'>
-            <div class="customer-details clearfix">
-                <p class="personal-details">
-                    Name: <input class="editname-input" type="text"> Surname: <input class="editsurname-input" type="text"><br>
-                    Cell #: <input class="editnumber-input" type="text"> Email: <input class="editemail-input" type="text"> <br>
-                    Password: <input class="editpassword-input   type="password"> confirm: <input class="editconfirm-input type="password">     
-                </p>
+           
+            <div class="edit-div edit-name-div clearfix">
+                <label for="" class="current-data current-name">Otsile</label>
+                <button class="edit-button edit-name">Edit</button><br>
+                <input type="text" class="edit-input edit-name-input" hidden><br>
+                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                <button class="save-edit save-name-edit" hidden>Save</button>
+                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
             </div>
-            <div class="customer-payment clearfix">
-                <p              class="customer-pay-details">
-                    Card Number: <input class="editcard-input" type="text"><br>
-                    Expiry Date: <input class="editexpiry-input" type="text"><br>
-                    Delivery Address: <input class="editaddress-input" type="text">
-                </p>
+
+            <div class="edit-div edit-name-div clearfix">
+                <label for="" class="current-data current-name">Modiselle</label>
+                <button class="edit-button edit-name">Edit</button><br>
+                <input type="text" class="edit-input edit-name-input" hidden><br>
+                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                <button class="save-edit save-name-edit" hidden>Save</button>
+                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
             </div>
-            <button class="update-button">
-                Update Details
-            </button>
+
+            <div class="edit-div edit-name-div clearfix">
+                <label for="" class="current-data current-name">0615022558</label>
+                <button class="edit-button edit-name">Edit</button><br>
+                <input type="text" class="edit-input edit-name-input" hidden><br>
+                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                <button class="save-edit save-name-edit" hidden>Save</button>
+                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            </div>
+
+            <div class="edit-div edit-name-div clearfix">
+                <label for="" class="current-data current-name">iamotsile@gmail.com</label>
+                <button class="edit-button edit-name">Edit</button><br>
+                <input type="text" class="edit-input edit-name-input" hidden><br>
+                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                <button class="save-edit save-name-edit" hidden>Save</button>
+                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            </div>
+
+            <div class="edit-div edit-name-div clearfix">
+                <label for="" class="current-data current-name">Otsile</label>
+                <button class="edit-button edit-name">Edit</button><br>
+                <input type="text" class="edit-input edit-name-input" hidden><br>
+                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                <button class="save-edit save-name-edit" hidden>Save</button>
+                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            </div>
+
+            <div class="edit-div edit-name-div clearfix">
+                <label for="" class="current-data current-name">Otsile</label>
+                <button class="edit-button edit-name">Edit</button><br>
+                <input type="text" class="edit-input edit-name-input" hidden><br>
+                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                <button class="save-edit save-name-edit" hidden>Save</button>
+                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            </div>
+
+            <div class="edit-div edit-name-div clearfix">
+                <label for="" class="current-data current-name">Otsile</label>
+                <button class="edit-button edit-name">Edit</button><br>
+                <input type="text" class="edit-input edit-name-input" hidden><br>
+                <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
+                <button class="save-edit save-name-edit" hidden>Save</button>
+                <button class="cancel-edit cancel-name-edit" hidden>Cancel</button>
+            </div>
+            
             
         </div>
     </section>
