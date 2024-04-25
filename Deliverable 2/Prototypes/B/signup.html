@@ -167,11 +167,11 @@
                 <div class="signup-elements">
 
                     <label class="signup-name">Name: </label>
-                    <input onchange="signupNameVerify()" class="signup-name-input" type="text">
+                    <input onchange="signupNameVerify()" class="signup-name-input" type="text" maxlength="68">
                     <p class = "verify-prompt signup-name-verify"></p>
 
                     <label class="signup-surname">Surname: </label>
-                    <input onchange="signupSurnameVerify()" class="signup-surname-input" type="text"> 
+                    <input onchange="signupSurnameVerify()" class="signup-surname-input" type="text" maxlength="68"> 
                     <p class ="verify-prompt signup-surname-verify"></p>
 
                     <label class="signup-number">Contact #: </label>
@@ -179,7 +179,7 @@
                     <p class = "verify-prompt signup-number-verify"></p>
 
                     <label class="signup-email">Email:</label>
-                    <input onchange="signupEmailVerify()" class="signup-email-input" type="text"> 
+                    <input onchange="signupEmailVerify()" class="signup-email-input" type="text" maxlength="128"> 
                     <p class = "verify-prompt signup-email-verify"></p>
 
                     <label class="signup-password">Password:</label>

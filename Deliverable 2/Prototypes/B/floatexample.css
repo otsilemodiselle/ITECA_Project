@@ -511,19 +511,9 @@ header {
     padding-top: 50px;
 }
 
-.edit-div {
-    border: 1px solid black;
-    width: 400px;
-    margin: auto auto;
-}
-
-.edit-button {
-    float: right;
-}
-
-.current-data {
-    margin-left: 60px;
-    
+.update-button {
+    margin-left: 450px;
+    cursor: pointer;
 }
 
 .sizes-list, .quantity-list, .cart-button, .wishlist-button {
@@ -580,7 +570,7 @@ header {
   /* Instagram */
   .fa-instagram {
     background: burlywood;
-    color: black
+    color: black;
   }
 
   /* Pinterest */
@@ -594,7 +584,7 @@ header {
     /* border: 1px solid black; */
   }
 
- .order-recip-details, .order-pay-details, .order-summary-details, .order-check-details{
+  .personal-details, .order-recip-details, .order-pay-details, .order-summary-details, .order-check-details, .customer-pay-details {
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     color: #383B3E;
@@ -602,7 +592,7 @@ header {
     margin-left: 30px;
 }
 
-.order-recipient, .order-payment, .order-summary, .order-checkout {
+.customer-details, .order-recipient, .order-payment, .customer-payment, .order-summary, .order-checkout {
     float: left;
     box-shadow: -2px 2px 6px #999999;
     border-top-left-radius: 2px;
@@ -616,8 +606,44 @@ header {
     /* border: 1px solid blue; */
 }
 
+.editname-input, .editsurname-input, .editnumber-input, .editemail-input, .editpassword-input, .editconfirm-input, .editcard-input, .editexpiry-input, .editaddress-input {
+    width: 120px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
 
-.checkout, .recip-edit, .personal-edit, .pay-edit {
+.editexpiry-input {
+    margin-left: 40px;
+    width: 30px;
+}
+
+.editcard-input {
+    margin-left: 22px;
+    width: 130px;
+}
+
+.editnumber-input {
+    margin-left: 30px;
+}
+
+.editname-input {
+    margin-left: 28px;
+}
+
+.editemail-input {
+    margin-left: 28px;
+}
+
+.editconfirm-input {
+    margin-left: 10px;
+}
+
+.editaddress-input {
+    width: 280px;
+}
+
+.checkout, .recip-edit, .personal-edit, .pay-edit, .customer-pay-edit {
     cursor: pointer;
     float: right;
     margin-bottom: 15px;
@@ -729,6 +755,42 @@ header {
     padding-top: 1px;
 }
 
+.edit-div {
+    /* border: 1px solid black; */
+    width: 500px;
+    margin: auto auto;
+    margin-bottom: 15px;
+}
+
+.edit-button {
+    float: right;
+}
+
+.current-data {
+    display: inline-block;
+    margin: auto auto;    
+}
+
+.edit-captions-address-div, .edit-inputs-address-div {
+    float: left;
+}
+
 .profileview-container {
-    border: 1px solid purple;
+    box-shadow: -2px 2px 6px #999999;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 500px;
+    margin: auto auto;
+}
+
+.edit-caption, .current-data {
+    font-size: 16px;
+    color:#383B3E;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.edit-caption, .current-address, .edit-input, .save-edit {
+    margin-left: 15px;
 }
