@@ -774,28 +774,32 @@ header {
 }
 
 .current-data {
-    display: inline-block;
+    /* display: inline-block; */
     margin: auto auto;    
 }
 
-.edit-captions-address-div, .edit-inputs-address-div, .edit-captions-password-div, .edit-inputs-password-div, .edit-password-verification-div, .edit-password-buttons-div  {
+.edit-captions-address-div, .edit-inputs-address-div, .edit-captions-password-div, .edit-inputs-password-div, .edit-verification-div, .edit-buttons-div  {
     float: left;
+}
+
+.edit-buttons-div  {
+    width: 200px;
 }
 
 .edit-inputs-password-div{
     padding-bottom: 2px;
 }
 
-.edit-password-verification-div {
+.edit-verification-div {
     width: 350px;
 }
 
-.edit-password-buttons-div {
+.edit-buttons-div {
     margin-left: 50px;
 }
 
-.edit-captions-password-div, .edit-inputs-password-div, .edit-password-verification-div, .edit-password-buttons-div  {
-    border: 1px solid black;
+.edit-captions-password-div, .edit-inputs-password-div, .edit-verification-div, .edit-buttons-div, .edit-buttons-div   {
+    /* border: 1px solid black; */
 }
 
 .profileview-container {
@@ -816,4 +820,26 @@ header {
 
 .edit-caption, .current-address, .edit-input, .save-edit {
     margin-left: 15px;
+    /* display: inline-block; */
 }
+
+.edit-verification-div {
+    margin-left: 15px;
+}
+
+.edit-password-verify {
+    margin-left: 0px;
+}
+
+.edit-elements-address, .edit-captions-address-div {
+    /* border: 1px solid black; */
+}
+
+.edit-input {
+    margin-top: 2px;
+}
+
+/* .edit-caption {
+    margin: 0px;
+    padding: 0px;
+} */
