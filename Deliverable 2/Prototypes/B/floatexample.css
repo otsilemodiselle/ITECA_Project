@@ -660,7 +660,32 @@ header {
     /* padding-bottom: 100px; */
 }
 
-.login-email, .login-password, .signup-name, .signup-surname, .signup-email, .signup-password, .signup-number, .signup-confirm {
+.login-container, .login-window, .login-elements, .login-captions-div, .login-inputs-div {
+    /* border: 1px solid black; */
+}
+
+.login-captions-div, .login-inputs-div {
+    float: left;
+}
+
+.login-email, .login-password {
+    padding: 0px;
+    margin: 0px;
+}
+
+.login-inputs-div {
+    margin-left: 15px;
+}
+
+.login-button {
+    margin: auto auto;
+    float: left;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 15px;
+}
+
+.login-email, .login-password, .signup-name, .signup-surname, .signup-email, .signup-password, .signup-number, .signup-confirm, .login-email, .login-password {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     color:#383B3E;
@@ -767,6 +792,7 @@ header {
     width: 500px;
     margin: auto auto;
     margin-bottom: 15px;
+    padding-top: 15px;
 }
 
 .edit-button {
