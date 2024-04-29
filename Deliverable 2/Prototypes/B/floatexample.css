@@ -869,3 +869,28 @@ header {
     margin: 0px;
     padding: 0px;
 } */
+
+
+/* New Code  */
+
+.carousel_img {
+    max-height: 400px;
+    width: 100%;
+    
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    /* position: absolute; */
+    
+    top: 330;
+}
+
+.main-casorel {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+

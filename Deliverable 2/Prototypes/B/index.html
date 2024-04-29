@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="3" >
+    <!-- <meta http-equiv="refresh" content="3" > -->
     <title>Float Example</title>
     <link rel="stylesheet" href="floatexample.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 </head>
 <body>  
+
     <header>
         <div class='clearfix' id='top-title-div'>
             <img src="dance burgundy.png" class='title-icon'  alt="">
@@ -85,6 +86,8 @@
                 </ul>
            </nav>
            <div class='main-carosel'>
+            <img src="" alt="" class="carousel_img">
+            
            </div>
            <div class='left-placart'>
     
@@ -100,5 +103,21 @@
 
         </div>
     </footer>
+    <script>        
+        var imageFiles = ["carousel_1.webp", "carousel_2.webp", "carousel_3.webp"];
+
+        var currentIndex = 0;
+        var imgElement = document.getElementsByClassName("carousel_img");
+
+        function changeImage() 
+        {
+            imgElement.src = imageFiles[currentIndex];
+
+            currentIndex = (changeImage + 1) %  imageFiles.length;
+        }
+
+        setInterval(changeImage, 1000);
+            
+    </script>
 </body>
 </html>
