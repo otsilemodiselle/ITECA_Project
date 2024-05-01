@@ -86,7 +86,40 @@
                 </ul>
            </nav>
            <div class='main-carosel'>
-            <img src="" alt="" class="carousel_img">
+            <div class="carousel">
+                <div class="carousel_container">
+                    <ul class="carousel_track">
+                        <li class="carousel_slide current-slide">
+                            <img src="carousel_1.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_2.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_3.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_4.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_5.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_6.webp" alt="" class="carousel_img">
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel_button carousel_button--left is-hidden">&lt;</button>
+                <button class="carousel_button carousel_button--right">&gt;</button>
+                <div class="carousel_nav">
+                    <button class="carousel_indicator current-slide"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                </div>
+            </div>
             
            </div>
            <div class='left-placart'>
@@ -103,21 +136,8 @@
 
         </div>
     </footer>
-    <script>        
-        var imageFiles = ["carousel_1.webp", "carousel_2.webp", "carousel_3.webp"];
 
-        var currentIndex = 0;
-        var imgElement = document.getElementsByClassName("carousel_img");
-
-        function changeImage() 
-        {
-            imgElement.src = imageFiles[currentIndex];
-
-            currentIndex = (changeImage + 1) %  imageFiles.length;
-        }
-
-        setInterval(changeImage, 1000);
-            
-    </script>
+    <script src="carousel.js"></script>
+    
 </body>
 </html>
