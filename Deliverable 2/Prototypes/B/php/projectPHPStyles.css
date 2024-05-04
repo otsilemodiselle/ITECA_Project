@@ -965,3 +965,8 @@ header {
 .is-hidden {
     display: none;
     }
+
+.cart_icon, .wishlist_icon {
+    width: 20px;
+    height: 100%;
+}

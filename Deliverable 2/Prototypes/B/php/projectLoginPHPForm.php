@@ -1,38 +1,100 @@
 <?php
-  require_once 'functions.php';
+      require_once 'functions.php';
+
+      session_start();
+  
+      echo <<<_END
+          <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <!--<meta http-equiv="refresh" content="3" >-->
+                  <title>Float Example</title>
+                  <link rel="stylesheet" href="projectPHPStyles.css">
+                  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+              </head>
+              <body> 
+              <script>
+  
+              </script>
+  
+      _END;
+  
+      if((!isset($_SESSION['cart_count'])) || ($_SESSION['cart_count'] == 0)){
+          $cart_icon = "empty_cart.png";
+      }
+      else{
+          $cart_icon = "full_cart.png";
+      }  
+  
+      if (isset($_SESSION['wishlist_count'])){
+          $wishlist_count = $_SESSION['wishlist_count'];
+      }
+      else{ $wishlist_count = 0;}
+  
+      if (isset($_SESSION['cart_count'])){
+          $cart_count = $_SESSION['cart_count'];
+      }
+      else{ $cart_count = 0;}
+  
+      if (isset($_SESSION['customer_id'])){
+          $login_name=$_SESSION['forename'];
+          echo <<<_END
+          <header>
+        <div class='clearfix' id='top-title-div'>
+            <img src="dance burgundy.png" class='title-icon'  alt="">
+            <a class='title-home' href:"index.html">Bride & Joy</a>
+            <ul class='clearfix title-list'>
+                  <li class='title-options'>                    
+                      <a onclick='Loggoutds()' href="projectIndexPHPForm.php"  class='title-link'>Sign-Out</a>
+                  </li>
+  
+                  <li class='title-options' class='title-link'>                    
+                      <a href="" class='title-link' class='title-link'>Hello $login_name!</a>
+                  </li>
+  
+                  <li class='title-options'>                    
+                      <a href="" class='title-link'>Wishlist ($wishlist_count)</a>
+                      <img src="wishlist.png" class="wishlist_icon">
+                  </li>
+  
+                  <li class='title-options'>                    
+                      <a href="" class='title-link'>Cart ($cart_count)</a>
+                      <img src="$cart_icon" class="cart_icon">
+                  </li>
+                  
+            </ul>
+        </div>
+        _END;
+      } else{
+          echo <<<_END
+          <header>
+        <div class='clearfix' id='top-title-div'>
+            <img src="dance burgundy.png" class='title-icon'  alt="">
+            <a class='title-home' href:"index.html">Bride & Joy</a>
+            <ul class='clearfix title-list'>
+                  <li class='title-options'>
+                      <a href="projectLoginPHPForm.php" class='title-link'>Login</a>
+                  </li>
+                  <li class='title-options'>
+                      <a  href="" class='title-link'>Sign-up</a>
+                  </li>
+                  <li class='title-options'>
+                      <a href="" class='title-link'>Wishlist ($wishlist_count)</a>
+                      <img src="wishlist.png" class="wishlist_icon">                    
+                  </li>
+                  <li class='title-options'>
+                      <a href="" class='title-link'>Cart ($cart_count)</a>
+                      <img src="$cart_icon" class="cart_icon">
+                  </li>
+            </ul>
+        </div>
+        _END;
+      }
 
   echo <<<_END
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            
-            <title>Order Checkout</title>
-            <link rel="stylesheet" href="projectPHPStyles.css">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-        </head>
-        <body>  
-            <header>
-                <div class='clearfix' id='top-title-div'>
-                    <img src="dance burgundy.png" class='title-icon'  alt="">
-                    <a class='title-home' href:"index.html">Bride & Joy</a>
-                    <ul class='clearfix title-list'>
-                        <li class='title-options'>
-                            <a href="" class='title-link link'>Cart</a>
-                        </li>
-                        <li class='title-options'>
-                            <a href="" class='title-link'>Cart</a>
-                        </li>
-                        <li class='title-options'>
-                            <a href="" class='title-link'>Login</a>
-                        </li>
-                        <li class='title-options'>
-                            <a href="" class='title-link'>Sign-up</a>
-                        </li>
-                    </ul>
-                </div>
                 <div id='top-nav-div'>
                     <nav id='top-nav'>
                         <ul class='clearfix nav-list'>
@@ -144,11 +206,11 @@
       $_SESSION['wishlist_count'] = $retrieved_wishlist_count;
       $_SESSION['cart_count'] = $retrieved_cart_count;
 
-      header("Location: redirect.php");
+      header("Location: projectIndexPHPForm.php");
 
       exit;
     }
-    window.alert("Incorrect login details");
+    else {window.alert("Incorrect login details");}
   }
   
 ?>
