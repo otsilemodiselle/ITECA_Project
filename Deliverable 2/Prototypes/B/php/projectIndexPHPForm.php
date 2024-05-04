@@ -20,6 +20,10 @@
             <script>
 
             </script>
+            <header>
+            <div class='clearfix' id='top-title-div'>
+                <img src="dance burgundy.png" class='title-icon'  alt="">
+                <a class='title-home' href="projectIndexPHPForm.php">Bride & Joy</a>
 
     _END;
 
@@ -43,10 +47,6 @@
     if (isset($_SESSION['customer_id'])){
         $login_name=$_SESSION['forename'];
         echo <<<_END
-        <header>
-      <div class='clearfix' id='top-title-div'>
-          <img src="dance burgundy.png" class='title-icon'  alt="">
-          <a class='title-home' href:"index.html">Bride & Joy</a>
           <ul class='clearfix title-list'>
                 <li class='title-options'>                    
                     <a onclick='Loggoutds()' href="projectIndexPHPForm.php"  class='title-link'>Sign-Out</a>
@@ -71,10 +71,6 @@
       _END;
     } else{
         echo <<<_END
-        <header>
-      <div class='clearfix' id='top-title-div'>
-          <img src="dance burgundy.png" class='title-icon'  alt="">
-          <a class='title-home' href:"index.html">Bride & Joy</a>
           <ul class='clearfix title-list'>
                 <li class='title-options'>
                     <a href="projectLoginPHPForm.php" class='title-link'>Login</a>
@@ -100,22 +96,22 @@
         <nav id='top-nav'>
           <ul class='clearfix nav-list'>
               <li class='nav-options'>
-                  <a href="projectWomensCatalogue.php" class='nav-link'>Brides</a>
+                  <a href="projectCataloguePHPForm.php?cat=womens" class='nav-link'>Brides</a>
               </li>   
               <li class='nav-options'>
-                  <a href="projectMensCatalogue.php" class='nav-link'>Grooms</a>
+                  <a href="projectCataloguePHPForm.php?cat=mens" class='nav-link'>Grooms</a>
               </li>
               <li class='nav-options'>
-                  <a href="projectGirlsCatalogue.php" class='nav-link'>Flower Girls</a>
+                  <a href="projectCataloguePHPForm.php?cat=girls" class='nav-link'>Flower Girls</a>
               </li>
               <li class='nav-options'>
-                  <a href="projectBoysCatalogue.php" class='nav-link'>Ring Bearers</a>
+                  <a href="projectCataloguePHPForm.php?cat=boys" class='nav-link'>Ring Bearers</a>
               </li>
               <li class='nav-options'>
-                  <a href="projectTraditionalCatalogue.php" class='nav-link'>Traditional</a>
+                  <a href="projectCataloguePHPForm.php?cat=traditional" class='nav-link'>Traditional</a>
               </li>
               <li class='nav-options'>
-                  <a href="projectSaleCatalogue.php" class='nav-link'>On Sale</a>
+                  <a href="projectCataloguePHPForm.php?cat=sales" class='nav-link'>On Sale</a>
               </li>
           </ul>
         </nav>
@@ -131,24 +127,25 @@
                       <a href="" class='collection-link'>Collection</a>
                   </li>
                   <li class='collection-option'>
-                      <a href="" class='collection-link'>Best Sellers</a>
+                      <a href="projectCataloguePHPForm.php?cat=best_sellers" class='collection-link'>Best Sellers</a>
                   </li>
                   <li class='collection-option'>
-                      <a href="" class='collection-link'>Africa Ceremony Collection</a>
+                      <a href="projectCataloguePHPForm.php?cat=africa_ceremony" class='collection-link'>Africa Ceremony Collection</a>
                   </li>
                   <li class='collection-option'>
-                      <a href="" class='collection-link'>Empire Dress Collection</a>
+                      <a href="projectCataloguePHPForm.php?cat=empire" class='collection-link'>Empire Dress Collection</a>
                   </li>
                   <li class='collection-option'>
-                      <a href="" class='collection-link'>Butterfly Collection</a>
+                      <a href="projectCataloguePHPForm.php?cat=butterfly" class='collection-link'>Butterfly Collection</a>
                   </li>
                   <li class='collection-option'>
-                      <a href="" class='collection-link'>Lace Collection</a>
+                      <a href="projectCataloguePHPForm.php?cat=lace" class='collection-link'>Lace Collection</a>
                   </li>
                   <li class='collection-option'>
-                      <a href="" class='collection-link'>Classic Collection</a>
-                  </li><li class='collection-option'>
-                      <a href="" class='collection-link'>On Sale</a>
+                      <a href="projectCataloguePHPForm.php?cat=classics" class='collection-link'>Classic Collection</a>
+                  </li>
+                  <li class='collection-option'>
+                      <a href="projectCataloguePHPForm.php?cat=sales" class='collection-link'>On Sale</a>
                   </li>
               </ul>
         </nav>
