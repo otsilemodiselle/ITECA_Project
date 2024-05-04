@@ -72,4 +72,13 @@
     $stmt->execute([$st, $nm, $sn, $pw]);
   }
 
+  function loggout(){
+    session_start();
+    $_SESSION = array();
+    setcookie(session_name(), '', time() - 2592000, '/');
+    session_destroy();
+  }
+
+?>
+
   
