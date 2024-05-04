@@ -8,7 +8,7 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            // <meta http-equiv="refresh" content="3" >
+            <!--<meta http-equiv="refresh" content="3" >-->
             <title>Float Example</title>
             <link rel="stylesheet" href="projectPHPStyles.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
@@ -23,6 +23,7 @@
     $cart_count = $_SESSION['cart_count'];
 
     echo <<<_END
+    
     <header>
         <div class='clearfix' id='top-title-div'>
             <img src="dance burgundy.png" class='title-icon'  alt="">
@@ -89,6 +90,7 @@
 
     <section class='container'>
       <div class='clearfix '>
+
         <nav class='nav-collections'>
               <ul class='collection-list'>
                   <li class='collection-option'>
@@ -116,14 +118,50 @@
                   </li>
               </ul>
         </nav>
+
         <div class='main-carosel'>
+            <div class="carousel">
+                <div class="carousel_container">
+                    <ul class="carousel_track">
+                        <li class="carousel_slide current-slide">
+                            <img src="carousel_1.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_2.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_3.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_4.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_5.webp" alt="" class="carousel_img">
+                        </li>
+                        <li class="carousel_slide">
+                            <img src="carousel_6.webp" alt="" class="carousel_img">
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel_button carousel_button--left is-hidden">&lt;</button>
+                <button class="carousel_button carousel_button--right">&gt;</button>
+                <div class="carousel_nav">
+                    <button class="carousel_indicator current-slide"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                </div>
+            </div>
         </div>
+
         <div class='left-placart'>
-
         </div>
+
         <div class='right-placart'>
-
         </div>
+
       </div>
     </section>
 
@@ -132,6 +170,8 @@
 
       </div>
     </footer>
+
+    <script src="carousel.js"></script>
     </body>
     </html>
   _END;
