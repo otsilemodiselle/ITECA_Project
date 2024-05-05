@@ -940,7 +940,7 @@ header {
     background: transparent;
     margin-left: 327px;
     top: 380px;
-    width: 200px;
+    width: 170px;
     position: absolute;
     /* z-index: 10000; */
 }
@@ -972,4 +972,35 @@ header {
 .cart_icon, .wishlist_icon {
     width: 20px;
     height: 100%;
+}
+
+.promo_text_left {
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    color: #F6F4F0;
+    font-size: 27px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.promo_text_right {
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    color: #F6F4F0;
+    font-size: 27px;
+    font-weight: bold;
+    margin-left: 60px;
+    text-align: center;
+}
+
+.promo_img_left {
+    height: 195px;
+    margin-left: 40px;
+    /* width: 100%; */
+}
+
+.promo_img_right {
+    height: 120px;
+    margin-left: 20px;
+    transform: scaleX(-1);
 }
