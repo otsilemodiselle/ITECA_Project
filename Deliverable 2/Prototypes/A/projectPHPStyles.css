@@ -353,6 +353,7 @@ header {
     margin: auto auto;
     padding: 0;
     display: inline-block;
+    /* margin-left: 600px; */
 }
 
 .nav-options{
@@ -980,7 +981,7 @@ header {
     color: #F6F4F0;
     font-size: 27px;
     /* font-weight: bold; */
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .promo_text_right {
@@ -995,7 +996,7 @@ header {
 
 .promo_img_left {
     height: 195px;
-    margin-left: 40px;
+    /* margin-left: 40px; */
     /* width: 100%; */
 }
 
@@ -1004,3 +1005,4 @@ header {
     margin-left: 20px;
     transform: scaleX(-1);
 }
+

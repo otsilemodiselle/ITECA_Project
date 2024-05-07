@@ -61,7 +61,6 @@ setInterval(function() {
       updateDots(currentDot, nextDot);
       hideButtonsAtEdges(slides, prevButton, nextButton, nextIndex);
     } 
-  console.log("This message will appear every 3 seconds.");
 }, 5000); // 5000 milliseconds = 5 seconds
 
 
