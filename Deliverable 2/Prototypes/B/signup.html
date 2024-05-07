@@ -100,13 +100,9 @@
         checker += signupConfirmVerify();
 
         if (checker == ""){
-            alert(success);
-            return true;
+            document.getElementsByClassName("signup-button")[0].style.pointerEvents = 'auto';
         }
-        else {
-            alert(failure);
-            return false;
-        }
+        
        
 
     }
@@ -187,8 +183,8 @@
                     <p class = "verify-prompt signup-password-verify"></p>
 
                     <label class="signup-confirm">Confirm: </label> 
-                    <input onchange="signupConfirmVerify()" class="signup-confirm-input" type="password"><p class = "verify-prompt signup-confirm-verify"></p><br>
-                    <button onclick="signupValidate()" class="signup-button">Signup</button>
+                    <input onchange="signupConfirmVerify(); signupValidate();" class="signup-confirm-input" type="password"><p class = "verify-prompt signup-confirm-verify"></p><br>
+                    <button style="pointer-events: none;" class="signup-button">Signup</button>
                 </div>
             </div>
             
