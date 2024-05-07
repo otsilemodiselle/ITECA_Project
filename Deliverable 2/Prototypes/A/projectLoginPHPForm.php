@@ -2,6 +2,65 @@
       require_once 'functions.php';
 
       session_start();
+
+      if (!empty($_POST['inputEmail']) && !empty($_POST['inputPassword'])) {
+        $inputEmail = sanitizeString($_POST['inputEmail']);
+        $inputPassword = sanitizeString($_POST['inputPassword']);
+    
+        
+        $query = "SELECT stakeholder_id FROM stakeholders WHERE email='$inputEmail'";
+        $result = queryMysql($query);
+        
+        if (!$result->rowCount()) 
+            {die ("Incorrect login details");}
+    
+        $row = $result->fetch();
+        $retrieved_st_id = $row['stakeholder_id'];
+    
+        $query = "SELECT * FROM customer WHERE stakeholder_id='$retrieved_st_id'";
+        $result = queryMysql($query);
+    
+        $row = $result->fetch();
+        $retrieved_customer_id =$row['customer_id'];
+        $retrieved_name = $row['name'];
+        $retrieved_surname = $row['surname'];
+        $retrieved_pw = $row['password'];
+    
+        if (password_verify(str_replace("'", "", $inputPassword), $retrieved_pw))
+        {
+          session_start();
+    
+          $_SESSION['customer_id'] = $retrieved_customer_id;
+          $_SESSION['forename'] = $retrieved_name;
+          $_SESSION['surname'] = $retrieved_name;
+    
+          $query = "SELECT COUNT(w.wish_id) AS wishlist_count
+                    FROM wishlist w
+                    JOIN collection co ON w.coll_id = co.coll_id
+                    JOIN customer c ON co.customer_id = c.customer_id
+                    WHERE c.customer_id = '$retrieved_customer_id';";
+          $result =queryMysql($query);
+          $row = $result->fetch();
+          $retrieved_wishlist_count = $row['wishlist_count'];
+    
+          $query = "SELECT COUNT(ca.cart_id) AS cart_count
+                    FROM cart ca
+                    JOIN collection co ON ca.coll_id = co.coll_id
+                    JOIN customer c ON co.customer_id = c.customer_id
+                    WHERE c.customer_id = '$retrieved_customer_id';";
+          $result =queryMysql($query);
+          $row = $result->fetch();
+          $retrieved_cart_count = $row['cart_count'];
+    
+          $_SESSION['wishlist_count'] = $retrieved_wishlist_count;
+          $_SESSION['cart_count'] = $retrieved_cart_count;
+    
+          header("Location: projectIndexPHPForm.php");
+          exit;
+        }
+        else {window.alert("Incorrect login details");}
+      }
+    
   
       echo <<<_END
           <!DOCTYPE html>
@@ -16,9 +75,6 @@
                   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
               </head>
               <body> 
-              <script>
-  
-              </script>
               <header>
               <div class='clearfix' id='top-title-div'>
                   <img src="dance burgundy.png" class='title-icon'  alt="">
@@ -47,7 +103,7 @@
         echo <<<_END
           <ul class='clearfix title-list'>
                 <li class='title-options'>                    
-                    <a onclick='Loggoutds()' href="projectIndexPHPForm.php"  class='title-link'>Sign-Out</a>
+                    <a href="destroy_session.php"  class='title-link'>Sign-Out</a>
                 </li>
 
                 <li class='title-options' class='title-link'>                    
@@ -149,63 +205,5 @@
     </html>
   _END;
 
-  if (!empty($_POST['inputEmail']) && !empty($_POST['inputPassword'])) {
-    $inputEmail = sanitizeString($_POST['inputEmail']);
-    $inputPassword = sanitizeString($_POST['inputPassword']);
-
     
-    $query = "SELECT stakeholder_id FROM stakeholders WHERE email='$inputEmail'";
-    $result = queryMysql($query);
-    
-    if (!$result->rowCount()) 
-        {die ("Incorrect login details");}
-
-    $row = $result->fetch();
-    $retrieved_st_id = $row['stakeholder_id'];
-
-    $query = "SELECT * FROM customer WHERE stakeholder_id='$retrieved_st_id'";
-    $result = queryMysql($query);
-
-    $row = $result->fetch();
-    $retrieved_customer_id =$row['customer_id'];
-    $retrieved_name = $row['name'];
-    $retrieved_surname = $row['surname'];
-    $retrieved_pw = $row['password'];
-
-    if (password_verify(str_replace("'", "", $inputPassword), $retrieved_pw))
-    {
-      session_start();
-
-      $_SESSION['customer_id'] = $retrieved_customer_id;
-      $_SESSION['forename'] = $retrieved_name;
-      $_SESSION['surname'] = $retrieved_name;
-
-      $query = "SELECT COUNT(w.wish_id) AS wishlist_count
-                FROM wishlist w
-                JOIN collection co ON w.coll_id = co.coll_id
-                JOIN customer c ON co.customer_id = c.customer_id
-                WHERE c.customer_id = '$retrieved_customer_id';";
-      $result =queryMysql($query);
-      $row = $result->fetch();
-      $retrieved_wishlist_count = $row['wishlist_count'];
-
-      $query = "SELECT COUNT(ca.cart_id) AS cart_count
-                FROM cart ca
-                JOIN collection co ON ca.coll_id = co.coll_id
-                JOIN customer c ON co.customer_id = c.customer_id
-                WHERE c.customer_id = '$retrieved_customer_id';";
-      $result =queryMysql($query);
-      $row = $result->fetch();
-      $retrieved_cart_count = $row['cart_count'];
-
-      $_SESSION['wishlist_count'] = $retrieved_wishlist_count;
-      $_SESSION['cart_count'] = $retrieved_cart_count;
-
-      header("Location: projectIndexPHPForm.php");
-
-      exit;
-    }
-    else {window.alert("Incorrect login details");}
-  }
-  
 ?>

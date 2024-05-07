@@ -48,7 +48,7 @@
        echo <<<_END
          <ul class='clearfix title-list'>
                <li class='title-options'>                    
-                   <a onclick='Loggoutds()' href="projectIndexPHPForm.php"  class='title-link'>Sign-Out</a>
+                   <a href="destroy_session.php"  class='title-link'>Sign-Out</a>
                </li>
 
                <li class='title-options' class='title-link'>                    
@@ -121,6 +121,8 @@
   if(isset($_GET['cat'])){
     $clickedCatalogue = $_GET['cat'];
 
+    $_SESSION['browsed_catalogue'] = $clickedCatalogue;
+
     echo <<<_END
     <section class='container'>
         <div class="section-header">
@@ -133,8 +135,8 @@
 
     function individualQuery($catalogueTable){
       $query = "SELECT i.prod_id, p.prod_img, p.prod_name, p.price
-                            FROM product p
-                            JOIN $catalogueTable i ON p.prod_id = i.prod_id;";
+                FROM product p
+                JOIN $catalogueTable i ON p.prod_id = i.prod_id;";
       return $query;
     }
     

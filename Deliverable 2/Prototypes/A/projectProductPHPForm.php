@@ -49,7 +49,7 @@
        echo <<<_END
          <ul class='clearfix title-list'>
                <li class='title-options'>                    
-                   <a onclick='Loggoutds()' href="projectIndexPHPForm.php"  class='title-link'>Sign-Out</a>
+                   <a href="destroy_session.php"  class='title-link'>Sign-Out</a>
                </li>
 
                <li class='title-options' class='title-link'>                    
@@ -164,6 +164,7 @@
     $result = queryMysql($query);
 
     $arrAvailableSizes = array();
+    $arrAvailableSizes[] = "";
 
     while ($row = $result->fetch())
     {
@@ -193,52 +194,22 @@
             <a href="#" class="fa fa-pinterest"></a>
             <a href="#" class="fa fa-instagram"></a>
         </div>
-      </div>
-
-      <div class='clearfix similar-container'>
-            <div class="similar-header-div">
-                <h3 class="similar-heading">
-                    Similar Products Include
-                </h3>
-            </div>
-            <div class='card three'>
-                <img src="thumbnail.png" alt="" class="thumbnail">
-                <p class="prod-name card-detail"><strong>Product Name</strong></p>
-                <p class="price card-detail"><strong>R65.00</strong></p>
-            </div>
-            <div class='card three'>
-                <img src="thumbnail.png" alt="" class="thumbnail">
-                <p class="prod-name card-detail"><strong>Product Name</strong></p>
-                <p class="price card-detail"><strong>R65.00</strong></p>
-            </div>
-            <div class='card three'>
-                <img src="thumbnail.png" alt="" class="thumbnail">
-                <p class="prod-name card-detail"><strong>Product Name</strong></p>
-                <p class="price card-detail"><strong>R65.00</strong></p>
-            </div>
-            <div class='card three'>
-                <img src="thumbnail.png" alt="" class="thumbnail">
-                <p class="prod-name card-detail"><strong>Product Name</strong></p>
-                <p class="price card-detail"><strong>R65.00</strong></p>
-            </div>
-        </div>
-    </section>
-
+      </div>            
     _END;
   }
 
  
   echo <<<_END
- </div>
- </section>
+ 
+  </section>
 
- <footer>
-     <div class='end'>
-         
-     </div>
- </footer>
- </body>
- </html>
+  <footer>
+      <div class='end'>
+          
+      </div>
+  </footer>
+  </body>
+  </html>
  _END;
 
 

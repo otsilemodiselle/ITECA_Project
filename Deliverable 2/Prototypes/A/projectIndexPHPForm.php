@@ -49,7 +49,7 @@
         echo <<<_END
           <ul class='clearfix title-list'>
                 <li class='title-options'>                    
-                    <a onclick='Loggoutds()' href="projectIndexPHPForm.php"  class='title-link'>Sign-Out</a>
+                    <a onclick='Loggoutds()' href="destroy_session.php"  class='title-link'>Sign-Out</a>
                 </li>
 
                 <li class='title-options' class='title-link'>                    
