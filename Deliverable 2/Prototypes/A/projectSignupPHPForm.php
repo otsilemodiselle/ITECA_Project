@@ -112,7 +112,7 @@
     <div class='signup-container clearfix'>
         <div class="signup-window">
             <div class="signup-elements">
-            <form method="post" action="projectSignupPHPForm.php">
+            <form method="post" action="signup2.php">
 
                 <label class="signup-name">Name: </label>
                 <input onchange="signupNameVerify()" class="signup-name-input" type="text" maxlength="68" name="name">
@@ -135,8 +135,10 @@
                 <p class = "verify-prompt signup-password-verify"></p>
 
                 <label class="signup-confirm">Confirm: </label> 
-                <input onchange="signupConfirmVerify(); signupValidate();" class="signup-confirm-input" type="password" name="confirm"><p class = "verify-prompt signup-confirm-verify"></p><br>
-                <button style="pointer-events: none;" class="signup-button">Signup</button>
+                <input onchange="signupConfirmVerify(); signupValidate();" class="signup-confirm-input" type="password" name="confirm">
+                <p class = "verify-prompt signup-confirm-verify"></p><br>
+                
+                <input type="submit" style="pointer-events: none;" class="signup-button" value="Signup">
             </form>
             </div>
         </div>

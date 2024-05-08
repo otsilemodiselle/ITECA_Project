@@ -49,15 +49,24 @@
     return str_replace("'", "", $result);
   }
 
-  function add_stakeholder($pdo, $em, $ad, $cn)
+  function add_stakeholder($pdo, $em, $cn)
   {
-    $stmt = $pdo->prepare('INSERT INTO stakeholders(email, address, contact_number) VALUES(?,?,?)');
+    $stmt = $pdo->prepare('INSERT INTO stakeholders(email, contact_number) VALUES(?,?)');
 
     $stmt->bindParam(1, $em, PDO::PARAM_STR, 128);
-    $stmt->bindParam(2, $ad, PDO::PARAM_STR, 255);
-    $stmt->bindParam(3, $cn, PDO::PARAM_STR, 10);
+    $stmt->bindParam(2, $cn, PDO::PARAM_STR, 10);
 
-    $stmt->execute([$em, $ad, $cn]);
+    $stmt->execute([$em, $cn]);
+  }
+
+  function add_address($pdo, $ad)
+  {
+    $stmt = $pdo->prepare('INSERT INTO stakeholders(address) 
+                          VALUES(?)');
+
+    $stmt->bindParam(2, $ad, PDO::PARAM_STR, 255);
+
+    $stmt->execute([$ad]);
   }
 
   function add_customer($pdo, $st, $nm, $sn, $pw)
@@ -67,7 +76,7 @@
     $stmt->bindParam(1, $st, PDO::PARAM_STR, 10);
     $stmt->bindParam(2, $nm, PDO::PARAM_STR, 68);
     $stmt->bindParam(3, $sn, PDO::PARAM_STR, 68);
-    $stmt->bindParam(1, $pw, PDO::PARAM_STR, 255);
+    $stmt->bindParam(4, $pw, PDO::PARAM_STR, 255);
 
     $stmt->execute([$st, $nm, $sn, $pw]);
   }

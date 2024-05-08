@@ -32,7 +32,7 @@
     
           $_SESSION['customer_id'] = $retrieved_customer_id;
           $_SESSION['forename'] = $retrieved_name;
-          $_SESSION['surname'] = $retrieved_name;
+          $_SESSION['surname'] = $retrieved_surname;
     
           $query = "SELECT COUNT(w.wish_id) AS wishlist_count
                     FROM wishlist w
