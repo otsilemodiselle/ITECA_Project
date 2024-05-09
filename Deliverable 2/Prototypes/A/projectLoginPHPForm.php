@@ -34,27 +34,6 @@
           $_SESSION['forename'] = $retrieved_name;
           $_SESSION['surname'] = $retrieved_surname;
     
-          $query = "SELECT COUNT(w.wish_id) AS wishlist_count
-                    FROM wishlist w
-                    JOIN collection co ON w.coll_id = co.coll_id
-                    JOIN customer c ON co.customer_id = c.customer_id
-                    WHERE c.customer_id = '$retrieved_customer_id';";
-          $result =queryMysql($query);
-          $row = $result->fetch();
-          $retrieved_wishlist_count = $row['wishlist_count'];
-    
-          $query = "SELECT COUNT(ca.cart_id) AS cart_count
-                    FROM cart ca
-                    JOIN collection co ON ca.coll_id = co.coll_id
-                    JOIN customer c ON co.customer_id = c.customer_id
-                    WHERE c.customer_id = '$retrieved_customer_id';";
-          $result =queryMysql($query);
-          $row = $result->fetch();
-          $retrieved_cart_count = $row['cart_count'];
-    
-          $_SESSION['wishlist_count'] = $retrieved_wishlist_count;
-          $_SESSION['cart_count'] = $retrieved_cart_count;
-    
           header("Location: projectIndexPHPForm.php");
           exit;
         }

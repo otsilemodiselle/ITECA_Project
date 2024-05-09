@@ -25,22 +25,58 @@
 
 _END;
 
+  if (isset($_SESSION['customer_id'])){
+
+    $customer_id = $_SESSION['customer_id'];
+    $query = "SELECT COUNT(w.wish_id) AS wishlist_count
+    FROM wishlist w
+    JOIN collection co ON w.coll_id = co.coll_id
+    JOIN customer c ON co.customer_id = c.customer_id
+    WHERE c.customer_id = $customer_id;";
+    $result =queryMysql($query);
+    $row = $result->fetch();
+    $retrieved_wishlist_count = $row['wishlist_count'];
+
+    $query = "SELECT COUNT(ca.cart_id) AS cart_count
+    FROM cart ca
+    JOIN collection co ON ca.coll_id = co.coll_id
+    JOIN customer c ON co.customer_id = c.customer_id
+    WHERE c.customer_id = $customer_id;";
+    $result =queryMysql($query);
+    $row = $result->fetch();
+    $retrieved_cart_count = $row['cart_count'];
+
+    $_SESSION['wishlist_count'] = $retrieved_wishlist_count;
+    $_SESSION['cart_count'] = $retrieved_cart_count;
+  }
+  else{
+    if (!isset($_SESSION['wishlist'])) {
+      $_SESSION['wishlist'] = array();}
+    $_SESSION['wishlist_count'] = count($_SESSION['wishlist']);
+    if (!isset($_SESSION['cart'])) {
+      $_SESSION['cart'] = array();}
+    $_SESSION['cart_count'] = count($_SESSION['cart']);
+  }
+  
+
+
   if((!isset($_SESSION['cart_count'])) || ($_SESSION['cart_count'] == 0)){
     $cart_icon = "empty_cart.png";
   }
   else{
       $cart_icon = "full_cart.png";
   }  
-
+  
+  
   if (isset($_SESSION['wishlist_count'])){
       $wishlist_count = $_SESSION['wishlist_count'];
   }
-  else{ $wishlist_count = 0;}
+  // else{ $wishlist_count = 0;}
 
   if (isset($_SESSION['cart_count'])){
       $cart_count = $_SESSION['cart_count'];
   }
-  else{ $cart_count = 0;}
+  // else{ $cart_count = 0;}
 
   if (isset($_SESSION['customer_id'])){
       $login_name=$_SESSION['forename'];
@@ -74,7 +110,7 @@ _END;
                   <a href="projectLoginPHPForm.php" class='title-link'>Login</a>
               </li>
               <li class='title-options'>
-                  <a  href="" class='title-link'>Sign-up</a>
+                  <a  href="projectSignupPHPForm.php" class='title-link'>Sign-up</a>
               </li>
               <li class='title-options'>
                   <a href="" class='title-link'>Wishlist ($wishlist_count)</a>

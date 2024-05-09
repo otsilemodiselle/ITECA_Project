@@ -49,6 +49,10 @@
     return str_replace("'", "", $result);
   }
 
+  function latestPrimaryKey(){
+    return $pdo->lastInsertId();
+  }
+
   function add_stakeholder($pdo, $em, $cn)
   {
     $stmt = $pdo->prepare('INSERT INTO stakeholders(email, contact_number) VALUES(?,?)');
@@ -79,6 +83,38 @@
     $stmt->bindParam(4, $pw, PDO::PARAM_STR, 255);
 
     $stmt->execute([$st, $nm, $sn, $pw]);
+  }
+
+  function add_collection($pdo, $cus, $prodid)
+  {
+    $stmt = $pdo->prepare('INSERT INTO collection(customer_id, prod_id) 
+                          VALUES(?,?)');
+
+    $stmt->bindParam(1, $cus, PDO::PARAM_INT);
+    $stmt->bindParam(2, $prodid, PDO::PARAM_INT);
+
+    $stmt->execute([$cus, $prodid]);
+  }
+
+  function add_cart($pdo, $collid, $stockid)
+  {
+    $stmt = $pdo->prepare('INSERT INTO cart(coll_id, stock_id) 
+                          VALUES(?,?)');
+
+    $stmt->bindParam(1, $collid, PDO::PARAM_INT);
+    $stmt->bindParam(2, $stockid, PDO::PARAM_INT);
+
+    $stmt->execute([$collid, $stockid]);
+  }
+
+  function add_wishlist($pdo, $collid)
+  {
+    $stmt = $pdo->prepare('INSERT INTO wishlist(coll_id) 
+                          VALUES(?)');
+
+    $stmt->bindParam(1, $collid, PDO::PARAM_INT);
+
+    $stmt->execute([$collid]);
   }
 
   function loggout(){

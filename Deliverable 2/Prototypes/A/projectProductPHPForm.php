@@ -8,6 +8,7 @@
  if(isset($_GET['prod_id']))
  {
     $clickedProduct = $_GET['prod_id'];
+    $_SESSION['clicked_product'] = $clickedProduct;
 
     $prod_id = $clickedProduct;
 
@@ -58,10 +59,10 @@
     }
 
     echo <<<_END
-      <form>
+      <form method="post" action="shopping.php">
         <div class="prod-action-div">
         <label for="sizes-list" class="sizes-label">Size</label>
-        <select name="Sizes" id="sizes-list">
+        <select name="sizes" id="sizes-list">
     _END;
 
     foreach ($arrAvailableSizes as $size){
@@ -70,8 +71,10 @@
 
     echo <<<_END
         </select>
-        <button class="cart-button">Add to Cart</button>
-        <button class="wishlist-button">Add to Wishlist</button>
+        <input type="hidden" name="prod_id" value=$prod_id>
+        <input type="hidden" name="customer_id" value=$customer_id>
+        <input type="submit" class="cart-button" value="Add to Cart" name="cartButton">
+        <input type="submit" class="wishlist-button" value="Add to Wishlist" name="wishlistButton">
       </form>
       </div>
         <div class="prod-socials-div">
