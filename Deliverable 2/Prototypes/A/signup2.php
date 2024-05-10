@@ -60,6 +60,40 @@
       $_SESSION['forename'] = $name;
       $_SESSION['surname'] = $surname;
 
+      if (isset($_SESSION['cart']))
+          {
+            foreach($_SESSION['cart'] as $temp_cart_item)
+            {
+                $query = "SELECT prod_id
+                         FROM stock
+                         WHERE stock_id = $temp_cart_item;";
+
+                $result = queryMysql($query);
+
+                if ($result->rowCount())
+                {
+                    $row = $result->fetch();
+                    $prod_id = $row['prod_id'];
+
+                    add_collection($pdo, $new_customer_id, $prod_id);
+                    $coll_id = latestPrimaryKey();
+                    add_cart($pdo, $coll_id, $temp_cart_item);
+                }                
+            }
+            unset($_SESSION['cart']);
+          } 
+
+          if (isset($_SESSION['wishlist'])) 
+          {
+            foreach($_SESSION['wishlist'] as $temp_wishlist_item)
+            {
+                add_collection($pdo, $new_customer_id, $temp_wishlist_item);
+                $coll_id = latestPrimaryKey();
+                add_wishlist($pdo, $coll_id);
+            }
+            unset($_SESSION['wishlist']);
+          }
+
       header("Location: projectIndexPHPForm.php");
       exit;
 
