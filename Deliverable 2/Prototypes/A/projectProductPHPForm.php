@@ -3,9 +3,91 @@
 
    session_start();
 
+  if (isset($_POST['prod_id']))
+  {
+    $prod_id = $_POST['prod_id'];
+    $size = $_POST['sizes'];
+      
+    if(isset($_SESSION['customer_id']))
+    {
+      if( (isset($_POST['cartButton'])) && (isset($_POST['sizes'])) )
+      {
+
+        $customer_id = $_SESSION['customer_id'];
+      
+        add_collection($pdo, $customer_id, $prod_id);
+        $coll_id = latestPrimaryKey();
+    
+        $query = "SELECT stock_id
+                  FROM stock
+                  WHERE prod_id = '$prod_id' AND size = '$size';";
+        
+        $result = queryMysql($query);
+
+        if ($result->rowCount())
+        {
+          $row = $result->fetch();
+          $stock_id = $row['stock_id'];
+          add_cart($pdo, $coll_id, $stock_id);
+        }
+        unset($_POST['sizes']);
+        
+      }
+      elseif(isset($_POST['wishlistButton']))
+      {
+        $customer_id = $_SESSION['customer_id'];
+
+        add_collection($pdo, $customer_id, $prod_id);
+        $coll_id = latestPrimaryKey();
+    
+        add_wishlist($pdo, $coll_id);
+      }
+    }
+    else
+    {
+      if((isset($_POST['cartButton'])) && (isset($_POST['sizes'])) )
+      {    
+        $query = "SELECT stock_id
+                  FROM stock
+                  WHERE prod_id = '$prod_id' AND size = '$size';";
+        
+        $result = queryMysql($query);
+        
+        if ($result->rowCount())
+        {
+          $row = $result->fetch();
+          $stock_id = $row['stock_id'];
+          $_SESSION['cart'][] = $stock_id;
+        }
+        
+        unset($_POST['sizes']);
+      }
+      elseif(isset($_POST['wishlistButton']))
+      {
+        
+        $_SESSION['wishlist'][] = $prod_id;
+      }
+    }
+  }
+
    require_once 'above_nav_content.php';
 
- if(isset($_GET['prod_id']))
+   echo <<<_END
+   <script>
+     function sizeCheck() {
+         var selectElement = document.getElementsByName("sizes")[0];
+         var cartButton = document.getElementsByClassName("cart-button")[0];
+ 
+         if (selectElement.selectedIndex === 0 && selectElement.value === "") {
+             cartButton.disabled = true;
+         } else {
+             cartButton.disabled = false;
+         }
+     }
+   </script>
+   _END; 
+
+  if(isset($_GET['prod_id']) || isset($_SESSION['clicked_product']))
  {
     $clickedProduct = $_GET['prod_id'];
     $_SESSION['clicked_product'] = $clickedProduct;
@@ -59,10 +141,10 @@
     }
 
     echo <<<_END
-      <form method="post" action="shopping.php">
+      <form method="post" action="projectProductPHPForm.php?prod_id=$prod_id">
         <div class="prod-action-div">
         <label for="sizes-list" class="sizes-label">Size</label>
-        <select name="sizes" id="sizes-list">
+        <select name="sizes" id="sizes-list" onchange="sizeCheck()">
     _END;
 
     foreach ($arrAvailableSizes as $size){
@@ -73,7 +155,7 @@
         </select>
         <input type="hidden" name="prod_id" value=$prod_id>
         <input type="hidden" name="customer_id" value=$customer_id>
-        <input type="submit" class="cart-button" value="Add to Cart" name="cartButton">
+        <input type="submit" class="cart-button" value="Add to Cart" name="cartButton" disabled>
         <input type="submit" class="wishlist-button" value="Add to Wishlist" name="wishlistButton">
       </form>
       </div>

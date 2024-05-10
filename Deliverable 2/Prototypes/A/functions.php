@@ -50,6 +50,7 @@
   }
 
   function latestPrimaryKey(){
+    global $pdo;
     return $pdo->lastInsertId();
   }
 
