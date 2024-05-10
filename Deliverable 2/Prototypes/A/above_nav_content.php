@@ -91,7 +91,7 @@ _END;
               </li>
 
               <li class='title-options'>                    
-                  <a href="" class='title-link'>Wishlist ($wishlist_count)</a>
+                  <a href="projectWishlistPHPForm.php" class='title-link'>Wishlist ($wishlist_count)</a>
                   <img src="wishlist.png" class="wishlist_icon">
               </li>
 
@@ -113,7 +113,7 @@ _END;
                   <a  href="projectSignupPHPForm.php" class='title-link'>Sign-up</a>
               </li>
               <li class='title-options'>
-                  <a href="" class='title-link'>Wishlist ($wishlist_count)</a>
+                  <a href="projectWishlistPHPForm.php" class='title-link'>Wishlist ($wishlist_count)</a>
                   <img src="wishlist.png" class="wishlist_icon">                    
               </li>
               <li class='title-options'>
