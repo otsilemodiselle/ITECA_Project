@@ -87,6 +87,8 @@
     /* border: 1px solid orangered; */
 }
 
+
+
 .card:hover {
     background-color: white; /* New background color on hover */
     box-shadow: -5px 5px 5px #999999;
@@ -158,6 +160,10 @@
     margin: auto auto;
     background-color: #7D836E;
     /* margin-bottom: 500px; */
+}
+
+.wishlist-item {
+    display: inline;
 }
 
 .panel-selection, .prod-price-panel, .prod-name-panel, .myorder-detail-panel {
