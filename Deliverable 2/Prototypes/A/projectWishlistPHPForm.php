@@ -28,7 +28,6 @@
           }
           else
           {
-            $i = 0;
             if (isset($_SESSION['wishlist']))
             {
               $count = count($_SESSION['wishlist']);
