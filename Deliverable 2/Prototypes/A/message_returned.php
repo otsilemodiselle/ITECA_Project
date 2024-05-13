@@ -15,6 +15,9 @@
       case "ordersuccess":
         $returned_message = "";
         break;
+      case "anonymous":
+        $returned_message = "Please login or signup.";
+        break;
     }
   }
 ?>

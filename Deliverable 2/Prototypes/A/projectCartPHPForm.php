@@ -54,19 +54,6 @@
           
           unset($_POST['cart-action']);
           break;
-
-        case 'Checkout':
-          if(isset($_SESSION['customer_id']) && ($itemsCount > 0))
-          {
-            $
-            header("Location: projectOrderPHPForm.php")
-          }
-          $prod_id = ($_POST['prod_id']);
-          header("Location: projectProductPHPForm.php?prod_id=$prod_id");
-          exit;
-          unset($_POST['cart-action']);
-          break;
-        
       }
   }
 
@@ -165,24 +152,50 @@
     }
   }
 
-  echo <<<_END
-  </div>
-  </div>
-  <div class="clearfix cart-manager">
-  <form method="post" action="projectCartPHPForm.php">
+  if ($invoiceTotal <= 0 || $itemsCount <= 0)
+  {
+    echo <<<_END
+    </div>
+    </div>
+    <div class="clearfix cart-manager">
       <p class="cart-summary">
           $itemsCount Item(s)  Total: R$invoiceTotal
       </p>
-      <input type="submit" class="cart-checkout" name="checkout" value="Checkout">
-      </form>
-  </div>
-  </section>
-
-  <footer>
-    <div class='end'>
-        
     </div>
-  </footer>
-  </body>
-  </html>
-  _END;
+    </section>
+    <footer>
+      <div class='end'>
+          
+      </div>
+    </footer>
+    </body>
+    </html>
+    _END;
+  }
+  else
+  {
+    echo <<<_END
+    </div>
+    </div>
+    <div class="clearfix cart-manager">
+    <form method="post" action="checkout.php">
+        <p class="cart-summary">
+            $itemsCount Item(s)  Total: R$invoiceTotal
+        </p>
+        <input type="hidden" name="invoice_total" value="$invoiceTotal">
+        <input type="hidden" name="items_Count" value="$itemsCount">
+        <input type="submit" class="cart-checkout" name="checkout" value="Checkout">
+        </form>
+    </div>
+    </section>
+    <footer>
+      <div class='end'>
+          
+      </div>
+    </footer>
+    </body>
+    </html>
+    _END;
+  }
+
+  

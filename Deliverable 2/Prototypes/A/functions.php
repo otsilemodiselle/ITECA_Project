@@ -54,6 +54,16 @@
     return $pdo->lastInsertId();
   }
 
+  function trimString($string, $maxLength)
+  {
+    if (strlen($string) > $maxLength)
+    {
+      $string = substr($string, 0, $maxLength) . "...";
+    }
+    return $string;
+    
+  }
+
   function add_stakeholder($pdo, $em, $cn)
   {
     $stmt = $pdo->prepare('INSERT INTO stakeholders(email, contact_number) VALUES(?,?)');
@@ -62,6 +72,29 @@
     $stmt->bindParam(2, $cn, PDO::PARAM_STR, 10);
 
     $stmt->execute([$em, $cn]);
+  }
+
+  function add_order($pdo, $wb, $od, $ci, $ot, $st)
+  {
+    $stmt = $pdo->prepare('INSERT INTO order_(waybill, order_desc, customer_id, order_total, status) VALUES(?,?,?,?,?)');
+
+    $stmt->bindParam(1, $wb, PDO::PARAM_INT);
+    $stmt->bindParam(2, $od, PDO::PARAM_STR, 255);
+    $stmt->bindParam(3, $ci, PDO::PARAM_INT);
+    $stmt->bindParam(4, $ot, PDO::PARAM_STR);
+    $stmt->bindParam(4, $st, PDO::PARAM_STR, 66);
+
+    $stmt->execute([$wb, $od, $ci, $ot, $st]);
+  }
+
+  function add_workitem($pdo, $dt, $cr)
+  {
+    $stmt = $pdo->prepare('INSERT INTO workitem(date, courier_id) VALUES(?,?)');
+
+    $stmt->bindParam(1, $dt, PDO::PARAM_STR);
+    $stmt->bindParam(2, $cr, PDO::PARAM_INT);
+
+    $stmt->execute([$dt, $cr]);
   }
 
   function add_address($pdo, $ad)

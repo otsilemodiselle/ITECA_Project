@@ -96,7 +96,7 @@ _END;
               </li>
 
               <li class='title-options'>                    
-                  <a href="" class='title-link'>Cart ($cart_count)</a>
+                  <a href="projectCartPHPForm.php" class='title-link'>Cart ($cart_count)</a>
                   <img src="$cart_icon" class="cart_icon">
               </li>
               
@@ -117,7 +117,7 @@ _END;
                   <img src="wishlist.png" class="wishlist_icon">                    
               </li>
               <li class='title-options'>
-                  <a href="" class='title-link'>Cart ($cart_count)</a>
+                  <a href="projectCartPHPForm.php" class='title-link'>Cart ($cart_count)</a>
                   <img src="$cart_icon" class="cart_icon">
               </li>
         </ul>
