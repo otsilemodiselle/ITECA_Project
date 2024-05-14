@@ -37,6 +37,8 @@
       $status = "Pending Payment";
 
       add_order($pdo, $waybill, $order_desc, $customer_id, $order_total, $status);
+      $order_id = latestPrimaryKey();
+      $_SESSION['order_id'] = $order_id;
       header("Location: projectOrderPHPForm.php");
       exit;
     }
