@@ -74,13 +74,32 @@
     $delivery_date = $row['date'];
     $order_total = $row['order_total'];
     $description = $row['order_desc'];
-  }
-  
+  } 
 
   $item_count = substr_count($description, "\n");
 
+  if(isset($_POST['order-action']))
+  {
+    $action = $_POST['order-action'];
+  switch ($action)
+      {
+        case 'Edit': 
+          header('location: projectProfileEditPHPForm.php');
+          exit;
+          break;
+        case 'Cancel Order':
+          header('location: projectMessagePHPForm.php?msg=EndOrder');
+          exit;
+          break;
+        case 'Pay Now':
+          header('location: projectMessagePHPForm.php?msg=pay');
+          exit;
+          break;
+      }
+  }
+
   echo <<<_END
-  <form method="post" action="order_processing.php">
+  <form method="post" action="projectOrderPHPForm.php">
   <section class='clearfix container'>
   <div class="section-header">
       <h3 class="cat-heading">Order Checkout</h3>
