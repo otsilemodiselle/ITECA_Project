@@ -22,18 +22,38 @@
     $address = $row['address'];
     $card_no = $row['card_no'];
     $exp_date = $row['exp_date'];
+  }  
+
+  if ($address === null) 
+  {
+    $address = "[delivery address not provided]";
+    $bool_address = false;
+  }
+  else 
+  {
+    $address = trimString($address, 35);
+    $bool_address = true;
+  }
+  if ($card_no === null) 
+  {
+    $card_no = "[card data not provided]";
+    $bool_card = false;
   }
   else
   {
-    $contact = "[contact number";
-    $address = "[delivery address not provided]";
-    $card_no = "[card data not provided]";
+    $bool_card = true;
+  }
+  if ($exp_date === null) 
+  {
     $exp_date = "[card data not provided]";
+    $bool_exp_date = false;
+  }
+  else
+  {
+    $bool_exp_date = true;
   }
 
-  if ($address === null) {$address = "[delivery address not provided]";}
-  if ($card_no === null) {$card_no = "[card data not provided]";}
-  if ($exp_date === null) {$exp_date = "[card data not provided]";}
+  $pay_clickable = (($bool_address == true) && ($bool_card == true) && ($bool_exp_date == true)) ? "" : "disabled";
   
 
   $queryCourier = "SELECT j.trading_name, w.waybill, w.date, o.order_total, o.order_desc
@@ -55,14 +75,7 @@
     $order_total = $row['order_total'];
     $description = $row['order_desc'];
   }
-  else
-  {
-    $courier_name = "[courier data pending]";
-    $waybill = "[courier data pending]";
-    $delivery_date = "[courier data pending]";
-    $order_total = "[order data pending]";
-    $description = "[order data pending]";
-  }
+  
 
   $item_count = substr_count($description, "\n");
 
@@ -75,11 +88,11 @@
   <div class='order-container clearfix'>
       <div class="order-recipient clearfix">
           <p class="order-recip-details">
-              $forename $surname<br>
-              $contact<br>
-              447 Acorn Rd, Pretoria, 0081 
+              Recipient: $forename $surname<br>
+              Contact no.: $contact<br>
+              Delivery Address: $address 
           </p>
-          <input type="submit" class="recip-edit" value="Edit">
+          <input type="submit" class="recip-edit" name="order-action" value="Edit">
       </div>
       <div class="order-payment clearfix">
           <p class="order-pay-details">
@@ -87,7 +100,7 @@
               Expiry Date: $exp_date
               <br>CVV: <input type="text" class="cvv-box" maxlength="3">
           </p>
-          <input type="submit" class="pay-edit" value="Edit">
+          <input type="submit" class="pay-edit" name="order-action" value="Edit">
       </div>
       <div class="order-summary">
           <p class="order-summary-details">
@@ -98,11 +111,11 @@
       </div>
       <div class="order-checkout clearfix">
           <p class="order-check-details">
-              $description <br>
               Quantity: $item_count Item(s)
               <br>Order Total: R$order_total
           </p>
-          <input type="submit" class="checkout" value="Pay Now">
+          <input type="submit" class="checkout" name="order-action" value="Cancel Order">
+          <input type="submit" class="checkout" name="order-action" value="Pay Now" $pay_clickable>
       </div>
       
     </div>
