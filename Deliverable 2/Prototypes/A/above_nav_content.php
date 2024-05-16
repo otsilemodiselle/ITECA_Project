@@ -87,7 +87,7 @@ _END;
               </li>
 
               <li class='title-options' class='title-link'>                    
-                  <a href="" class='title-link' class='title-link'>Hello $login_name!</a>
+                  <a href="projectProfileViewPHPForm.php" class='title-link' class='title-link'>$login_name's Profile</a>
               </li>
 
               <li class='title-options'>                    
