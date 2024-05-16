@@ -1,6 +1,6 @@
 <?php
   require_once 'functions.php';
-  sesion_start();
+  session_start();
   require_once 'above_nav_content.php';
 
   $customer_id = $_SESSION['customer_id'];
