@@ -5,6 +5,8 @@
 
    require_once 'above_nav_content.php';
 
+   require_once 'load_profile_data.php';
+
   echo<<<_END
   <section class='clearfix container'>
     <div class="section-header">
@@ -14,7 +16,7 @@
        
         <div class="edit-div edit-name-div clearfix">
             <label for="" class="edit-caption">Name: </label>
-            <label for="" class="current-data current-name">Otsile</label>
+            <label for="" class="current-data current-name">$name</label>
             <button class="edit-button edit-name" onclick="showEditName()">Edit</button><br><br>
             <div class="edit-elements edit-elements-name" hidden>
                 <input type="text" class="edit-input edit-name-input" maxlength="68" onchange="editName()"><br>
@@ -26,7 +28,7 @@
 
         <div class="edit-div edit-surname-div clearfix">
             <label for="" class="edit-caption">Surname: </label>
-            <label for="" class="current-data current-surname">Modiselle</label>
+            <label for="" class="current-data current-surname">$surname</label>
             <button class="edit-button edit-surname" onclick="showEditSurname()">Edit</button><br><br>
             <div  class="edit-elements edit-elements-surname" hidden>
                 <input type="text" class="edit-input edit-surname-input" maxlength="68" onchange="editSurname()"><br>
@@ -38,7 +40,7 @@
 
         <div class="edit-div edit-number-div clearfix">
             <label for="" class="edit-caption">Contact no: </label>
-            <label for="" class="current-data current-number">0615022558</label>
+            <label for="" class="current-data current-number">$contact</label>
             <button class="edit-button edit-number" onclick="showEditNumber()">Edit</button><br><br>
             <div class="edit-elements edit-elements-number" hidden>
                 <input type="text" class="edit-input edit-number-input" maxlength="10" onchange="editNumber()"><br>
@@ -62,7 +64,7 @@
 
         <div class="edit-div edit-card-div clearfix">
             <label for="" class="edit-caption">Card no: </label>
-            <label for="" class="current-data current-card">4480 **** **** 6000</label>
+            <label for="" class="current-data current-card">$card_no</label>
             <button class="edit-button edit-card" onclick="showEditCard()">Edit</button><br><br>
             <div  class="edit-elements edit-elements-card" hidden>
                 <input type="text" class="edit-input edit-card-input" maxlength="16" onchange="editCard()"><br>
@@ -74,7 +76,7 @@
 
         <div class="edit-div edit-expiry-div clearfix">
             <label for="" class="edit-caption">Expiry Date: </label>
-            <label for="" class="current-data current-expiry">03/29</label>
+            <label for="" class="current-data current-expiry">$exp_date</label>
             <button class="edit-button edit-expiry" onclick="showEditExpiry()">Edit</button><br><br>
             <div class="edit-elements edit-elements-expiry" hidden>
                 <input type="text" class="edit-input edit-expiry-input" maxlength="4" onchange="editExpiry()"><br>
@@ -86,7 +88,7 @@
 
         <div class="edit-div edit-address-div clearfix">
             <label for="" class="edit-caption">Delivery Address: </label><br>
-            <label for="" class="current-data current-address">447 Acorn Road, Lynnwood Glen, Pretoria, 0081</label>
+            <label for="" class="current-data current-address">$address</label>
             <button class="edit-button edit-address" onclick="showEditAddress()">Edit</button><br><br>
             <div class="edit-elements edit-elements-address" hidden>
                 <div class="edit-captions-address-div">
