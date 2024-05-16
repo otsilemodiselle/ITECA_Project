@@ -3,7 +3,7 @@
 
    session_start();
 
-   require_once 'above_nav_content_profile_edit_page.php';
+   require_once 'above_nav_content.php';
 
   echo<<<_END
   <section class='clearfix container'>
@@ -150,6 +150,7 @@
             
         </div>
     </footer>
+    <script src="profileEdit.js"></script>
     </body>
     </html>
   _END;
