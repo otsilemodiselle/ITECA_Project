@@ -64,6 +64,17 @@
     
   }
 
+  function maskCard($card)
+  {
+    $card_no_array = str_split($card);
+    for ($i = 0; $i < 12; $i++)
+    {
+      $card_no_array[$i] = '*';
+    }
+    $masked_card_no = implode('', $card_no_array);
+    return $masked_card_no;
+  }
+
   function add_stakeholder($pdo, $em, $cn)
   {
     $stmt = $pdo->prepare('INSERT INTO stakeholders(email, contact_number) VALUES(?,?)');
