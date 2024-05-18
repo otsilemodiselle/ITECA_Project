@@ -19,9 +19,9 @@
             <label for="" class="current-data current-name">$name</label>
             <button class="edit-button edit-name" onclick="showEditName()">Edit</button><br><br>
             <div class="edit-elements edit-elements-name" hidden>
-                <input type="text" class="edit-input edit-name-input" maxlength="68" onchange="editName()"><br>
+                <input onchange="editName(); nameSaveEnable();" type="text" class="edit-input edit-name-input" maxlength="68" name="name-edit-input"><br>
                 <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <button class="save-edit save-name-edit" >Save</button>
+                <button class="save-edit save-name-edit" style="pointer-events: none;">Save</button>
                 <button class="cancel-edit cancel-name-edit" onclick="hideEditName()" >Cancel</button>
             </div>
         </div>
@@ -31,9 +31,9 @@
             <label for="" class="current-data current-surname">$surname</label>
             <button class="edit-button edit-surname" onclick="showEditSurname()">Edit</button><br><br>
             <div  class="edit-elements edit-elements-surname" hidden>
-                <input type="text" class="edit-input edit-surname-input" maxlength="68" onchange="editSurname()"><br>
+                <input type="text" class="edit-input edit-surname-input" maxlength="68" onchange="editSurname(); surnameSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-surname-verify"></label><br>
-                <button class="save-edit save-surname-edit" >Save</button>
+                <button class="save-edit save-surname-edit" style="pointer-events: none;">Save</button>
                 <button class="cancel-edit cancel-surname-edit" onclick="hideEditSurname()">Cancel</button>
             </div>
         </div>
@@ -43,21 +43,21 @@
             <label for="" class="current-data current-number">$contact</label>
             <button class="edit-button edit-number" onclick="showEditNumber()">Edit</button><br><br>
             <div class="edit-elements edit-elements-number" hidden>
-                <input type="text" class="edit-input edit-number-input" maxlength="10" onchange="editNumber()"><br>
+                <input type="text" class="edit-input edit-number-input" maxlength="10" onchange="editNumber(); numberSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-number-verify"></label><br>
-                <button class="save-edit save-number-edit" >Save</button>
+                <button class="save-edit save-number-edit" style="pointer-events: none;">Save</button>
                 <button class="cancel-edit cancel-number-edit" onclick="hideEditNumber()">Cancel</button>
             </div>
         </div>
 
         <div class="edit-div edit-email-div clearfix">
             <label for="" class="edit-caption">Email: </label>
-            <label for="" class="current-data current-email">iamotsile@gmail.com</label>
+            <label for="" class="current-data current-email">$email</label>
             <button class="edit-button edit-email" onclick="showEditEmail()">Edit</button><br><br>
             <div  class="edit-elements edit-elements-email" hidden>
-                <input type="text" class="edit-input edit-email-input" maxlength="128" onchange="editEmail()"><br>
+                <input type="text" class="edit-input edit-email-input" maxlength="128" onchange="editEmail(); emailSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-email-verify"></label><br>
-                <button class="save-edit save-email-edit" >Save</button>
+                <button class="save-edit save-email-edit" style="pointer-events: none;">Save</button>
                 <button class="cancel-edit cancel-email-edit" onclick="hideEditEmail()">Cancel</button>
             </div>
         </div>
@@ -67,9 +67,9 @@
             <label for="" class="current-data current-card">$card_no</label>
             <button class="edit-button edit-card" onclick="showEditCard()">Edit</button><br><br>
             <div  class="edit-elements edit-elements-card" hidden>
-                <input type="text" class="edit-input edit-card-input" maxlength="16" onchange="editCard()"><br>
+                <input type="text" class="edit-input edit-card-input" maxlength="16" onchange="editCard(); cardSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-card-verify"></label><br>    
-                <button class="save-edit save-card-edit" >Save</button>
+                <button class="save-edit save-card-edit" style="pointer-events: none;">Save</button>
                 <button class="cancel-edit cancel-card-edit" onclick="hideEditCard()" >Cancel</button>
             </div>
         </div>
@@ -79,9 +79,9 @@
             <label for="" class="current-data current-expiry">$exp_date</label>
             <button class="edit-button edit-expiry" onclick="showEditExpiry()">Edit</button><br><br>
             <div class="edit-elements edit-elements-expiry" hidden>
-                <input type="text" class="edit-input edit-expiry-input" maxlength="4" onchange="editExpiry()"><br>
-                <label for="" class="edit-verify-feedback edit-expiry-verify">test</label><br>
-                <button class="save-edit save-expiry-edit" >Save</button>
+                <input type="text" class="edit-input edit-expiry-input" maxlength="4" onchange="editExpiry(); expSaveEnable();"><br>
+                <label for="" class="edit-verify-feedback edit-expiry-verify"></label><br>
+                <button class="save-edit save-expiry-edit" style="pointer-events: none;">Save</button>
                 <button class="cancel-edit cancel-expiry-edit" onclick="hideEditExpiry()">Cancel</button>
             </div>
         </div>
@@ -99,18 +99,18 @@
                 
                 </div>
                 <div class="edit-inputs-address-div">
-                    <input type="text" class="edit-input edit-street-input" ><br>
-                    <input type="text" class="edit-input edit-suburb-input" ><br>
-                    <input type="text" class="edit-input edit-city-input" ><br>
-                    <input maxlength="4" type="text" class="edit-input edit-code-input" onchange="editAddress()"><br>
+                    <input type="text" class="edit-input edit-street-input" onchange="editAddress(); addressSaveEnable();"><br>
+                    <input type="text" class="edit-input edit-suburb-input" onchange="editAddress(); addressSaveEnable();"><br>
+                    <input type="text" class="edit-input edit-city-input" onchange="editAddress(); addressSaveEnable();"><br>
+                    <input maxlength="4" type="text" class="edit-input edit-code-input" onchange="editAddress(); addressSaveEnable();"><br>
                 </div>
                 <br><br><br><br>         
                 <div class="edit-verification-div">
                     <label for="" class="edit-verify-feedback edit-address-verify"><label><br>
                 </div>     
                 <div class="edit-buttons-div">
-                    <button class="save-edit save-name-edit" >Save</button>
-                    <button class="cancel-edit cancel-name-edit" onclick="hideEditAddress()">Cancel</button>
+                    <button class="save-edit save-address-edit" style="pointer-events: none;">Save</button>
+                    <button class="cancel-edit cancel-address-edit" onclick="hideEditAddress()">Cancel</button>
                 </div>  
             
             
@@ -128,15 +128,15 @@
                     <label for="" class="edit-caption">Confirm Password:</label>
                 </div>
                 <div class="edit-inputs-password-div">
-                    <input type="password" class="edit-input edit-password-input" maxlength="255" onkeyup="editPassword()"><br>
-                    <input type="password" class="edit-input edit-confirm-input" maxlength="255" onkeyup="editPassword()"><br>
+                    <input type="text" class="edit-input edit-password-input" maxlength="255" onchange="editPassword();passwordSaveEnable();"><br>
+                    <input type="text" class="edit-input edit-confirm-input" maxlength="255" onchange="editPassword(); passwordSaveEnable();"><br>
                     
                 </div>
                 <div class="edit-verification-div">
                     <label for="" class="edit-verify-feedback edit-password-verify"></label><br>
                 </div>
                 <div class="edit-buttons-div">
-                    <button class="save-edit save-password-edit" >Save</button>
+                    <button class="save-edit save-password-edit" style="pointer-events: none;">Save</button>
                     <button class="cancel-edit cancel-password-edit" onclick="hideEditPassword()">Cancel</button>
                 </div>
                 
