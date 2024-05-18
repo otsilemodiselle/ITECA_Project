@@ -72,7 +72,11 @@
           header("Location: projectIndexPHPForm.php");
           exit;
         }
-        else {window.alert("Incorrect login details");}
+        else 
+        {
+          header("Location: projectMessagePHPForm.php?msg=loginfail");
+          exit;
+        }
       }
   
      require_once 'above_nav_content.php';

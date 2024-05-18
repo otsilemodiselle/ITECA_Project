@@ -18,6 +18,9 @@
       case "anonymous":
         $returned_message = "Please login or signup.";
         break;
+      case "loginfail":
+        $returned_message = "Login details incorrect.";
+        break;
     }
   }
 ?>
