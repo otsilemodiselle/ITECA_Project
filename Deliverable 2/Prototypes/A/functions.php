@@ -118,6 +118,95 @@
     $stmt->execute([$ad]);
   }
 
+  function update_name($pdo, $nm, $cd)
+  {
+    $stmt = $pdo->prepare('UPDATE customer SET name = ? WHERE customer_id = ?');
+
+    $stmt->bindParam(1, $nm, PDO::PARAM_STR, 68);
+    $stmt->bindParam(2, $cd, PDO::PARAM_INT);
+
+    $stmt->execute([$nm, $cd]);
+  }
+
+  function update_surname($pdo, $sn, $cd)
+  {
+    $stmt = $pdo->prepare('UPDATE customer SET surname = ? WHERE customer_id = ?');
+
+    $stmt->bindParam(1, $sn, PDO::PARAM_STR, 68);
+    $stmt->bindParam(2, $cd, PDO::PARAM_INT);
+
+    $stmt->execute([$sn, $cd]);
+  }
+
+  function update_contact($pdo, $cn, $cd)
+  {
+    $stmt = $pdo->prepare('UPDATE stakeholders s
+                          JOIN customer c ON s.stakeholder_id = c.stakeholder_id
+                          SET s.contact_number = ? 
+                          WHERE c.customer_id = ?');
+
+    $stmt->bindParam(1, $cn, PDO::PARAM_STR, 10);
+    $stmt->bindParam(2, $cd, PDO::PARAM_INT);
+
+    $stmt->execute([$cn, $cd]);
+  }
+
+  function update_email($pdo, $em, $cd)
+  {
+    $stmt = $pdo->prepare('UPDATE stakeholders s
+                          JOIN customer c ON s.stakeholder_id = c.stakeholder_id
+                          SET s.email = ? 
+                          WHERE c.customer_id = ?');
+
+    $stmt->bindParam(1, $em, PDO::PARAM_STR, 128);
+    $stmt->bindParam(2, $cd, PDO::PARAM_INT);
+
+    $stmt->execute([$em, $cd]);
+  }
+
+  function update_card($pdo, $ca, $cd)
+  {
+    $stmt = $pdo->prepare('UPDATE customer SET card_no = ? WHERE customer_id = ?');
+
+    $stmt->bindParam(1, $ca, PDO::PARAM_STR, 68);
+    $stmt->bindParam(2, $cd, PDO::PARAM_INT);
+
+    $stmt->execute([$ca, $cd]);
+  }
+
+  function update_exp($pdo, $ex, $cd)
+  {
+    $stmt = $pdo->prepare('UPDATE customer SET exp_date = ? WHERE customer_id = ?');
+
+    $stmt->bindParam(1, $ex, PDO::PARAM_INT);
+    $stmt->bindParam(2, $cd, PDO::PARAM_INT);
+
+    $stmt->execute([$ex, $cd]);
+  }
+
+  function update_address($pdo, $ad, $cd)
+  {
+    $stmt = $pdo->prepare('UPDATE stakeholders s
+                          JOIN customer c ON s.stakeholder_id = c.stakeholder_id
+                          SET s.address = ? 
+                          WHERE c.customer_id = ?');
+
+    $stmt->bindParam(1, $ad, PDO::PARAM_STR, 255);
+    $stmt->bindParam(2, $cd, PDO::PARAM_INT);
+
+    $stmt->execute([$ad, $cd]);
+  }
+
+  function update_password($pdo, $pw, $cd)
+  {
+    $stmt = $pdo->prepare('UPDATE customer SET password = ? WHERE customer_id = ?');
+
+    $stmt->bindParam(1, $pw, PDO::PARAM_STR, 255);
+    $stmt->bindParam(2, $cd, PDO::PARAM_INT);
+
+    $stmt->execute([$pw, $cd]);
+  }
+
   function add_customer($pdo, $st, $nm, $sn, $pw)
   {
     $stmt = $pdo->prepare('INSERT INTO customer(stakeholder_id, name, surname, password) VALUES(?,?,?,?)');
