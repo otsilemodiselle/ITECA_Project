@@ -130,16 +130,16 @@ _END;
      <nav id='top-nav'>
        <ul class='clearfix nav-list'>
            <li class='nav-options'>
-               <a href="projectCataloguePHPForm.php?cat=womens" class='nav-link'>Brides</a>
+               <a href="projectCataloguePHPForm.php?cat=womens" class='nav-link'>Bridal Gowns</a>
            </li>   
            <li class='nav-options'>
-               <a href="projectCataloguePHPForm.php?cat=mens" class='nav-link'>Grooms</a>
+               <a href="projectCataloguePHPForm.php?cat=mens" class='nav-link'>Groom Suits</a>
            </li>
            <li class='nav-options'>
-               <a href="projectCataloguePHPForm.php?cat=girls" class='nav-link'>Flower Girls</a>
+               <a href="projectCataloguePHPForm.php?cat=girls" class='nav-link'>Flower Girls Outfits</a>
            </li>
            <li class='nav-options'>
-               <a href="projectCataloguePHPForm.php?cat=boys" class='nav-link'>Ring Bearers</a>
+               <a href="projectCataloguePHPForm.php?cat=boys" class='nav-link'>Ring Bearers Outfits</a>
            </li>
            <li class='nav-options'>
                <a href="projectCataloguePHPForm.php?cat=traditional" class='nav-link'>Traditional</a>

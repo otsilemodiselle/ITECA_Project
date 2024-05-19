@@ -14,7 +14,7 @@
         <nav class='nav-collections'>
               <ul class='collection-list'>
                   <li class='collection-option'>
-                      <a href="" class='collection-link'>Collection</a>
+                      <a href="#" class='collection-link'>Collections</a>
                   </li>
                   <li class='collection-option'>
                       <a href="projectCataloguePHPForm.php?cat=best_sellers" class='collection-link'>Best Sellers</a>
