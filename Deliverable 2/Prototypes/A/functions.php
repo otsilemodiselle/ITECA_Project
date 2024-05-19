@@ -118,6 +118,16 @@
     $stmt->execute([$ad]);
   }
 
+  function update_order_status($pdo, $st, $od)
+  {
+    $stmt = $pdo->prepare('UPDATE order_ SET status = ? WHERE order_id = ?');
+
+    $stmt->bindParam(1, $st, PDO::PARAM_STR, 60);
+    $stmt->bindParam(2, $od, PDO::PARAM_INT);
+
+    $stmt->execute([$st, $od]);
+  }
+
   function update_name($pdo, $nm, $cd)
   {
     $stmt = $pdo->prepare('UPDATE customer SET name = ? WHERE customer_id = ?');

@@ -18,18 +18,36 @@
   if(isset($_POST['profile-view-action']))
   {
     $action = $_POST['profile-view-action'];
-  switch ($action)
-      {
-        case 'Edit': 
-          header('location: projectProfileEditPHPForm.php');
+    switch ($action)
+    {
+      case 'Edit': 
+        header('location: projectProfileEditPHPForm.php');
+        exit;
+        break;
+      case 'Cancel Order':
+        $cancelled_status = "Cancelled";
+        if(isset($_POST['order-id']))
+        {
+          $order_id = $_POST['order-id'];
+          update_order_status($pdo, $cancelled_status, $order_id);
+          header('location: projectProfileViewPHPForm.php');
           exit;
-          break;
-        case '':
-          header('location: projectMessagePHPForm.php?msg=EndOrder');
+        }
+        break;
+      case 'Complete Order':
+        if(isset($_POST['order-id']))
+        {
+          $_SESSION['order_id'] = $_POST['order-id'];
+          header('location: projectOrderPHPForm.php');
           exit;
-          break;
-      }
+        }
+        break;
+      case '':
+        header('location: projectMessagePHPForm.php?msg=EndOrder');
+        exit;
+        break;
     }
+  }
 
   echo<<<_END
     <section class='clearfix container'>
@@ -54,7 +72,9 @@
             </p>
             <input type="submit" class="customer-pay-edit" value="Edit" name="profile-view-action">
         </div>
+        </form> 
         <br>
+
         <div class="myorders-subsection">
             <div class="subsection-header clearfix">
                 <h3 class="cat-heading">My Orders</h3>
@@ -63,7 +83,8 @@
   _END;
 
   $queryMyOrders = "SELECT * FROM order_
-                    WHERE customer_id = $customer_id;";
+                    WHERE customer_id = $customer_id
+                    ORDER BY waybill DESC;";
 
   $result = queryMysql($queryMyOrders);
 
@@ -78,33 +99,41 @@
         $status = $row['status'];
 
         echo<<<_END
-            <div class='myorder-banner clearfix'>
-            <p class="myorder-detail-panel">Order ref: $waybill Total: R$order_total </p>
+        <form method="post" action="projectProfileViewPHPForm.php">
+        <div class='myorder-banner clearfix'>
+        <p class="myorder-detail-panel">Order ref: $waybill Total: R$order_total - $status </p>
+        <input type="hidden" name="order-id" value=$order_id>
         _END;
         if ($status == "Complete")
         {
-            echo<<<_END
-                    <input type="submit" class="log-return" value="Log a Return" name="view-profile-action">
-            _END;
+          echo<<<_END
+          <input type="submit" class="log-return" value="Log a Return" name="view-profile-action">
+          </div>
+          </form> 
+          _END;
+        }
+        if ($status == "Cancelled")
+        {
+          echo<<<_END
+          </div>
+          </form> 
+          _END;
         }
         else
         {
-            echo<<<_END
-                    <input type="submit" class="log-return" value="Complete Order" name="view-profile-action">
-                    <input type="submit" class="log-return" value="Cancel Order" name="view-profile-action">
-            _END;
+          echo<<<_END
+          <input type="submit" class="log-return" value="Complete Order" name="profile-view-action">
+          <input type="submit" class="log-return" value="Cancel Order" name="profile-view-action">
+          </div>
+          </form> 
+          _END;
         }
-        echo "</div>";
     }
   }
     
-  
-
-  
-
   echo<<<_END
     </div>
-    </form>    
+       
     </section>
 
     <footer>
