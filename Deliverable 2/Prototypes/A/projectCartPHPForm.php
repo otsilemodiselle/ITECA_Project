@@ -73,9 +73,11 @@
   if(isset($_SESSION['customer_id']))
   {
     $customer_id = $_SESSION['customer_id'];
-    $query = "SELECT prod_id
-              FROM collection co
+    $query = "SELECT p.prod_id, p.prod_img, p.prod_name, p.price, st.size, st.stock_id
+              FROM product p
+              JOIN collection co ON p.prod_id = co.prod_id
               JOIN cart ca ON co.coll_id = ca.coll_id
+              JOIN stock st ON ca.stock_id = st.stock_id
               JOIN customer c ON co.customer_id = c.customer_id
               WHERE c.customer_id = $customer_id;";
     $result = queryMysql($query);
@@ -85,17 +87,11 @@
       while ($row = $result->fetch())
       {
         $prod_id = $row['prod_id'];
-
-        $queryProdData =  "SELECT prod_img, prod_name, price
-                          FROM product
-                          WHERE prod_id = $prod_id;";
-        $prodDataResult = queryMysql($queryProdData);
-
-        $row = $prodDataResult->fetch();
         $prod_img = $row['prod_img'];
         $prod_name = $row['prod_name'];
         $price = $row['price'];
-        $stock_id = '';
+        $stock_id = $row['stock_id'];
+        $size = $row['size'];
         $invoiceTotal += $price;
         $itemsCount++;
 
@@ -104,7 +100,7 @@
         <div class='cart-banner clearfix'>
           <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
           <p class="prod-price-panel">R$price</p> 
-          <p class="prod-name-panel">$prod_name</p>
+          <p class="prod-name-panel">$prod_name - Size: $size</p>
           <input type="hidden" name="prod_id" value="$prod_id">
           <input type="hidden" name="price" value="$price">
           <input type="hidden" name="stock_id" value="$stock_id">
@@ -121,7 +117,7 @@
     {
       foreach($_SESSION['cart'] as $stock_id)
       {
-        $queryProdData =  "SELECT p.prod_img, p.prod_name, p.price, p.prod_id
+        $queryProdData =  "SELECT p.prod_img, p.prod_name, p.price, p.prod_id, s.size
                           FROM product p
                           JOIN stock s ON p.prod_id = s.prod_id
                           WHERE s.stock_id = $stock_id;";
@@ -132,6 +128,7 @@
         $prod_name = $row['prod_name'];
         $price = $row['price'];
         $prod_id = $row['prod_id'];
+        $size = $row['size'];
         $invoiceTotal += $price;
         $itemsCount++;
 
@@ -140,7 +137,7 @@
         <div class='cart-banner clearfix'>
           <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
           <p class="prod-price-panel">R$price</p> 
-          <p class="prod-name-panel">$prod_name</p>
+          <p class="prod-name-panel">$prod_name - Size: $size</p>
           <input type="hidden" name="stock_id" value="$stock_id">
           <input type="hidden" name="prod_id" value="$prod_id">
           <input type="hidden" name="price" value="$price">
