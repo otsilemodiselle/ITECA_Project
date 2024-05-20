@@ -10,9 +10,10 @@
     $delivery_date = date("Y-m-d", strtotime($today . "+10 days"));
     add_workitem($pdo, $delivery_date, $courier_id);
     $waybill = latestPrimaryKey();
-    $order_desc = "";
+    $stock_details = "";
+    $prod_details = "";
     
-    $query = "SELECT p.prod_id, p.prod_name, st.size, p.price
+    $query = "SELECT p.prod_id, st.stock_id
               FROM product p
               JOIN collection co ON p.prod_id = co.prod_id
               JOIN cart ca ON co.coll_id = ca.coll_id
@@ -26,19 +27,24 @@
       while ($row = $result->fetch())
       {
         $prod_id = $row['prod_id'];
-        $prod_name = $row['prod_name'];
-        $size = $row['size'];
-        $price = $row['price'];
-
-        $order_desc .= "#" . $prod_id . "-" . trimString($prod_name, 12) . "-Size:" . $size . "-R" . $price . "\n";
+        $prod_details .= $prod_id . ',';
+        $stock_id = $row['stock_id'];
+        $stock_details .= $stock_id . ',';
       }
 
       $order_total = $_POST['invoice_total'];
       $status = "Pending Payment";
 
-      add_order($pdo, $waybill, $order_desc, $customer_id, $order_total, $status);
+      add_order($pdo, $waybill, $stock_details, $customer_id, $order_total, $status, $prod_details);
       $order_id = latestPrimaryKey();
       $_SESSION['order_id'] = $order_id;
+
+      $queryEmptyCart = "DELETE co FROM collection co
+                JOIN cart ca ON co.coll_id = ca.coll_id
+                WHERE customer_id = $customer_id;";
+
+      queryMysql($queryEmptyCart);
+
       header("Location: projectOrderPHPForm.php");
       exit;
     }
