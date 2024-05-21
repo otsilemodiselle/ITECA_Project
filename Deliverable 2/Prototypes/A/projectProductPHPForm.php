@@ -155,8 +155,8 @@
         </select>
         <input type="hidden" name="prod_id" value=$prod_id>
         <input type="hidden" name="customer_id" value=$customer_id>
-        <input type="submit" class="cart-button" value="Add to Cart" name="cartButton" disabled>
-        <input type="submit" class="wishlist-button" value="Add to Wishlist" name="wishlistButton">
+        <input type="submit" class="cart-button gray-button" value="Add to Cart" name="cartButton" disabled>
+        <input type="submit" class="wishlist-button gray-button" value="Add to Wishlist" name="wishlistButton">
       </form>
       </div>
         <div class="prod-socials-div">

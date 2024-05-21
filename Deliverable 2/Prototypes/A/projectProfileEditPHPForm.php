@@ -82,6 +82,8 @@
     exit;
   }
 
+  $card_no = maskCard($card_no);
+
   echo<<<_END
   <section class='clearfix container'>
     <div class="section-header">
@@ -93,13 +95,13 @@
         <div class="edit-div edit-name-div clearfix">
             <label for="" class="edit-caption">Name: </label>
             <label for="" class="current-data current-name">$name</label>
-            <button class="edit-button edit-name" onclick="showEditName()">Edit</button><br><br>
+            <button class="edit-button edit-name button" onclick="showEditName()">Edit</button><br><br>
             <form method="post" action="projectProfileEditPHPForm.php">
             <div class="edit-elements edit-elements-name" hidden>                
                 <input onchange="editName(); nameSaveEnable();" type="text" class="edit-input edit-name-input" maxlength="68" name="name-edit-input"><br>
                 <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
-                <input type="submit" name="save-name-edit" class="save-edit save-name-edit" style="pointer-events: none;" value="Save">
-                <button class="cancel-edit cancel-name-edit" onclick="hideEditName()" >Cancel</button>
+                <input type="submit" name="save-name-edit" class="save-edit save-name-edit button" style="pointer-events: none;" value="Save">
+                <button class="cancel-edit cancel-name-edit button" onclick="hideEditName()" >Cancel</button>
             </div>
             </form>
         </div>
@@ -107,13 +109,13 @@
         <div class="edit-div edit-surname-div clearfix">
             <label for="" class="edit-caption">Surname: </label>
             <label for="" class="current-data current-surname">$surname</label>
-            <button class="edit-button edit-surname" onclick="showEditSurname()">Edit</button><br><br>
+            <button class="edit-button edit-surname button" onclick="showEditSurname()">Edit</button><br><br>
             <form method="post" action="projectProfileEditPHPForm.php">
             <div  class="edit-elements edit-elements-surname" hidden>
                 <input type="text" name="surname-edit-input" class="edit-input edit-surname-input" maxlength="68" onchange="editSurname(); surnameSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-surname-verify"></label><br>
-                <input type="submit" name="save-surname-edit" class="save-edit save-surname-edit" style="pointer-events: none;" value="Save">
-                <button class="cancel-edit cancel-surname-edit" onclick="hideEditSurname()">Cancel</button>
+                <input type="submit" name="save-surname-edit" class="save-edit save-surname-edit button" style="pointer-events: none;" value="Save">
+                <button class="cancel-edit cancel-surname-edit button" onclick="hideEditSurname()">Cancel</button>
             </div>
             </form>
         </div>
@@ -121,13 +123,13 @@
         <div class="edit-div edit-number-div clearfix">
             <label for="" class="edit-caption">Contact no: </label>
             <label for="" class="current-data current-number">$contact</label>
-            <button class="edit-button edit-number" onclick="showEditNumber()">Edit</button><br><br>
+            <button class="edit-button edit-number button" onclick="showEditNumber()">Edit</button><br><br>
             <form method="post" action="projectProfileEditPHPForm.php">
             <div class="edit-elements edit-elements-number" hidden>
                 <input type="text" name="number-edit-input" class="edit-input edit-number-input" maxlength="10" onchange="editNumber(); numberSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-number-verify"></label><br>
-                <input type="submit" name="save-contact-edit" class="save-edit save-number-edit" style="pointer-events: none;" value="Save">
-                <button class="cancel-edit cancel-number-edit" onclick="hideEditNumber()">Cancel</button>
+                <input type="submit" name="save-contact-edit" class="save-edit save-number-edit button" style="pointer-events: none;" value="Save">
+                <button class="cancel-edit cancel-number-edit button" onclick="hideEditNumber()">Cancel</button>
             </div>
             </form>
         </div>
@@ -135,13 +137,13 @@
         <div class="edit-div edit-email-div clearfix">
             <label for="" class="edit-caption">Email: </label>
             <label for="" class="current-data current-email">$email</label>
-            <button class="edit-button edit-email" onclick="showEditEmail()">Edit</button><br><br>
+            <button class="edit-button edit-email button" onclick="showEditEmail()">Edit</button><br><br>
             <form method="post" action="projectProfileEditPHPForm.php">
             <div  class="edit-elements edit-elements-email" hidden>
                 <input type="text" name="email-edit-input" class="edit-input edit-email-input" maxlength="128" onchange="editEmail(); emailSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-email-verify"></label><br>
-                <input type="submit" name="save-email-edit" class="save-edit save-email-edit" style="pointer-events: none;" value="Save">
-                <button class="cancel-edit cancel-email-edit" onclick="hideEditEmail()">Cancel</button>
+                <input type="submit" name="save-email-edit" class="save-edit save-email-edit button" style="pointer-events: none;" value="Save">
+                <button class="cancel-edit cancel-email-edit button" onclick="hideEditEmail()">Cancel</button>
             </div>
             </form>
         </div>
@@ -149,13 +151,13 @@
         <div class="edit-div edit-card-div clearfix">
             <label for="" class="edit-caption">Card no: </label>
             <label for="" class="current-data current-card">$card_no</label>
-            <button class="edit-button edit-card" onclick="showEditCard()">Edit</button><br><br>
+            <button class="edit-button edit-card button" onclick="showEditCard()">Edit</button><br><br>
             <form method="post" action="projectProfileEditPHPForm.php">
             <div  class="edit-elements edit-elements-card" hidden>
                 <input type="text" name="card-edit-input" class="edit-input edit-card-input" maxlength="16" onchange="editCard(); cardSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-card-verify"></label><br>    
-                <input type="submit" name="save-card-edit" class="save-edit save-card-edit" style="pointer-events: none;" value="Save">
-                <button class="cancel-edit cancel-card-edit" onclick="hideEditCard()" >Cancel</button>
+                <input type="submit" name="save-card-edit" class="save-edit save-card-edit button" style="pointer-events: none;" value="Save">
+                <button class="cancel-edit cancel-card-edit button" onclick="hideEditCard()" >Cancel</button>
             </div>
             </form>
         </div>
@@ -163,13 +165,13 @@
         <div class="edit-div edit-expiry-div clearfix">
             <label for="" class="edit-caption">Expiry Date: </label>
             <label for="" class="current-data current-expiry">$exp_date</label>
-            <button class="edit-button edit-expiry" onclick="showEditExpiry()">Edit</button><br><br>
+            <button class="edit-button edit-expiry button" onclick="showEditExpiry()">Edit</button><br><br>
             <form method="post" action="projectProfileEditPHPForm.php">
             <div class="edit-elements edit-elements-expiry" hidden>
                 <input type="text" name="exp-edit-input" class="edit-input edit-expiry-input" maxlength="4" onchange="editExpiry(); expSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-expiry-verify"></label><br>
-                <input type="submit" name="save-exp-edit" class="save-edit save-expiry-edit" style="pointer-events: none;" value="Save">
-                <button class="cancel-edit cancel-expiry-edit" onclick="hideEditExpiry()">Cancel</button>
+                <input type="submit" name="save-exp-edit" class="save-edit save-expiry-edit button" style="pointer-events: none;" value="Save">
+                <button class="cancel-edit cancel-expiry-edit button" onclick="hideEditExpiry()">Cancel</button>
             </div>
             </form>
         </div>
@@ -177,7 +179,7 @@
         <div class="edit-div edit-address-div clearfix">
             <label for="" class="edit-caption">Delivery Address: </label><br>
             <label for="" class="current-data current-address">$address</label>
-            <button class="edit-button edit-address" onclick="showEditAddress()">Edit</button><br><br>
+            <button class="edit-button edit-address button" onclick="showEditAddress()">Edit</button><br><br>
             <form method="post" action="projectProfileEditPHPForm.php">
             <div class="edit-elements edit-elements-address" hidden>
                 <div class="edit-captions-address-div">
@@ -198,8 +200,8 @@
                     <label for="" class="edit-verify-feedback edit-address-verify"><label><br>
                 </div>     
                 <div class="edit-buttons-div">
-                    <input type="submit" name="save-address-edit" class="save-edit save-address-edit" style="pointer-events: none;" value="Save">
-                    <button class="cancel-edit cancel-address-edit" onclick="hideEditAddress()">Cancel</button>
+                    <input type="submit" name="save-address-edit" class="save-edit save-address-edit button" style="pointer-events: none;" value="Save">
+                    <button class="cancel-edit cancel-address-edit button" onclick="hideEditAddress()">Cancel</button>
                 </div>  
             
             
@@ -227,8 +229,8 @@
                     <label for="" class="edit-verify-feedback edit-password-verify"></label><br>
                 </div>
                 <div class="edit-buttons-div">
-                    <input type="submit" name="save-password-edit" class="save-edit save-password-edit" style="pointer-events: none;" value="Save">
-                    <button class="cancel-edit cancel-password-edit" onclick="hideEditPassword()">Cancel</button>
+                    <input type="submit" name="save-password-edit" class="save-edit save-password-edit button" style="pointer-events: none;" value="Save">
+                    <button class="cancel-edit cancel-password-edit button" onclick="hideEditPassword()">Cancel</button>
                 </div>
                 
             </div>

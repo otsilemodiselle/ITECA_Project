@@ -98,8 +98,8 @@
               <p class="prod-price-panel">R$price</p> 
               <p class="prod-name-panel">$prod_name</p>
               <input type="hidden" name="prod_id" value="$prod_id">
-              <input type="submit" name="wishlist-action" class="wish-delete" value="Delete">
-              <input type="submit" name="wishlist-action" class="wish-cart" value="Add to Cart">
+              <input type="submit" name="wishlist-action" class="wish-delete button" value="Delete">
+              <input type="submit" name="wishlist-action" class="wish-cart button" value="Add to Cart">
             </div>
         </form>
         _END;
@@ -141,8 +141,8 @@
               <p class="prod-price-panel">R$price</p> 
               <p class="prod-name-panel">$prod_name</p>
               <input type="hidden" name="prod_id" value="$prod_id">
-              <input type="submit" name="wishlist-action" class="wish-delete" value="Delete">
-              <input type="submit" name="wishlist-action" class="wish-cart" value="Add to Cart">
+              <input type="submit" name="wishlist-action" class="wish-delete button" value="Delete">
+              <input type="submit" name="wishlist-action" class="wish-cart button" value="Add to Cart">
             </div>
         </form>
         _END;

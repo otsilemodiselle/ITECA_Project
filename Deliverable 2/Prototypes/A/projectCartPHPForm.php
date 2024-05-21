@@ -104,7 +104,7 @@
           <input type="hidden" name="prod_id" value="$prod_id">
           <input type="hidden" name="price" value="$price">
           <input type="hidden" name="stock_id" value="$stock_id">
-          <input type="submit" name="cart-action" class="cart-delete" value="Delete">
+          <input type="submit" name="cart-action" class="cart-delete button" value="Delete">
         </div>
         </form>   
         _END;
@@ -141,7 +141,7 @@
           <input type="hidden" name="stock_id" value="$stock_id">
           <input type="hidden" name="prod_id" value="$prod_id">
           <input type="hidden" name="price" value="$price">
-          <input type="submit" name="cart-action" class="cart-delete" value="Delete">
+          <input type="submit" name="cart-action" class="cart-delete button" value="Delete">
         </div>
         </form>  
         _END;
@@ -181,7 +181,7 @@
         </p>
         <input type="hidden" name="invoice_total" value="$invoiceTotal">
         <input type="hidden" name="items_Count" value="$itemsCount">
-        <input type="submit" class="cart-checkout" name="checkout" value="Checkout">
+        <input type="submit" class="cart-checkout button" name="checkout" value="Checkout">
         </form>
     </div>
     </section>

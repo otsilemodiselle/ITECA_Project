@@ -29,7 +29,8 @@
         if(isset($_POST['order-id']))
         {
           $order_id = $_POST['order-id'];
-          update_order_status($pdo, $cancelled_status, $order_id);
+          $queryCancelOrder = "DELETE FROM order_ WHERE order_id = $order_id;";
+          queryMysql($queryCancelOrder);
           header('location: projectProfileViewPHPForm.php');
           exit;
         }
@@ -62,7 +63,7 @@
                 $contact<br>
                 $email
             </p>
-            <input type="submit" class="personal-edit" value="Edit" name="profile-view-action">
+            <input type="submit" class="personal-edit button" value="Edit" name="profile-view-action">
         </div>
         <div class="customer-payment clearfix">
             <p class="customer-pay-details">
@@ -70,7 +71,7 @@
                 Expiry Date: $exp_date
                 <br>$address
             </p>
-            <input type="submit" class="customer-pay-edit" value="Edit" name="profile-view-action">
+            <input type="submit" class="customer-pay-edit button" value="Edit" name="profile-view-action">
         </div>
         </form> 
         <br>
@@ -94,7 +95,6 @@
     {
         $order_id = $row['order_id'];
         $waybill = $row['waybill'];
-        $order_desc = $row['order_desc'];
         $order_total = $row['order_total'];
         $status = $row['status'];
 
@@ -122,8 +122,8 @@
         else
         {
           echo<<<_END
-          <input type="submit" class="log-return" value="Complete Order" name="profile-view-action">
-          <input type="submit" class="log-return" value="Cancel Order" name="profile-view-action">
+          <input type="submit" class="log-return button" value="Complete Order" name="profile-view-action">
+          <input type="submit" class="log-return button" value="Cancel Order" name="profile-view-action">
           </div>
           </form> 
           _END;
