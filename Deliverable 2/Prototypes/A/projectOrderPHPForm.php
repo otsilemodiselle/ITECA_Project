@@ -21,6 +21,10 @@
     $contact = $row['contact_number'];
     $address = $row['address'];
     $card_no = $row['card_no'];
+    if (!$card_no==null)
+    {
+      $card_no = maskCard($card_no);
+    }
     $exp_date = $row['exp_date'];
   }  
 
@@ -56,7 +60,7 @@
   $pay_clickable = (($bool_address == true) && ($bool_card == true) && ($bool_exp_date == true)) ? "" : "disabled";
   
 
-  $queryCourier = "SELECT j.trading_name, w.waybill, w.date, o.order_total, o.order_desc
+  $queryCourier = "SELECT j.trading_name, w.waybill, w.date, o.order_total, o.stock_details
                   FROM workitem w
                   JOIN courier cou ON cou.courier_id = w.courier_id
                   JOIN juristic j ON j.jurist_id = cou.jurist_id
@@ -73,10 +77,10 @@
     $waybill = $row['waybill'];
     $delivery_date = $row['date'];
     $order_total = $row['order_total'];
-    $description = $row['order_desc'];
+    $description = $row['stock_details'];
   } 
 
-  $item_count = substr_count($description, "\n");
+  $item_count = substr_count($description, ",");
 
   if(isset($_POST['order-action']))
   {
@@ -88,11 +92,17 @@
           exit;
           break;
         case 'Cancel Order':
-          header('location: projectMessagePHPForm.php?msg=EndOrder');
+          $queryCancelOrder = "DELETE FROM order_ WHERE order_id = $order_id;";
+          queryMysql($queryCancelOrder);
+          header('location: projectProfileViewPHPForm.php');
           exit;
           break;
         case 'Pay Now':
           header('location: projectMessagePHPForm.php?msg=pay');
+          exit;
+          break;
+        case 'Order Details':
+          header('location: projectOrderDetailsPHPForm.php');
           exit;
           break;
       }
@@ -111,21 +121,22 @@
               Contact no.: $contact<br>
               Delivery Address: $address 
           </p>
-          <input type="submit" class="recip-edit" name="order-action" value="Edit">
+          <input type="submit" class="button recip-edit" name="order-action" value="Edit">
       </div>
       <div class="order-payment clearfix">
           <p class="order-pay-details">
-              Card: VISA $card_no<br>
+              Card: $card_no<br>
               Expiry Date: $exp_date
-              <br>CVV: <input type="text" class="cvv-box" maxlength="3">
+              <br>CVV: <input oninput="cvvValidation(); checkoutEnable();" type="text" class="cvv-box" maxlength="3" >
+              <label class="cvv-feedback"></label>
           </p>
-          <input type="submit" class="pay-edit" name="order-action" value="Edit">
+          <input type="submit" class="button pay-edit" name="order-action" value="Edit">
       </div>
       <div class="order-summary">
           <p class="order-summary-details">
               Order Ref: $waybill
               <br>Courier: $courier_name
-              <br>ETA: $delivery_date
+              <br>ETA: $delivery_date <br><br>
           </p>
       </div>
       <div class="order-checkout clearfix">
@@ -133,8 +144,12 @@
               Quantity: $item_count Item(s)
               <br>Order Total: R$order_total
           </p>
-          <input type="submit" class="checkout" name="order-action" value="Cancel Order">
-          <input type="submit" class="checkout" name="order-action" value="Pay Now" $pay_clickable>
+
+          <input type="submit" class="button checkout" name="order-action" value="Cancel Order">
+
+          <input type="submit" class="button checkout" name="order-action" value="Order Details">
+
+          <input type="submit" class="button checkout pay-now" style="pointer-events: none;" name="order-action" value="Pay Now" $pay_clickable >
       </div>
       
     </div>
@@ -146,6 +161,7 @@
         
     </div>
   </footer>
+  <script src="cvvValidation.js"></script>
   </body>
   </html>
   _END;
