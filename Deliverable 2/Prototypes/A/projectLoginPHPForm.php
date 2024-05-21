@@ -97,7 +97,7 @@
                           <form method="post" action="projectLoginPHPForm.php">
                             <div class="login-inputs-div">
                                 <input type="text" name="inputEmail"><br>
-                                <input type="text" name="inputPassword">
+                                <input type="password" name="inputPassword">
                             </div>
                             <input type="submit" value="Login" class="login-button">
                           </form>
