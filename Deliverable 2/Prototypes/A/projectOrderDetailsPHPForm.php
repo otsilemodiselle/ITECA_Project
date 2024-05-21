@@ -34,43 +34,83 @@
     $prod_id = "";
     $item_count = 0;
 
-    $stock_details_array = str_split($stock_details);
-    $j = count($stock_details_array);
-    for($i = 0; $i < $j; ++$i)
+    if($status == "Pending Payment")
     {
-      $stock_id .= $stock_details_array[$i];
-      if($stock_details_array[$i+1]==',')
+      $stock_details_array = str_split($stock_details);
+      $j = count($stock_details_array);
+      for($i = 0; $i < $j; ++$i)
       {
-         $queryProdData =  "SELECT p.prod_img, p.prod_name, p.price, s.size
-                          FROM product p
-                          JOIN stock s ON p.prod_id = s.prod_id
-                          WHERE stock_id = $stock_id;";
-        $prodDataResult = queryMysql($queryProdData);
+        $stock_id .= $stock_details_array[$i];
+        if($stock_details_array[$i+1]==',')
+        {
+          $queryProdData =  "SELECT p.prod_img, p.prod_name, p.price, s.size
+                            FROM product p
+                            JOIN stock s ON p.prod_id = s.prod_id
+                            WHERE stock_id = $stock_id;";
+          $prodDataResult = queryMysql($queryProdData);
 
-        $row = $prodDataResult->fetch();
-        $prod_img = $row['prod_img'];
-        $prod_name = $row['prod_name'];
-        $price = $row['price'];
-        $size = $row['size'];
+          $row = $prodDataResult->fetch();
+          $prod_img = $row['prod_img'];
+          $prod_name = $row['prod_name'];
+          $price = $row['price'];
+          $size = $row['size'];
 
-        echo<<<_END
-        <form method="post" action="projectCartPHPForm.php">
-        <div class='cart-banner clearfix'>
-          <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
-          <p class="prod-price-panel">R$price</p> 
-          <p class="prod-name-panel">$prod_name Size: $size</p>
-          <input type="hidden" name="prod_id" value="$prod_id">
-          <input type="hidden" name="price" value="$price">
-        </div>
-        </form>   
-        _END;
+          echo<<<_END
+          <form method="post" action="projectCartPHPForm.php">
+          <div class='cart-banner clearfix'>
+            <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
+            <p class="prod-price-panel">R$price</p> 
+            <p class="prod-name-panel">$prod_name Size: $size</p>
+          </div>
+          </form>   
+          _END;
 
-        $stock_id = "";
-        $i++;
-        $item_count++;
+          $stock_id = "";
+          $i++;
+          $item_count++;
+        }
+
       }
-
     }
+    else
+    {
+      $prod_details_array = str_split($prod_details);
+      $j = count($prod_details_array);
+      for($i = 0; $i < $j; ++$i)
+      {
+        $prod_id .= $prod_details_array[$i];
+        if($prod_details_array[$i+1]==',')
+        {
+          $queryProdData =  "SELECT p.prod_img, p.prod_name, p.price
+                            FROM product p
+                            WHERE prod_id = $prod_id;";
+          $prodDataResult = queryMysql($queryProdData);
+
+          $row = $prodDataResult->fetch();
+          $prod_img = $row['prod_img'];
+          $prod_name = $row['prod_name'];
+          $price = $row['price'];
+
+          echo<<<_END
+          <form method="post" action="projectCartPHPForm.php">
+          <div class='cart-banner clearfix'>
+            <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
+            <p class="prod-price-panel">R$price</p> 
+            <p class="prod-name-panel">$prod_name </p>
+            <input type="submit" class="cart-checkout button" name="order-action" value="Log Return">
+          </div>
+          </form>   
+          _END;
+
+          $stock_id = "";
+          $i++;
+          $item_count++;
+        }
+
+      }
+    }
+
+    
   }
 
   echo <<<_END

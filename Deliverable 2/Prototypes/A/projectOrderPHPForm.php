@@ -98,6 +98,28 @@
           exit;
           break;
         case 'Pay Now':
+          $paid_status = "Fulfilled";
+          $query = "SELECT stock_details FROM order_ WHERE order_id = $order_id;";
+          $result = queryMysql($query);
+          $stock_details = $row['stock_details'];
+          $bought_stock_id = "";
+          $stock_details_array = str_split($stock_details);
+          $j = count($stock_details_array);
+          for($i = 0; $i < $j; ++$i)
+          {
+            $bought_stock_id .= $stock_details_array[$i];
+            if($stock_details_array[$i+1]==',')
+            {
+              $queryDepleteStock = "DELETE FROM stock WHERE stock_id = $bought_stock_id;";
+              queryMysql($queryDepleteStock);
+
+              $bought_stock_id ="";
+              $i++;
+            }
+          }
+            
+            
+          update_order_status($pdo, $paid_status, $order_id);
           header('location: projectMessagePHPForm.php?msg=pay');
           exit;
           break;

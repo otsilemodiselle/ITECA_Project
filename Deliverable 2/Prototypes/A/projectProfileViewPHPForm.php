@@ -104,17 +104,10 @@
         <p class="myorder-detail-panel">Order ref: $waybill Total: R$order_total - $status </p>
         <input type="hidden" name="order-id" value=$order_id>
         _END;
-        if ($status == "Complete")
+        if ($status == "Fulfilled")
         {
           echo<<<_END
-          <input type="submit" class="log-return" value="Log a Return" name="view-profile-action">
-          </div>
-          </form> 
-          _END;
-        }
-        if ($status == "Cancelled")
-        {
-          echo<<<_END
+          <input type="submit" class="log-return" value="Review" name="view-profile-action">
           </div>
           </form> 
           _END;

@@ -21,6 +21,9 @@
       case "loginfail":
         $returned_message = "Login details incorrect.";
         break;
+      case "pay":
+        $returned_message = "Payment Successful! Your order is being fulfilled.";
+        break;
     }
   }
 ?>
