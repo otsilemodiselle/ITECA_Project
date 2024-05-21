@@ -1,5 +1,5 @@
 <?php
-  session_start();
+
 
   if(isset($_GET['msg'])){
     $message_type = $_GET['msg'];

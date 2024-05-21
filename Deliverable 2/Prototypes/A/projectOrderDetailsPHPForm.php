@@ -102,7 +102,7 @@
           </form>   
           _END;
 
-          $stock_id = "";
+          $prod_id = "";
           $i++;
           $item_count++;
         }
