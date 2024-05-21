@@ -43,6 +43,14 @@
           exit;
         }
         break;
+      case 'Review':
+        if(isset($_POST['order-id']))
+        {
+          $_SESSION['order_id'] = $_POST['order-id'];
+          header('location: projectOrderDetailsPHPForm.php');
+          exit;
+        }
+        break;
       case '':
         header('location: projectMessagePHPForm.php?msg=EndOrder');
         exit;
@@ -107,7 +115,7 @@
         if ($status == "Fulfilled")
         {
           echo<<<_END
-          <input type="submit" class="log-return" value="Review" name="view-profile-action">
+          <input type="submit" class="log-return" value="Review" name="profile-view-action">
           </div>
           </form> 
           _END;
