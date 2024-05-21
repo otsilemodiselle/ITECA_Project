@@ -598,6 +598,10 @@ header {
     margin-left: 30px;
 }
 
+/* .order-check-details {
+    height: 100px;
+} */
+
 .customer-details, .order-recipient, .order-payment, .customer-payment, .order-summary, .order-checkout {
     float: left;
     box-shadow: -2px 2px 6px #999999;
@@ -803,6 +807,7 @@ header {
 
 .edit-button {
     float: right;
+    margin-right: 15px;
 }
 
 .current-data {
@@ -1010,5 +1015,60 @@ header {
     height: 120px;
     margin-left: 20px;
     transform: scaleX(-1);
+}
+
+.cvv-feedback {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color:red !important;
+    font-size: 10px; 
+}
+
+.button {
+    background-color: #F6F4F0;
+    color:#383B3E;
+    border: 2px solid #7D836E;
+    font-family: 'Open-Sans' sans-serif;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.button:hover {
+    background-color: #7D836E;
+    color: #F6F4F0;
+    border: 2px solid #F6F4F0;
+    font-family: 'Open-Sans' sans-serif;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px; 
+}
+
+.gray-button {
+    background-color: #F6F4F0;
+    color: #383B3E;
+    border: 2px solid #9B9694;
+    font-family: 'Open-Sans' sans-serif;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.gray-button:hover {
+    background-color:  #9B9694;
+    color: #F6F4F0;
+    border: 2px solid #F6F4F0;
+    font-family: 'Open-Sans' sans-serif;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px; 
+}
+
+.checkout {
+    margin-top: 7px;
 }
 
