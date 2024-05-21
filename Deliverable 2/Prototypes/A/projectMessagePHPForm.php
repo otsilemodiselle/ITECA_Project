@@ -1,6 +1,8 @@
 <?php
     require_once 'functions.php';
 
+    session_start();
+
     require_once 'above_nav_content.php';
 
     require_once 'message_returned.php';
