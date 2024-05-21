@@ -85,17 +85,18 @@
     $stmt->execute([$em, $cn]);
   }
 
-  function add_order($pdo, $wb, $od, $ci, $ot, $st)
+  function add_order($pdo, $wb, $sd, $ci, $ot, $st, $pd)
   {
-    $stmt = $pdo->prepare('INSERT INTO order_(waybill, order_desc, customer_id, order_total, status) VALUES(?,?,?,?,?)');
+    $stmt = $pdo->prepare('INSERT INTO order_(waybill, stock_details, customer_id, order_total, status, prod_details) VALUES(?,?,?,?,?,?)');
 
     $stmt->bindParam(1, $wb, PDO::PARAM_INT);
-    $stmt->bindParam(2, $od, PDO::PARAM_STR, 255);
+    $stmt->bindParam(2, $sd, PDO::PARAM_STR, 255);
     $stmt->bindParam(3, $ci, PDO::PARAM_INT);
     $stmt->bindParam(4, $ot, PDO::PARAM_STR);
-    $stmt->bindParam(4, $st, PDO::PARAM_STR, 66);
+    $stmt->bindParam(5, $st, PDO::PARAM_STR, 66);
+    $stmt->bindParam(6, $pd, PDO::PARAM_STR, 255);
 
-    $stmt->execute([$wb, $od, $ci, $ot, $st]);
+    $stmt->execute([$wb, $sd, $ci, $ot, $st, $pd]);
   }
 
   function add_workitem($pdo, $dt, $cr)
