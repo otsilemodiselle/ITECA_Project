@@ -1,5 +1,5 @@
 <?php
-  require_once 'functions.php';
+  require_once '../src/functions.php';
 
   session_start();
 
@@ -60,7 +60,7 @@
   $invoiceTotal = 0;
   $itemsCount = 0;
 
-  require_once 'above_nav_content.php';
+  require_once '../src/above_nav_content.php';
 
   echo <<<_END
   <section class='clearfix container'>
@@ -96,9 +96,9 @@
         $itemsCount++;
 
         echo<<<_END
-        <form method="post" action="projectCartPHPForm.php">
+        <form method="post" action="my_cart.php">
         <div class='cart-banner clearfix'>
-          <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
+          <img src="images/img/$prod_img" alt="" class="small-thumbnail">
           <p class="prod-price-panel">R$price</p> 
           <p class="prod-name-panel">$prod_name - Size: $size</p>
           <input type="hidden" name="prod_id" value="$prod_id">
@@ -133,9 +133,9 @@
         $itemsCount++;
 
         echo<<<_END
-        <form method="post" action="projectCartPHPForm.php">
+        <form method="post" action="my_cart.php">
         <div class='cart-banner clearfix'>
-          <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
+          <img src="images/img/$prod_img" alt="" class="small-thumbnail">
           <p class="prod-price-panel">R$price</p> 
           <p class="prod-name-panel">$prod_name - Size: $size</p>
           <input type="hidden" name="stock_id" value="$stock_id">

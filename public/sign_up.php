@@ -1,9 +1,9 @@
 <?php
-  require_once 'functions.php';
+  require_once '../src/functions.php';
 
   session_start();
 
-  require_once 'above_nav_content.php';
+  require_once '../src/above_nav_content.php';
 
   echo <<<_END
   <script>
@@ -112,7 +112,7 @@
     <div class='signup-container clearfix'>
         <div class="signup-window">
             <div class="signup-elements">
-            <form method="post" action="signup2.php">
+            <form method="post" action="sign_up_script.php">
 
                 <label class="signup-name">Name: </label>
                 <input onchange="signupNameVerify()" class="signup-name-input" type="text" maxlength="68" name="name">

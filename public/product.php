@@ -1,5 +1,5 @@
 <?php
-   require_once 'functions.php';
+   require_once '../src/functions.php';
 
    session_start();
 
@@ -70,7 +70,7 @@
     }
   }
 
-   require_once 'above_nav_content.php';
+   require_once '../src/above_nav_content.php';
 
    echo <<<_END
    <script>
@@ -110,7 +110,7 @@
     echo <<<_END
     <section class='container'>
     <div class='clearfix prod-container'>
-        <img src="Images/img/$prod_img" alt="" class="prod-img">
+        <img src="images/img/$prod_img" alt="" class="prod-img">
         <div class="prod-header-div">
             <h3 class="prod-heading">
                 $prod_name
@@ -141,7 +141,7 @@
     }
 
     echo <<<_END
-      <form method="post" action="projectProductPHPForm.php?prod_id=$prod_id">
+      <form method="post" action="product.php?prod_id=$prod_id">
         <div class="prod-action-div">
         <label for="sizes-list" class="sizes-label">Size</label>
         <select name="sizes" id="sizes-list" onchange="sizeCheck()">

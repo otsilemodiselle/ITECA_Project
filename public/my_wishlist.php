@@ -1,5 +1,5 @@
 <?php
-  require_once 'functions.php';
+  require_once '../src/functions.php';
 
   session_start();
 
@@ -47,7 +47,7 @@
 
         case 'Add to Cart':
           $prod_id = ($_POST['prod_id']);
-          header("Location: projectProductPHPForm.php?prod_id=$prod_id");
+          header("Location: product.php?prod_id=$prod_id");
           exit;
           unset($_POST['wishlist-action']);
           break;
@@ -55,7 +55,7 @@
       }
   }
 
-  require_once 'above_nav_content.php';
+  require_once '../src/above_nav_content.php';
 
   echo<<<_END
   <section class='clearfix container'>
@@ -92,9 +92,9 @@
         $price = $row['price'];
 
         echo<<<_END
-        <form method="post" action="projectWishlistPHPForm.php">
+        <form method="post" action="my_wishlist.php">
             <div class='wishlist-banner clearfix'>
-              <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
+              <img src="images/img/$prod_img" alt="" class="small-thumbnail">
               <p class="prod-price-panel">R$price</p> 
               <p class="prod-name-panel">$prod_name</p>
               <input type="hidden" name="prod_id" value="$prod_id">
@@ -135,9 +135,9 @@
         $price = $row['price'];
 
         echo<<<_END
-        <form method="post" action="projectWishlistPHPForm.php">
+        <form method="post" action="my_wishlist.php">
             <div class='wishlist-banner clearfix'>
-              <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
+              <img src="images/img/$prod_img" alt="" class="small-thumbnail">
               <p class="prod-price-panel">R$price</p> 
               <p class="prod-name-panel">$prod_name</p>
               <input type="hidden" name="prod_id" value="$prod_id">

@@ -1,8 +1,8 @@
 <?php
-  require_once 'functions.php';
+  require_once '../src/functions.php';
   session_start();
-  require_once 'above_nav_content.php';
-  require_once 'load_profile_data.php';
+  require_once '../src/above_nav_content.php';
+  require_once '../src/load_profile_data.php';
 
   $customer_id = $_SESSION['customer_id'];
   if (!$card_no==null)
@@ -21,7 +21,7 @@
     switch ($action)
     {
       case 'Edit': 
-        header('location: projectProfileEditPHPForm.php');
+        header('location: profile_edit.php');
         exit;
         break;
       case 'Cancel Order':
@@ -31,7 +31,7 @@
           $order_id = $_POST['order-id'];
           $queryCancelOrder = "DELETE FROM order_ WHERE order_id = $order_id;";
           queryMysql($queryCancelOrder);
-          header('location: projectProfileViewPHPForm.php');
+          header('location: profile_view.php');
           exit;
         }
         break;
@@ -39,7 +39,7 @@
         if(isset($_POST['order-id']))
         {
           $_SESSION['order_id'] = $_POST['order-id'];
-          header('location: projectOrderPHPForm.php');
+          header('location: order_checkout.php');
           exit;
         }
         break;
@@ -47,12 +47,12 @@
         if(isset($_POST['order-id']))
         {
           $_SESSION['order_id'] = $_POST['order-id'];
-          header('location: projectOrderDetailsPHPForm.php');
+          header('location: order_details.php');
           exit;
         }
         break;
       case '':
-        header('location: projectMessagePHPForm.php?msg=EndOrder');
+        header('location: message.php?msg=EndOrder');
         exit;
         break;
     }
@@ -64,7 +64,7 @@
         <h3 class="cat-heading">Profile View</h3>
     </div>
 
-        <form method="post" action="projectProfileViewPHPForm.php">
+        <form method="post" action="profile_view.php">
         <div class="customer-details clearfix">
             <p class="personal-details">
                 $name $surname<br>
@@ -107,7 +107,7 @@
         $status = $row['status'];
 
         echo<<<_END
-        <form method="post" action="projectProfileViewPHPForm.php">
+        <form method="post" action="profile_view.php">
         <div class='myorder-banner clearfix'>
         <p class="myorder-detail-panel">Order ref: $waybill Total: R$order_total - $status </p>
         <input type="hidden" name="order-id" value=$order_id>

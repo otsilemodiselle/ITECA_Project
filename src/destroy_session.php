@@ -3,7 +3,7 @@
   $message = "You have logged out, goodbye.";
   echo "<script>alert('".addslashes($message)."');</script>";
   destroy_session_and_data();
-  header("Location: projectIndexPHPForm.php");
+  header("Location: ../public/index.php");
   exit();
 
 

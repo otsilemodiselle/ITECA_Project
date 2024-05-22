@@ -1,9 +1,9 @@
 <?php
-   require_once 'functions.php';
+   require_once '../src/functions.php';
 
    session_start();
 
-   require_once 'above_nav_content.php';
+   require_once '../src/above_nav_content.php';
 
   if(isset($_GET['cat'])){
     $clickedCatalogue = $_GET['cat'];
@@ -37,9 +37,9 @@
       $cat_prod_name = $row['prod_name'];
       $cat_price = $row['price'];
       echo <<<_END
-      <a href="projectProductPHPForm.php?prod_id=$cat_prod_id">
+      <a href="product.php?prod_id=$cat_prod_id">
         <div class='card'>
-            <img src="Images/img/$cat_prod_img" alt="" class="thumbnail">
+            <img src="images/img/$cat_prod_img" alt="" class="thumbnail">
             <p class="prod-name card-detail"><strong>$cat_prod_name</strong></p>
             <p class="price card-detail"><strong>R$cat_price</strong></p>
         </div>

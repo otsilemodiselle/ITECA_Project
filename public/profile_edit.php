@@ -1,13 +1,13 @@
 <?php
-   require_once 'functions.php';
+   require_once '../src/functions.php';
 
    session_start();
 
    
 
-   require_once 'above_nav_content.php';
+   require_once '../src/above_nav_content.php';
 
-   require_once 'load_profile_data.php';
+   require_once '../src/load_profile_data.php';
 
    $customer_id = $_SESSION['customer_id'];
 
@@ -16,7 +16,7 @@
     $new_name = sanitizeString($_POST['name-edit-input']);
     $formatted_name = ucfirst(strtolower($new_name));
     update_name($pdo, $formatted_name, $customer_id);
-    header('location: projectProfileEditPHPForm.php');
+    header('location: profile_edit.php');
     exit;
   }
 
@@ -25,7 +25,7 @@
     $new_surname = sanitizeString($_POST['surname-edit-input']);
     $formatted_surname = ucfirst(strtolower($new_surname));
     update_surname($pdo, $formatted_surname, $customer_id);
-    header('location: projectProfileEditPHPForm.php');
+    header('location: profile_edit.php');
     exit;
   }
 
@@ -33,7 +33,7 @@
   {
     $new_contact = sanitizeString($_POST['number-edit-input']);
     update_contact($pdo, $new_contact, $customer_id);
-    header('location: projectProfileEditPHPForm.php');
+    header('location: profile_edit.php');
     exit;
   }
 
@@ -41,7 +41,7 @@
   {
     $new_email = sanitizeString($_POST['email-edit-input']);
     update_email($pdo, $new_email, $customer_id);
-    header('location: projectProfileEditPHPForm.php');
+    header('location: profile_edit.php');
     exit;
   }
 
@@ -49,7 +49,7 @@
   {
     $new_card = sanitizeString($_POST['card-edit-input']);
     update_card($pdo, $new_card, $customer_id);
-    header('location: projectProfileEditPHPForm.php');
+    header('location: profile_edit.php');
     exit;
   }
 
@@ -57,7 +57,7 @@
   {
     $exp_date = sanitizeString($_POST['exp-edit-input']);
     update_exp($pdo, $exp_date, $customer_id);
-    header('location: projectProfileEditPHPForm.php');
+    header('location: profile_edit.php');
     exit;
   }
 
@@ -69,7 +69,7 @@
     $code = sanitizeString($_POST['code-edit-input']);
     $address = $street . ', ' . $suburb . ', ' . $city . ', ' . $code;
     update_address($pdo, $address, $customer_id);
-    header('location: projectProfileEditPHPForm.php');
+    header('location: profile_edit.php');
     exit;
   }
 
@@ -78,7 +78,7 @@
     $password = sanitizeString($_POST['password-edit-input']);
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     update_password($pdo, $hashed_password, $customer_id);
-    header('location: projectProfileEditPHPForm.php');
+    header('location: profile_edit.php');
     exit;
   }
 
@@ -96,7 +96,7 @@
             <label for="" class="edit-caption">Name: </label>
             <label for="" class="current-data current-name">$name</label>
             <button class="edit-button edit-name button" onclick="showEditName()">Edit</button><br><br>
-            <form method="post" action="projectProfileEditPHPForm.php">
+            <form method="post" action="profile_edit.php">
             <div class="edit-elements edit-elements-name" hidden>                
                 <input onchange="editName(); nameSaveEnable();" type="text" class="edit-input edit-name-input" maxlength="68" name="name-edit-input"><br>
                 <label for="" class="edit-verify-feedback edit-name-verify"></label><br>
@@ -110,7 +110,7 @@
             <label for="" class="edit-caption">Surname: </label>
             <label for="" class="current-data current-surname">$surname</label>
             <button class="edit-button edit-surname button" onclick="showEditSurname()">Edit</button><br><br>
-            <form method="post" action="projectProfileEditPHPForm.php">
+            <form method="post" action="profile_edit.php">
             <div  class="edit-elements edit-elements-surname" hidden>
                 <input type="text" name="surname-edit-input" class="edit-input edit-surname-input" maxlength="68" onchange="editSurname(); surnameSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-surname-verify"></label><br>
@@ -124,7 +124,7 @@
             <label for="" class="edit-caption">Contact no: </label>
             <label for="" class="current-data current-number">$contact</label>
             <button class="edit-button edit-number button" onclick="showEditNumber()">Edit</button><br><br>
-            <form method="post" action="projectProfileEditPHPForm.php">
+            <form method="post" action="profile_edit.php">
             <div class="edit-elements edit-elements-number" hidden>
                 <input type="text" name="number-edit-input" class="edit-input edit-number-input" maxlength="10" onchange="editNumber(); numberSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-number-verify"></label><br>
@@ -138,7 +138,7 @@
             <label for="" class="edit-caption">Email: </label>
             <label for="" class="current-data current-email">$email</label>
             <button class="edit-button edit-email button" onclick="showEditEmail()">Edit</button><br><br>
-            <form method="post" action="projectProfileEditPHPForm.php">
+            <form method="post" action="profile_edit.php">
             <div  class="edit-elements edit-elements-email" hidden>
                 <input type="text" name="email-edit-input" class="edit-input edit-email-input" maxlength="128" onchange="editEmail(); emailSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-email-verify"></label><br>
@@ -152,7 +152,7 @@
             <label for="" class="edit-caption">Card no: </label>
             <label for="" class="current-data current-card">$card_no</label>
             <button class="edit-button edit-card button" onclick="showEditCard()">Edit</button><br><br>
-            <form method="post" action="projectProfileEditPHPForm.php">
+            <form method="post" action="profile_edit.php">
             <div  class="edit-elements edit-elements-card" hidden>
                 <input type="text" name="card-edit-input" class="edit-input edit-card-input" maxlength="16" onchange="editCard(); cardSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-card-verify"></label><br>    
@@ -166,7 +166,7 @@
             <label for="" class="edit-caption">Expiry Date: </label>
             <label for="" class="current-data current-expiry">$exp_date</label>
             <button class="edit-button edit-expiry button" onclick="showEditExpiry()">Edit</button><br><br>
-            <form method="post" action="projectProfileEditPHPForm.php">
+            <form method="post" action="profile_edit.php">
             <div class="edit-elements edit-elements-expiry" hidden>
                 <input type="text" name="exp-edit-input" class="edit-input edit-expiry-input" maxlength="4" onchange="editExpiry(); expSaveEnable();"><br>
                 <label for="" class="edit-verify-feedback edit-expiry-verify"></label><br>
@@ -180,7 +180,7 @@
             <label for="" class="edit-caption">Delivery Address: </label><br>
             <label for="" class="current-data current-address">$address</label>
             <button class="edit-button edit-address button" onclick="showEditAddress()">Edit</button><br><br>
-            <form method="post" action="projectProfileEditPHPForm.php">
+            <form method="post" action="profile_edit.php">
             <div class="edit-elements edit-elements-address" hidden>
                 <div class="edit-captions-address-div">
                     <label for="" class="edit-caption">Street Address: </label><br>
@@ -214,7 +214,7 @@
             <label for="" class="edit-caption">Password: </label>
             <label for="" class="current-data current-password">******</label>
             <button class="edit-button edit-password" onclick="showEditPassword()">Edit</button><br><br>
-            <form method="post" action="projectProfileEditPHPForm.php">
+            <form method="post" action="profile_edit.php">
             <div class="edit-elements edit-elements-password" hidden>
                 <div class="edit-captions-password-div">
                     <label for="" class="edit-caption">New Password: </label><br>
@@ -246,7 +246,7 @@
             
         </div>
     </footer>
-    <script src="profileEdit.js"></script>
+    <script src="js/profile_edit.js"></script>
     </body>
     </html>
   _END;

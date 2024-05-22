@@ -1,8 +1,8 @@
 <?php
   session_start();
-  require_once('functions.php');
+  require_once('../src/functions.php');
 
-  require_once 'above_nav_content.php';
+  require_once '../src/above_nav_content.php';
 
   echo <<<_END
   <section class='clearfix container'>
@@ -56,9 +56,9 @@
           $size = $row['size'];
 
           echo<<<_END
-          <form method="post" action="projectCartPHPForm.php">
+          <form method="post" action="my_cart.php">
           <div class='cart-banner clearfix'>
-            <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
+            <img src="images/img/$prod_img" alt="" class="small-thumbnail">
             <p class="prod-price-panel">R$price</p> 
             <p class="prod-name-panel">$prod_name Size: $size</p>
           </div>
@@ -92,9 +92,9 @@
           $price = $row['price'];
 
           echo<<<_END
-          <form method="post" action="projectCartPHPForm.php">
+          <form method="post" action="my_cart.php">
           <div class='cart-banner clearfix'>
-            <img src="Images/img/$prod_img" alt="" class="small-thumbnail">
+            <img src="images/img/$prod_img" alt="" class="small-thumbnail">
             <p class="prod-price-panel">R$price</p> 
             <p class="prod-name-panel">$prod_name </p>
             <input type="submit" class="cart-checkout button" name="order-action" value="Log Return">

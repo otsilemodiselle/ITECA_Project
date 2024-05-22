@@ -1,5 +1,5 @@
 <?php
-      require_once 'functions.php';
+      require_once '../src/functions.php';
 
       session_start();
 
@@ -69,17 +69,17 @@
             unset($_SESSION['wishlist']);
           }
     
-          header("Location: projectIndexPHPForm.php");
+          header("Location: index.php");
           exit;
         }
         else 
         {
-          header("Location: projectMessagePHPForm.php?msg=loginfail");
+          header("Location: message.php?msg=loginfail");
           exit;
         }
       }
   
-     require_once 'above_nav_content.php';
+     require_once '../src/above_nav_content.php';
 
   echo <<<_END
     
@@ -94,7 +94,7 @@
                                 <h3 class="login-email">Email:</h3><br>
                                 <h3 class="login-password">Password:</h3>
                             </div>
-                          <form method="post" action="projectLoginPHPForm.php">
+                          <form method="post" action="login.php">
                             <div class="login-inputs-div">
                                 <input type="text" name="inputEmail"><br>
                                 <input type="password" name="inputPassword">

@@ -94,13 +94,13 @@
             unset($_SESSION['wishlist']);
           }
 
-      header("Location: projectIndexPHPForm.php");
+      header("Location: ../public/index.php");
       exit;
 
 
     }
     else{
-      header("Location: projectMessagePHPForm.php?msg=signupfail");
+      header("Location: ../public/message.php?msg=signupfail");
       exit;
     }
   }

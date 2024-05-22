@@ -1,7 +1,7 @@
 <?php
-  require_once 'functions.php';
+  require_once '../src/functions.php';
   session_start();
-  require_once 'above_nav_content.php';
+  require_once '../src/above_nav_content.php';
 
   $forename = $_SESSION['forename'];
   $surname = $_SESSION['surname'];
@@ -88,13 +88,13 @@
   switch ($action)
       {
         case 'Edit': 
-          header('location: projectProfileEditPHPForm.php');
+          header('location: profile_edit.php');
           exit;
           break;
         case 'Cancel Order':
           $queryCancelOrder = "DELETE FROM order_ WHERE order_id = $order_id;";
           queryMysql($queryCancelOrder);
-          header('location: projectProfileViewPHPForm.php');
+          header('location: profile_view.php');
           exit;
           break;
         case 'Pay Now':
@@ -120,18 +120,18 @@
             
             
           update_order_status($pdo, $paid_status, $order_id);
-          header('location: projectMessagePHPForm.php?msg=pay');
+          header('location: message.php?msg=pay');
           exit;
           break;
         case 'Order Details':
-          header('location: projectOrderDetailsPHPForm.php');
+          header('location: order_details.php');
           exit;
           break;
       }
   }
 
   echo <<<_END
-  <form method="post" action="projectOrderPHPForm.php">
+  <form method="post" action="order_checkout.php">
   <section class='clearfix container'>
   <div class="section-header">
       <h3 class="cat-heading">Order Checkout</h3>
@@ -183,7 +183,7 @@
         
     </div>
   </footer>
-  <script src="cvvValidation.js"></script>
+  <script src="js/cvv_validation.js"></script>
   </body>
   </html>
   _END;
