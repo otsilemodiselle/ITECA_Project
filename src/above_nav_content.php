@@ -10,7 +10,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <!--<meta http-equiv="refresh" content="3" >-->
           <title>Bride & Joy</title>
-          <link rel="stylesheet" href="../public/css/bride_and_joy.css">
+          <link rel="stylesheet" href="css/bride_and_joy.css">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       </head>
@@ -20,8 +20,8 @@
       </script>
       <header>
       <div class='clearfix' id='top-title-div'>
-          <img src="../public/images/dance burgundy.png" class='title-icon'  alt="">
-          <a class='title-home' href="../public/index.php">Bride & Joy</a>
+          <img src="images/dance burgundy.png" class='title-icon'  alt="">
+          <a class='title-home' href="index.php">Bride & Joy</a>
 
 _END;
 
@@ -83,21 +83,21 @@ _END;
       echo <<<_END
         <ul class='clearfix title-list'>
               <li class='title-options'>                    
-                  <a onclick='Loggoutds()' href="destroy_session.php"  class='title-link'>Sign-Out</a>
+                  <a onclick='Loggoutds()' href="src/destroy_session.php"  class='title-link'>Sign-Out</a>
               </li>
 
               <li class='title-options' class='title-link'>                    
-                  <a href="../public/profile_view.php" class='title-link' class='title-link'>$login_name's Profile</a>
+                  <a href="profile_view.php" class='title-link' class='title-link'>$login_name's Profile</a>
               </li>
 
               <li class='title-options'>                    
-                  <a href="../public/my_wishlist.php" class='title-link'>Wishlist ($wishlist_count)</a>
-                  <img src="../public/images/wishlist.png" class="wishlist_icon">
+                  <a href="my_wishlist.php" class='title-link'>Wishlist ($wishlist_count)</a>
+                  <img src="images/wishlist.png" class="wishlist_icon">
               </li>
 
               <li class='title-options'>                    
-                  <a href="../public/my_cart.php" class='title-link'>Cart ($cart_count)</a>
-                  <img src="../public/images/$cart_icon" class="cart_icon">
+                  <a href="my_cart.php" class='title-link'>Cart ($cart_count)</a>
+                  <img src="images/$cart_icon" class="cart_icon">
               </li>
               
         </ul>
@@ -107,18 +107,18 @@ _END;
       echo <<<_END
         <ul class='clearfix title-list'>
               <li class='title-options'>
-                  <a href="../public/login.php" class='title-link'>Login</a>
+                  <a href="login.php" class='title-link'>Login</a>
               </li>
               <li class='title-options'>
-                  <a  href="../public/sign_up.php" class='title-link'>Sign-up</a>
+                  <a  href="sign_up.php" class='title-link'>Sign-up</a>
               </li>
               <li class='title-options'>
-                  <a href="../public/my_wishlist.php" class='title-link'>Wishlist ($wishlist_count)</a>
-                  <img src="../public/images/wishlist.png" class="wishlist_icon">                    
+                  <a href="my_wishlist.php" class='title-link'>Wishlist ($wishlist_count)</a>
+                  <img src="images/wishlist.png" class="wishlist_icon">                    
               </li>
               <li class='title-options'>
-                  <a href="../public/my_cart.php" class='title-link'>Cart ($cart_count)</a>
-                  <img src="../public/images/$cart_icon" class="cart_icon">
+                  <a href="my_cart.php" class='title-link'>Cart ($cart_count)</a>
+                  <img src="images/$cart_icon" class="cart_icon">
               </li>
         </ul>
     </div>
@@ -130,22 +130,22 @@ _END;
      <nav id='top-nav'>
        <ul class='clearfix nav-list'>
            <li class='nav-options'>
-               <a href="../public/catalogue.php?cat=womens" class='nav-link'>Bridal Gowns</a>
+               <a href="catalogue.php?cat=womens" class='nav-link'>Bridal Gowns</a>
            </li>   
            <li class='nav-options'>
-               <a href="../public/catalogue.php?cat=mens" class='nav-link'>Groom Suits</a>
+               <a href="catalogue.php?cat=mens" class='nav-link'>Groom Suits</a>
            </li>
            <li class='nav-options'>
-               <a href="../public/catalogue.php?cat=girls" class='nav-link'>Flower Girls Outfits</a>
+               <a href="catalogue.php?cat=girls" class='nav-link'>Flower Girls Outfits</a>
            </li>
            <li class='nav-options'>
-               <a href="../public/catalogue.php?cat=boys" class='nav-link'>Ring Bearers Outfits</a>
+               <a href="catalogue.php?cat=boys" class='nav-link'>Ring Bearers Outfits</a>
            </li>
            <li class='nav-options'>
-               <a href="../public/catalogue.php?cat=traditional" class='nav-link'>Traditional</a>
+               <a href="catalogue.php?cat=traditional" class='nav-link'>Traditional</a>
            </li>
            <li class='nav-options'>
-               <a href="../public/catalogue.php?cat=sales" class='nav-link'>On Sale</a>
+               <a href="catalogue.php?cat=sales" class='nav-link'>On Sale</a>
            </li>
        </ul>
      </nav>

@@ -1,5 +1,5 @@
 <?php
-  require_once '../src/functions.php';
+  require_once 'src/functions.php';
 
   session_start();
 
@@ -60,7 +60,7 @@
   $invoiceTotal = 0;
   $itemsCount = 0;
 
-  require_once '../src/above_nav_content.php';
+  require_once 'src/above_nav_content.php';
 
   echo <<<_END
   <section class='clearfix container'>
@@ -175,7 +175,7 @@
     </div>
     </div>
     <div class="clearfix cart-manager">
-    <form method="post" action="checkout.php">
+    <form method="post" action="src/checkout.php">
         <p class="cart-summary">
             $itemsCount Item(s)  Total: R$invoiceTotal
         </p>

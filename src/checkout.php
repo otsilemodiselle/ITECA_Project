@@ -45,7 +45,7 @@
 
       queryMysql($queryEmptyCart);
 
-      header("Location: ../public/order_checkout.php");
+      header("Location: ../order_checkout.php");
       exit;
     }
 
@@ -55,7 +55,7 @@
   else
   {
     // Do some work
-    header("Location: ../public/message.php?msg=anonymous");
+    header("Location: ../message.php?msg=anonymous");
     exit;
   }
 ?>

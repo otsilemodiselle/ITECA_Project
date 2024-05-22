@@ -1,8 +1,8 @@
 <?php
-  require_once '../src/functions.php';
+  require_once 'src/functions.php';
   session_start();
-  require_once '../src/above_nav_content.php';
-  require_once '../src/load_profile_data.php';
+  require_once 'src/above_nav_content.php';
+  require_once 'src/load_profile_data.php';
 
   $customer_id = $_SESSION['customer_id'];
   if (!$card_no==null)

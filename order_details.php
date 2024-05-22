@@ -1,8 +1,8 @@
 <?php
   session_start();
-  require_once('../src/functions.php');
+  require_once('src/functions.php');
 
-  require_once '../src/above_nav_content.php';
+  require_once 'src/above_nav_content.php';
 
   echo <<<_END
   <section class='clearfix container'>
