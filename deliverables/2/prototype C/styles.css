@@ -71,18 +71,16 @@ body {
   background-color: #f6f4f0;
 }
 
-header img {
-  height: 5.2rem;
-}
-
-.main-header--top-row {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #383B3E;
+  margin-bottom: 3.2rem;
 }
 
 .logo-box {
-  padding: 0 3rem 0 3rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
 }
 
 .logo-box a:link,
@@ -98,64 +96,70 @@ header img {
 }
 
 .logo-a,
-.logo-b {
+.logo-b,
+.logo-c {
   color: #383B3E
 }
 
-.logo-c {
-  color: #92727A;
+.searchbar {
+  width: 24.6rem;
+  font-family: inherit;
 }
 
-.searchbox {
-  width: 25.6rem;
-}
 
-.top-row-links-box {
-  padding: 1rem 3rem 1rem 3rem;
-}
 
-.top-row-links-list {
+.category-links-list {
   display: flex;
   list-style: none;
-  gap: 3rem;
-  text-decoration: dashed;
-}
-
-.top-row-links-list li a:link,
-.top-row-links-list li a:visited {
-  text-decoration: none;
-  color: #383B3E;
-}
-
-.top-row-links-list li a:hover,
-.top-row-links-list li a:active {
-  text-decoration: none;
-  color: #383B3E;
-}
-
-.bottom-row-links-list {
-  display: flex;
-  list-style: none;
-  gap: 3rem;
-  text-decoration: dashed;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .main-header--bottom-row{
   margin: auto auto;
 }
 
-.bottom-row-links-list li a:link,
-.bottom-row-links-list li a:visited {
+.category-links-list li a:link,
+.category-links-list li a:visited {
   text-decoration: none;
   color: #383B3E;
 }
 
-.bottom-row-links-list li a:hover,
-.bottom-row-links-list li a:active {
+.category-links-list li a:hover,
+.category-links-list li a:active {
   text-decoration: none;
   color: #383B3E;
 }
 
-.bottom-row-links-list {
+.category-links-list {
   padding: 1rem 3rem 1rem 3rem;
+}
+
+.utility-links-list {
+  padding: 1rem 3rem 1rem 3rem;
+}
+
+.utility-links-list {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  text-decoration: dashed;
+}
+
+.utility-links-list li a:link,
+.utility-links-list li a:visited {
+  text-decoration: none;
+  color: #383B3E;
+}
+
+.utility-links-list li a:hover,
+.utility-links-list li a:active {
+  text-decoration: none;
+  color: #383B3E;
+}
+
+.hero {
+  padding: 0px 9.6rem;
+  display: flex;
+  
 }
