@@ -6,7 +6,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header-styles.css">
+  <link rel="stylesheet" href="main-styles.css">
+  <link rel="stylesheet" href="carousel.css">
   <title>Document</title>
 
 </head>
@@ -43,16 +45,22 @@
       </div>
 
       <div class="search-box">
-        <input class="searchbar" type="text" placeholder="Search your wedding garment here"/>      
+        <input class="searchbar" type="text" placeholder="Search Wedding Garment Here"/>    
+        <button class="btn-search">
+          <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+
+        </button>  
       </div>
 
       <div class="utility-box">
         <ul class="utility-links-list">
           <li>
-            <a class="link-wishlist" href="#">Wishlist</a>
+            <a class="link-wishlist" href="#">Wishlist(0)</a>
           </li>
           <li>
-            <a class="link-cart" href="#">Cart</a>
+            <a class="link-cart" href="#">Cart(0)</a>
           </li>
           <li>
             <a class="link-login" href="#">Login</a>
@@ -61,7 +69,7 @@
             <a class="link-signup" href="#">Sign-up</a>
           </li>
           <li>
-            <a class="link-profile" href="#">My Profile</a>
+            <a class="link-profile" href="#">Profile</a>
           </li>
         </ul>
       </div>
@@ -72,7 +80,93 @@
 
   <main>
     
-   
+    <section class="hero container">
+
+      <a href="#">
+        <div class="container--trad-banner">
+ 
+          <img src="trad_1.png" alt="profile image of bride in traditional wedding dress">    
+
+          <img src="trad_2.png" alt="portrait image of bride in traditional wedding dress">    
+
+          <img src="trad_3.png" alt="portrait image of bride in traditional wedding dress">    
+
+          <!-- <img src="trad_4.png" alt="portrait image of groom in traditional wedding dress">      -->
+        
+          <img src="proudly.webp" alt="shop proudly SA slogan and banner">
+        
+        </div>
+      </a>
+
+      <div class="carousel container">
+        <div class="delivery-box">
+          Free Delivery 
+        </div>
+        <ul class="carousel_track">
+          <li class="carousel_slide current-slide">
+            <a href="#">
+              <img src="carousel_01.webp" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="copy-box">
+        <p class="copy-text">Find your red carpet garment</p>
+      </div>
+
+      <div class='main-carosel'>
+            <div class="carousel">
+                <div class="carousel_container">
+                    <ul class="carousel_track">
+                        <li class="carousel_slide current-slide">
+                            <a href="#">
+                                <img src="carousel_1.webp" alt="" class="carousel_img">
+                            </a>
+                        </li>
+                        <li class="carousel_slide">
+                            <a href="product.php?prod_id=30">
+                                <img src="carousel_2.webp" alt="" class="carousel_img">
+                            </a>
+                        </li>
+                        <li class="carousel_slide">
+                            <a href="product.php?prod_id=13">
+                                <img src="carousel_3.webp" alt="" class="carousel_img">
+                            </a>
+                        </li>
+                        <li class="carousel_slide">
+                            <a href="product.php?prod_id=41">
+                                <img src="carousel_4.webp" alt="" class="carousel_img">
+                            </a>
+                        </li>
+                        <li class="carousel_slide">
+                            <a href="product.php?prod_id=36">
+                                <img src="carousel_5.webp" alt="" class="carousel_img">
+                            </a>
+                        </li>
+                        <li class="carousel_slide">
+                        <a href="product.php?prod_id=9">
+                            <img src="carousel_6.webp" alt="" class="carousel_img">
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel_button carousel_button--left is-hidden">&lt;</button>
+                <button class="carousel_button carousel_button--right">&gt;</button>
+                <div class="carousel_nav">
+                    <button class="carousel_indicator current-slide"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                </div>
+            </div>
+      </div> -->
+
+    </section>
+
   </main>
+
+  <!-- <script src="carousel.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,46 @@
+.container{
+  /* 1140px other convention */
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+main {
+  padding: 3rem 3rem 9.2rem 3rem;
+  flex-direction: column;
+  justify-content: center;
+  z-index: -1;
+  width: 100%;
+  margin-top: 8rem;
+}
+
+.container--trad-banner {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5.2rem;
+}
+
+.container--trad-banner img {
+  height: 15rem;
+}
+
+.carousel {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+}
+
+.delivery-box{
+  background-color: #7D836E;
+  height: 50rem;
+}
+
+.carousel_track {
+  list-style: none;
+}
+
+.carousel_slide img {
+  height: 50rem;
+}
+
