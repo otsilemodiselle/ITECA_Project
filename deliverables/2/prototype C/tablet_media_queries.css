@@ -1,0 +1,48 @@
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 900px) and (max-width: 1200px) {
+
+    nav {
+        padding: 0.4rem 0.8rem ;
+    }
+
+
+    .category-links-list {
+        gap: 1.2rem;
+    }
+
+    .searchbar {
+        width: 12.8rem;
+    }
+
+    .utility-links-list {
+        gap: 1.2rem;
+    }
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 600px) and (max-width: 900px) {
+    
+    nav {
+        
+        padding: 0.8rem 0.4rem;
+    }
+
+    .burger-box{
+        display: block;
+    }
+
+    .btn-burger {
+        width: 3.2rem;
+        border: none;
+    }
+
+    .category-box {
+        display: none;
+    }
+
+    .utility-box {
+        display: none;
+    }
+}

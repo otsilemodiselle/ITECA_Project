@@ -1,0 +1,42 @@
+/* Regular smartphones (portrait) */
+@media (max-width: 600px) {
+    nav {
+        padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    }
+
+    .burger-box{
+        display: block;
+    }
+
+    .btn-burger {
+        width: 2.4rem;
+        border: none;
+    }
+
+    .logo-box span {
+        font-size: 2.4rem;
+    }
+
+    .searchbar {
+        width: 7.4rem;
+    }
+
+    .indicators-list li svg {
+        stroke: #92727A;
+        width: 2.4rem;
+    }
+
+    .indicators-list li span {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    .category-box {
+        display: none;
+    }
+
+    .utility-box {
+        display: none;
+    }
+}
