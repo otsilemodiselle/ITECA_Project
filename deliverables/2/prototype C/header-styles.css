@@ -1,67 +1,3 @@
-/* 
---- 01 TYPOGRAPHY
-
-- FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-- FONT WEIGHTS
-
-Default: 400
-Medium: 500
-Semi-bold: 600
-Bold: 700
-
-- LINE HEIGHTS
-
-Defaults: 1
-Small: 1.05
-Medium: 1.2
-Paragraph Default: 1.6
-Large: 1.8
-
---- 02 COLORS
-
-- PRIMARY: 
-
-https://maketintsandshades.com/
-
-- TINTS: 
-- SHADES: 
-- GREYS: 
---- 03 ICONS
-
---- 04 IMAGES
-
-- FACES: UI Faces
-- OTHERS: Unsplash
-
---- 05 SHADOWS
-
- 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
-
---- 06 BORDER-RADIUS
-
-Default: 9px
-Medium: 11px
-
---- 07 WHITESPACE
-
-- SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-*/
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  /* font-size: 10px; */
-  font-size: 62.5%;
-}
-
 body {
   font-family: "Inria Serif", serif;
   line-height: 1;
@@ -89,16 +25,20 @@ nav {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.9);
-  padding: 1.5rem 3rem 1.5rem 3rem;
+  padding: 1.6rem 3rem 1.6rem 3rem;
+}
+
+.burger-box {
+  display: none;
 }
 
 .logo-box {
-  
+  padding: 0 0.4rem
 }
 
 .logo-box a:link,
 .logo-box a:visited {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   text-decoration: none;
 }
 
@@ -111,16 +51,20 @@ nav {
 .logo-a,
 .logo-b,
 .logo-c {
-  color: #383B3E
+  color: #383B3E;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.4rem;
 }
 
 .search-box {
   display: flex;
   align-items: center;
+  padding: 0 0.4rem;
 }
 
 .searchbar {
-  width: 24.6rem;
+  width: 25.6rem;
   font-family: inherit;
   border: none;
   padding: 0.5rem;
@@ -148,10 +92,53 @@ nav {
   padding: 0;
 }
 
+.indicators-list {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.indicators-list li {
+  list-style: none;
+}
+
+.indicators-list li a:link,
+.indicators-list li a:visited {
+  text-decoration: none;
+}
+
+.indicators-list li a:hover,
+.indicators-list li a:active {
+  text-decoration: none;
+}
+
+.indicators-list li a {
+  display: flex;
+  align-items: end;
+}
+
+.indicators-list li svg {
+  stroke: #92727A;
+  width: 3.6rem;
+}
+
+.indicators-list li span {
+  display: flex;
+  text-decoration: double;
+  font-size: 1.2rem;
+  color: #f6f4f0;
+  background-color: red;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-left: -1rem;
+}
+
 .category-links-list {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.4rem;
   justify-content: center;
 }
 
@@ -174,7 +161,7 @@ nav {
 .utility-links-list {
   display: flex;
   list-style: none;
-  gap: 3rem;
+  gap: 2.4rem;
   text-decoration: dashed;
 }
 
@@ -186,6 +173,34 @@ nav {
 
 .utility-links-list li a:hover,
 .utility-links-list li a:active {
+  text-decoration: none;
+  color: #383B3E;
+}
+
+.sub-menu {
+  
+  display: none;
+}
+
+.sub-menu.visible {
+  display: block;
+  width: 100%;
+}
+
+.sub-menu li {
+  padding: 0.4rem;
+  border-bottom: 0.1rem solid #383B3E;
+  transition: 0.4s;
+}
+
+.sub-menu-links-list li a:link,
+.sub-menu-links-list li a:visited {
+  text-decoration: none;
+  color: #383B3E;
+}
+
+.sub-menu-links-list li a:hover,
+.sub-menu-links-list li a:active {
   text-decoration: none;
   color: #383B3E;
 }

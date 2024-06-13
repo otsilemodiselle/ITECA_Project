@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- <meta http-equiv="refresh" content="5"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="universal.css">
   <link rel="stylesheet" href="header-styles.css">
   <link rel="stylesheet" href="main-styles.css">
   <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="tablet_media_queries.css">
+  <link rel="stylesheet" href="phone_media_queries.css">
   <title>Document</title>
 
 </head>
@@ -18,13 +22,24 @@
   <header>
 
     <nav>
+      <div class="burger-box">
+        <button class="btn-burger">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg> 
+        </button>
+
+      </div>
 
       <div class="logo-box">
         <a href="index.html">
-          <span class="logo-a">Bride</span><span class="logo-b">&</span><span class="logo-c">Joy</span>
+          <span class="logo-a">Bride</span>
+          <span class="logo-b">&</span>
+          <span class="logo-c">Joy</span>
         </a>
       </div>
 
+    
       <div class="category-box">
 
         <ul class="category-links-list">
@@ -45,7 +60,7 @@
       </div>
 
       <div class="search-box">
-        <input class="searchbar" type="text" placeholder="Search Wedding Garment Here"/>    
+        <input class="searchbar" type="text" placeholder="Search "/>    
         <button class="btn-search">
           <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
@@ -54,14 +69,36 @@
         </button>  
       </div>
 
+      <div class="indicators-box">
+        <ul class="indicators-list">
+          <li>
+            <a href="#">
+              <svg class="icon-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+              </svg>
+              <span class="cart-counter">00</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg class="icon-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+
+              <span class="wishlist-counter">00</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <div class="utility-box">
         <ul class="utility-links-list">
-          <li>
+          <!-- <li>
             <a class="link-wishlist" href="#">Wishlist(0)</a>
           </li>
           <li>
             <a class="link-cart" href="#">Cart(0)</a>
-          </li>
+          </li> -->
           <li>
             <a class="link-login" href="#">Login</a>
           </li>
@@ -75,6 +112,39 @@
       </div>
 
     </nav>
+    <div class="sub-menu">
+
+      <ul class="sub-menu-links-list">
+        <li>
+          <a class="link-womens" href="#">Womens</a>
+        </li>
+        <li>
+          <a class="link-mens" href="#">Mens</a>
+        </li>
+        <li>
+          <a class="link-girls" href="#">Girls</a>
+        </li>
+        <li>
+          <a class="link-boys" href="#">Boys</a>
+        </li>
+        <!-- <li>
+          <a class="link-wishlist" href="#">Wishlist(0)</a>
+        </li>
+        <li>
+          <a class="link-cart" href="#">Cart(0)</a>
+        </li> -->
+        <li>
+          <a class="link-login" href="#">Login</a>
+        </li>
+        <li>
+          <a class="link-signup" href="#">Sign-up</a>
+        </li>
+        <li>
+          <a class="link-profile" href="#">Profile</a>
+        </li>
+      </ul>
+
+    </div>
 
   </header>
 
@@ -84,17 +154,17 @@
 
       <a href="#">
         <div class="container--trad-banner">
+
+          <img src="proudly." alt="shop proudly SA slogan and banner">
  
-          <img src="trad_1.png" alt="profile image of bride in traditional wedding dress">    
+          <img src="trad_1." alt="profile image of bride in traditional wedding dress">    
 
-          <img src="trad_2.png" alt="portrait image of bride in traditional wedding dress">    
+          <img src="trad_2." alt="portrait image of bride in traditional wedding dress">    
 
-          <img src="trad_3.png" alt="portrait image of bride in traditional wedding dress">    
+          <img src="trad_3." alt="portrait image of bride in traditional wedding dress">    
 
           <!-- <img src="trad_4.png" alt="portrait image of groom in traditional wedding dress">      -->
-        
-          <img src="proudly.webp" alt="shop proudly SA slogan and banner">
-        
+          
         </div>
       </a>
 
@@ -103,11 +173,11 @@
           Free Delivery 
         </div>
         <ul class="carousel_track">
-          <li class="carousel_slide current-slide">
+          <liclass="carousel_slide current-slide">
             <a href="#">
-              <img src="carousel_01.webp" alt="">
+              <img class="" src="carousel_01." alt="">
             </a>
-          </li>
+          </liclass=>
         </ul>
       </div>
       <!-- <div class="copy-box">
@@ -118,36 +188,36 @@
             <div class="carousel">
                 <div class="carousel_container">
                     <ul class="carousel_track">
-                        <li class="carousel_slide current-slide">
+                        <liclass="carousel_slide current-slide">
                             <a href="#">
                                 <img src="carousel_1.webp" alt="" class="carousel_img">
                             </a>
-                        </li>
-                        <li class="carousel_slide">
+                        </liclass=>
+                        <liclass="carousel_slide">
                             <a href="product.php?prod_id=30">
                                 <img src="carousel_2.webp" alt="" class="carousel_img">
                             </a>
-                        </li>
-                        <li class="carousel_slide">
+                        </liclass=>
+                        <liclass="carousel_slide">
                             <a href="product.php?prod_id=13">
                                 <img src="carousel_3.webp" alt="" class="carousel_img">
                             </a>
-                        </li>
-                        <li class="carousel_slide">
+                        </liclass=>
+                        <liclass="carousel_slide">
                             <a href="product.php?prod_id=41">
                                 <img src="carousel_4.webp" alt="" class="carousel_img">
                             </a>
-                        </li>
-                        <li class="carousel_slide">
+                        </liclass=>
+                        <liclass="carousel_slide">
                             <a href="product.php?prod_id=36">
                                 <img src="carousel_5.webp" alt="" class="carousel_img">
                             </a>
-                        </li>
-                        <li class="carousel_slide">
+                        </liclass=>
+                        <liclass="carousel_slide">
                         <a href="product.php?prod_id=9">
                             <img src="carousel_6.webp" alt="" class="carousel_img">
                         </a>
-                        </li>
+                        </liclass=>
                     </ul>
                 </div>
                 <button class="carousel_button carousel_button--left is-hidden">&lt;</button>
@@ -167,6 +237,6 @@
 
   </main>
 
-  <!-- <script src="carousel.js"></script> -->
+  <script src="sub_menu.js"></script>
 </body>
 </html>
