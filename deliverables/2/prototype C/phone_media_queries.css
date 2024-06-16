@@ -211,6 +211,10 @@
         align-self: center;
     }
 
+    .login-modal-content {
+        width: 90%;
+    }
+
     footer nav {
         display: flex;
         flex-direction: column;
