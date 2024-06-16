@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="header-styles.css">
   <link rel="stylesheet" href="main-styles.css">
   <link rel="stylesheet" href="footer-styles.css">
+  <link rel="stylesheet" href="login_modal.css">
+  <link rel="stylesheet" href="signup_modal.css">
   <link rel="stylesheet" href="carousel.css">
   <link rel="stylesheet" href="tablet_media_queries.css">
   <link rel="stylesheet" href="phone_media_queries.css">
@@ -101,10 +103,10 @@
             <a class="link-cart" href="#">Cart(0)</a>
           </li> -->
           <li>
-            <a class="link-login" href="#">Login</a>
+            <a class="link-login" id="open-login-modal" href="#">Login</a>
           </li>
           <li>
-            <a class="link-signup" href="#">Sign-up</a>
+            <a class="link-signup" id="open-signup-modal" href="#">Sign-up</a>
           </li>
           <li>
             <a class="link-profile" href="#">Profile</a>
@@ -135,10 +137,10 @@
           <a class="link-cart" href="#">Cart(0)</a>
         </li> -->
         <li>
-          <a class="link-login" href="#">Login</a>
+          <a class="link-login" id="open-login-modal-sub" href="#">Login</a>
         </li>
         <li>
-          <a class="link-signup" href="#">Sign-up</a>
+          <a class="link-signup" id="open-signup-modal-sub" href="#">Sign-up</a>
         </li>
         <li>
           <a class="link-profile" href="#">Profile</a>
@@ -563,6 +565,68 @@
 
     </section>
 
+    <section class="section-components">
+      
+      <div id="login-modal" class="modal">
+        <div class="login-modal-content" >
+          
+          <span class="close-login">&times;</span>
+          
+          
+          <div class="login-logo">
+            <span class="logo-a">Bride</span>
+            <span class="logo-b">&</span>
+            <span class="logo-c">Joy</span>
+          </div>
+          <p class="login-slogan">Find your red carpet garment.</p>
+          
+          <div class="login-underline"></div>
+          <h3 class="login-heading">Login</h3>
+          <p class="login-instruction">Enter your email address and password to log in to your account.</p>
+            
+          <label for="login-email-box" class="login-label-email">Email</label>
+          <input type="text" id="login-email-box" placeholder="me@example.com" required/>
+          <label for="login-password-box" class="login-label-password">Password</label>
+          <input type="password" id="login-password-box" required>
+            
+          <a href="" class="btn-submit-login">Login</a>
+          
+        </div>
+      </div>
+
+      <div id="signup-modal" class="modal">
+        <div class="signup-modal-content" >
+          
+          <span class="close-signup">&times;</span>
+          
+          
+          <div class="signup-logo">
+            <span class="logo-a">Bride</span>
+            <span class="logo-b">&</span>
+            <span class="logo-c">Joy</span>
+          </div>
+          <p class="signup-slogan">Find your red carpet garment.</p>
+          
+          <div class="signup-underline"></div>
+          <h3 class="signup-heading">sign-up</h3>
+          <p class="signup-instruction">Planning for a big day? Sign up</p>
+            
+          <label for="signup-email-box" class="signup-label-email">Email</label>
+          <input type="text" id="signup-email-box" placeholder="me@example.com" required/>
+          <label for="signup-password-box" class="signup-label-password">Password</label>
+          <input type="password" id="signup-password-box" required>
+          <label for="signup-name-box" class="signup-label-name">First Name</label>
+          <input type="text" id="signup-name-box" required/>
+          <label for="signup-surname-box" class="signup-label-surname">Last Name</label>
+          <input type="text" id="signup-surname-box" required/> 
+            
+          <a href="" class="btn-submit-signup">Login</a>
+          
+        </div>
+      </div>
+
+    </section>
+
   </main>
 
   <footer>
@@ -627,5 +691,7 @@
   <script src="sub_menu.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+  <script src="login_modal.js"></script>
+  <script src="signup_modal.js"></script>
 </body>
 </html>
