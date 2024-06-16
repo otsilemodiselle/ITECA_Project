@@ -4,53 +4,346 @@ img {
 
 .container{
   /* 1140px other convention */
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
-  padding: 1.5rem 3rem 1.5rem 3rem;
+  /* padding: 3rem; */
+  border: 0.1rem solid black;
 }
 
 main {
-  padding: 3rem 3rem 9.2rem 3rem;
+  padding: 3rem;
   flex-direction: column;
   justify-content: center;
-  z-index: -1;
-  width: 100%;
-  margin-top: 8rem;
+  /* z-index: -1; */
+  margin-top: 14rem;
 }
 
-.container--trad-banner {
-  display: flex; 
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5.2rem;
-  gap: 0.5rem;
+.section-categories {
+  margin-bottom: 12rem;
 }
 
-.container--trad-banner img {
-  height: 15rem;
-}
-
-.carousel {
+.categories {
   display: flex;
-  gap: 1.8rem;
+  gap: 1.2rem;
+}
+
+.categories a:hover,
+.categories a:active {
+  transform: scale(1.3);
+  overflow: hidden;
+}
+
+.figure-categories {
+  position: relative;
+  /* border: 0.1rem solid black; */
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.figure-categories::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.figure-categories img {
+  width: 100%;
+  display: block;
+  transform: scale(1.2);
+}
+
+.figure-categories figcaption {
+  position: absolute;
+  bottom: 2rem;
+  text-decoration: none;
+  text-align: center;
+  color: #f6f4f0;
+  font-size: 3rem;
+  z-index: 2;
+}
+
+.section-traditional {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 9rem;
+}
+
+.banner-traditional {
+  align-items: center;
+  border: 0.4rem solid black;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  background-image: url("proudly\ large.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  font-size: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  padding: 3.2rem 1.2rem 3.2rem 1.2rem;
+}
+
+
+
+.mini-catalog-traditional {
+  /* display: grid;
+  column-gap: 1.4rem;
+  justify-content: start; */
+ 
+}
+
+.mini-catalog-traditional a:link,
+.mini-catalog-traditional a:visited {
+  text-decoration: none;
+  color: #383B3E;
+}
+
+/* .mini-catalog-traditional a {
+  display: block;
+} */
+
+.shopping-card {
+  position: relative;
+}
+
+.shopping-card-photoframe {
+  overflow: hidden;
+  width: 16.8rem;
+  height: 25.6rem;
+  position: relative;
+}
+
+.shopping-card img {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.shopping-card img:hover {
+  height: 150%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  /* transform: scale(1.2); */
+}
+
+.shopping-card-details {
+  width: 16.8rem;
+  font-size: 1.4rem;
+  padding: 0.4rem 0;
+}
+
+
+.shopping-card-price  {
+  width: 16.8rem;
+  font-size: 1.8rem;
+  padding: 0.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopping-card button {
+  border: none;
+  background-color: #f6f4f0;
+}
+
+.shopping-card button:hover {
+  cursor: pointer;
+}
+
+.shopping-card svg {
+  width: 2.4rem;
+  stroke: #92727a;
+  stroke-width: 0.2rem;
+}
+
+.shop-more {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.delivery-box{
-  background-color: #7D836E;
-  height: 100rem;
-  border: 0.1rem solid red;
+.btn-shop-more:link,
+.btn-shop-more:visited {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background-color: #7d836e;
+  color: #f6f4f0 !important;
+  /* border: 0.1rem solid black; */
+  padding: 0.8rem 1.6rem;
 }
 
-.carousel_track {
-  list-style: none;
-  border: 0.1rem solid purple;
+.btn-shop-more:hover,
+.btn-shop-more:active {
+  background-color: #646958;
 }
 
-.carousel_slide img {
-  height: 50rem;
+.section-sales {
+  margin-bottom: 9rem;
 }
+
+.section-sales a:link,
+.section-sales a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mid-end {
+    grid-column: 5 /-1;
+}
+
+.on-sale::after {
+  content: "SALE!";
+  font-size: 1.6rem;
+  background-color: #ece55f;
+  color: red;
+  padding: 0.2rem 1.6rem;
+  position: absolute;
+  top: -2%;
+  left: -2%;
+}
+
+.figure-sales {
+  overflow: hidden;
+  position: relative;
+}
+
+.figure-sales::after {
+  content: "See What's On Sale!";
+  text-transform: uppercase;
+  font-size: 3rem;
+  background-color: #ece55f;
+  color: red;
+  padding: 1.6rem 12.8rem;
+  position: absolute;
+  top: 17%;
+  left: -29%;
+  transform: rotate(-45deg);
+}
+
+.figure-sales a:link,
+.figure-sales a:visited {
+  text-decoration: none;
+}
+
+
+.figure-sales a:hover {
+  transform: scale(1.2);
+}
+
+.figure-sales img {
+  transform: scaleX(-1);
+  width: 100%;
+}
+
+.section-empire {
+  margin-bottom: 9rem;
+}
+
+.mini-catalog-empire {
+  /* display: grid; */
+}
+
+.start-mid {
+  grid-column: 1 / 4;
+}
+
+.figure-empire {
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.figure-empire img {
+  width: 100%;
+  height: 150%;
+  overflow: hidden;
+  transform: scale(1.4);
+}
+
+.figure-empire img:hover {
+  transform: scale(1.6);
+}
+
+/* .figure-empire::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  z-index: 1;
+  pointer-events: none;
+} */
+
+.figure-empire figcaption {
+  color: #f6f4f0;
+  font-size: 4.4rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 2.4rem;
+  margin: 2rem;
+}
+
+.section-empire a:link,
+.section-empire a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-euro-suits {
+  margin-bottom: 12rem;
+}
+
+.section-euro-suits a:link,
+.section-euro-suits a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.figure-euro-suits {
+  position: relative;
+}
+
+.figure-euro-suits img {
+  transform: scaleX(-1);
+  width: 100%;
+}
+
+.figure-euro-suits figcaption {
+  position: absolute;
+  color: #f6f4f0;
+  font-size: 4.4rem;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  width: 8rem;
+  top: 0;
+  right: 0;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+
+
+
 
 
 
