@@ -23,7 +23,7 @@
     row-gap: 1.6rem;
     column-gap: 1.4rem;
     align-items: start;
-    justify-content: center;
+    justify-content: end;
   }
 
   .grid--2-cols {
