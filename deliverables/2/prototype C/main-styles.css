@@ -25,9 +25,13 @@ main {
   gap: 1.2rem;
 }
 
-.categories a:hover,
-.categories a:active {
-  transform: scale(1.3);
+.categories img {
+  transition: all 0.4s;
+}
+
+.categories img:hover,
+.categories img:active {
+  transform: scale(1.5);
   overflow: hidden;
 }
 
@@ -54,6 +58,7 @@ main {
   width: 100%;
   display: block;
   transform: scale(1.2);
+  transition: all 0.4s;
 }
 
 .figure-categories figcaption {
@@ -71,7 +76,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 9rem;
+  margin-bottom: 12rem;
 }
 
 .banner-traditional {
@@ -90,15 +95,6 @@ main {
   justify-content: center;
   font-weight: 700;
   padding: 3.2rem 1.2rem 3.2rem 1.2rem;
-}
-
-
-
-.mini-catalog-traditional {
-  /* display: grid;
-  column-gap: 1.4rem;
-  justify-content: start; */
- 
 }
 
 .mini-catalog-traditional a:link,
@@ -128,6 +124,7 @@ main {
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+  transition: all 2s;
 }
 
 .shopping-card img:hover {
@@ -193,7 +190,7 @@ main {
 }
 
 .section-sales {
-  margin-bottom: 9rem;
+  margin-bottom: 12rem;
 }
 
 .section-sales a:link,
@@ -243,6 +240,7 @@ main {
 
 .figure-sales a:hover {
   transform: scale(1.2);
+  transition: all 2s;
 }
 
 .figure-sales img {
@@ -251,11 +249,7 @@ main {
 }
 
 .section-empire {
-  margin-bottom: 9rem;
-}
-
-.mini-catalog-empire {
-  /* display: grid; */
+  margin-bottom: 12rem;
 }
 
 .start-mid {
@@ -277,6 +271,7 @@ main {
 
 .figure-empire img:hover {
   transform: scale(1.6);
+  transition: all 2s;
 }
 
 /* .figure-empire::before {
@@ -320,6 +315,14 @@ main {
 
 .figure-euro-suits {
   position: relative;
+  overflow: hidden;
+}
+
+
+
+.figure-euro-suits a:hover {
+  transform: scale(1.2);
+  transition: all 2s;
 }
 
 .figure-euro-suits img {
