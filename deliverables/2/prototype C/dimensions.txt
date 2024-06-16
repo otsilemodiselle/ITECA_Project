@@ -25,15 +25,16 @@ Large: 1.8
 
 https://maketintsandshades.com/
 
-- TINTS: 
-- SHADES: 
-- GREYS: 
+- TINTS: #f6f4f0 #92727a #7d836e #383B3E #ece55f
+- SHADES: #ced4da #646958
+- GREYS: #383B3E #343a40 #495057 #212529
 --- 03 ICONS
 
 --- 04 IMAGES
 
 - FACES: UI Faces
 - OTHERS: Unsplash
+- CLOTHES MODELS: Midjourney
 
 --- 05 SHADOWS
 
@@ -47,6 +48,6 @@ Medium: 11px
 --- 07 WHITESPACE
 
 - SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 / 25
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 / 168 / 256 / 300/ 500
 
 */
