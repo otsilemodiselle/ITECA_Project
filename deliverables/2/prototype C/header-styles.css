@@ -15,7 +15,7 @@ header {
   top: 0;
   right: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 1000;
   margin-bottom: 3.2rem;
   background-color: #f6f4f0;
 }
@@ -24,7 +24,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.9);
   padding: 1.6rem 3rem 1.6rem 3rem;
 }
 
@@ -38,23 +38,43 @@ nav {
 
 .logo-box a:link,
 .logo-box a:visited {
-  font-size: 3.2rem;
   text-decoration: none;
 }
 
 .logo-box a:hover,
 .logo-box a:active {
-  font-size: 3.6rem;
   text-decoration: none;
 }
 
 .logo-a,
 .logo-b,
 .logo-c {
+  font-size: 4.4rem;
   color: #383B3E;
   margin: 0;
   padding: 0;
   letter-spacing: -0.4rem;
+}
+
+.category-links-list {
+  display: flex;
+  list-style: none;
+  gap: 2.4rem;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.category-links-list li a:link,
+.category-links-list li a:visited {
+  text-decoration: none;
+  color: #383B3E;
+}
+
+.category-links-list li a:hover,
+.category-links-list li a:active {
+  border-bottom: 0.1rem solid #495057;
+  color: #495057;
 }
 
 .search-box {
@@ -78,6 +98,10 @@ nav {
   color: #f6f4f0;
 }
 
+.searchbar:focus {
+  outline: none;
+}
+
 .btn-search {
   padding: 0.5rem;
 
@@ -88,7 +112,7 @@ nav {
 .icon-search {
   stroke:#f6f4f0;
   height: 1.7rem;
-  width: 1.7em;
+  width: 1.7rem;
   padding: 0;
 }
 
@@ -135,34 +159,14 @@ nav {
   margin-left: -1rem;
 }
 
-.category-links-list {
-  display: flex;
-  list-style: none;
-  gap: 2.4rem;
-  justify-content: center;
-}
-
-.main-header--bottom-row{
-  margin: auto auto;
-}
-
-.category-links-list li a:link,
-.category-links-list li a:visited {
-  text-decoration: none;
-  color: #383B3E;
-}
-
-.category-links-list li a:hover,
-.category-links-list li a:active {
-  text-decoration: none;
-  color: #383B3E;
-}
 
 .utility-links-list {
   display: flex;
   list-style: none;
   gap: 2.4rem;
   text-decoration: dashed;
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 .utility-links-list li a:link,
@@ -173,24 +177,25 @@ nav {
 
 .utility-links-list li a:hover,
 .utility-links-list li a:active {
-  text-decoration: none;
-  color: #383B3E;
+  border-bottom: 0.1rem solid #495057;
+  color: #495057;
 }
 
 .sub-menu {
-  
   display: none;
+  transform: translate(-100%);
+  transition: transform 1s ease-in-out;
 }
 
 .sub-menu.visible {
   display: block;
   width: 100%;
+  transform: translate(0);
 }
 
 .sub-menu li {
   padding: 0.4rem;
   border-bottom: 0.1rem solid #383B3E;
-  transition: 0.4s;
 }
 
 .sub-menu-links-list li a:link,
@@ -204,4 +209,6 @@ nav {
   text-decoration: none;
   color: #383B3E;
 }
+
+
 
