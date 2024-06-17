@@ -10,8 +10,11 @@
     font-size: 62.5%;
   }
   
-  a {
+  a:link,
+  a:visited {
     display: block;
+    text-decoration: none;
+    color: inherit;
   }
 
   button {
@@ -22,8 +25,8 @@
     display: grid;
     row-gap: 1.6rem;
     column-gap: 1.4rem;
-    align-items: start;
-    justify-content: end;
+    align-items: center;
+    justify-content: center;
   }
 
   .grid--2-cols {

@@ -25,9 +25,9 @@ Large: 1.8
 
 https://maketintsandshades.com/
 
-- TINTS: #f6f4f0 #92727a #7d836e #383B3E #ece55f
-- SHADES: #ced4da #665055 #646958
-- GREYS: #383B3E #343a40 #495057 #212529
+- TINTS: #f6f4f0 #92727a #7d836e #ff0000 #383B3E #ece55f
+- SHADES: #ced4da #665055 #646958 #b30000
+- GREYS: #b6b9bc #383B3E #343a40 #495057 #212529
 --- 03 ICONS
 
 --- 04 IMAGES
