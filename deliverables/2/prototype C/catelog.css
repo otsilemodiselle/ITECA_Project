@@ -1,0 +1,32 @@
+.catelog-utility-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.8rem;
+  border: 0.1rem solid #b6b9bc;
+  margin-bottom: 0.8rem;
+}
+
+#sort-options {
+  border: 0.1rem solid #b6b9bc;
+  padding: 0.8rem;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  text-align: center;
+}
+
+.catelog-list {
+  border: 0.1rem solid #b6b9bc;
+  padding: 1.2rem;
+  display: grid;
+  /* grid-template-columns: auto auto auto auto auto auto auto; */
+  grid-template-columns: repeat(7, auto);
+  justify-content: space-between;
+  margin-bottom: 13rem;
+}
+
+.catelog-list a:link,
+.catelog-list a:visited {
+  color: inherit;
+  text-decoration: none;
+}
