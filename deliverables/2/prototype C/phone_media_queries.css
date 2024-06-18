@@ -250,6 +250,10 @@
         flex-direction: column;
     }
 
+    .cart-order-summary {
+        margin-bottom: 1.8rem;
+    }
+
     .cart-items-container {
         width: 100%; 
     }
