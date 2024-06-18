@@ -14,7 +14,9 @@
 .cart-order-summary {
     border: 0.1rem solid #b6b9bc;
     padding: 2rem;
-    margin-bottom: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cart-order-summary h3 {
@@ -22,13 +24,10 @@
     margin-bottom: 1.2rem;
 }
 
-.cart-order-summary div {
-    display: flex;
-}
-
 .cart-order-summary table {
     width: 100%;
     border-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .cart-order-summary table td {
@@ -44,7 +43,17 @@
     border-bottom:  0.2rem solid #b6b9bc;
 }
 
-
+.btn-checkout {
+    background-color: #7d836e;
+    color: #f6f4f0;
+    /* padding: 0.4rem 3rem; */
+    text-align: center;
+    font-family: arial;
+    border: none;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 1.2rem;
+}
 
 .cart-items-container {
    width: 60%; 
