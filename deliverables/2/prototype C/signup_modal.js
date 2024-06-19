@@ -1,20 +1,20 @@
 var signupModal = document.getElementById("signup-modal");
 
-var btn = document.getElementById("open-signup-modal");
+var signupBtn = document.getElementById("open-signup-modal");
 
-var btn2 = document.getElementById("open-signup-modal-sub")
+var signupBtn2 = document.getElementById("open-signup-modal-sub")
 
-var span = document.getElementsByClassName("close-signup")[0];
+var closeSignupSpan = document.getElementsByClassName("close-signup")[0];
 
-btn.onclick = function() {
+signupBtn.onclick = function() {
   signupModal.style.display = "block";
 }
 
-btn2.onclick = function() {
+signupBtn2.onclick = function() {
   signupModal.style.display = "block";
 }
 
-span.onclick = function() {
+closeSignupSpan.onclick = function() {
   signupModal.style.display = "none";
 }
 
