@@ -1,0 +1,148 @@
+.address-modal-content {
+  background-color: #f6f4f0;
+  margin: 1% auto;
+  padding: 5rem;
+  border: 0.1rem solid #343a40;
+  width: 40%;
+  height: 100%;
+  display: grid;
+  grid-template-columns:  repeat(2, auto);
+  grid-template-rows: auto auto auto auto;
+  row-gap: 1.4rem;
+  column-gap: 1.4rem;
+  align-items: center;
+}
+
+.close-address {
+  color: #212529;
+  font-size: 5.2rem;
+  font-weight: bold;
+  font-weight: bold;
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  justify-self: end;
+  cursor: pointer;
+}
+
+.address-modal-header {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+.lbl-contact {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;  
+}
+
+#edit-contact-box {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  padding: 0.4rem 1.2rem;
+  color: #f6f4f0;
+}
+
+.lbl-street {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;  
+}
+
+#edit-street-box {
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  padding: 0.4rem 1.2rem;
+  color: #f6f4f0;
+}
+
+.lbl-suburb {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;  
+}
+
+#edit-suburb-box {
+  grid-column: 2 / 4;
+  grid-row: 5 / 6;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  padding: 0.4rem 1.2rem;
+  color: #f6f4f0;
+}
+
+.lbl-province {
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;  
+}
+
+#province-select-box {
+  grid-column: 2 / 4;
+  grid-row: 6 / 7;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  padding: 0.4rem 1.2rem;
+  color: #f6f4f0;
+}
+
+.lbl-city {
+  grid-column: 1 / 2;
+  grid-row: 7 / 8;  
+}
+
+#edit-city-box {
+  grid-column: 2 / 4;
+  grid-row: 7 / 8;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  padding: 0.4rem 1.2rem;
+  color: #f6f4f0;
+}
+
+.lbl-postal {
+  grid-column: 1 / 2;
+  grid-row: 8 / 9;  
+}
+
+#edit-postal-box {
+  grid-column: 2 / 3;
+  grid-row: 8 / 9;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  padding: 0.4rem 1.2rem;
+  color: #f6f4f0;
+}
+
+.btn-save-address {
+  grid-column: 1 / 4;
+  grid-row: 9 / 10;
+  justify-self: center;
+  background-color: #92727a;
+  padding: 0.8rem 10rem;
+  color: #f6f4f0;
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+  border: none;
+  margin-top: 3rem;
+}
+
+
+
+
+
+

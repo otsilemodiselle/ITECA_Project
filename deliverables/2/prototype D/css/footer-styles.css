@@ -1,0 +1,58 @@
+footer {
+  box-shadow: none !important;
+  width: 100%;
+}
+
+footer nav {
+  display: grid;
+  row-gap: 1.6rem;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5rem;
+  padding-top: 6.4rem;
+}
+
+footer nav div a,
+footer nav div p {
+  margin-bottom: 0.8rem;
+}
+
+footer nav div a:link,
+footer nav div a:visited {
+  text-decoration: none;
+  color: #343a40;
+}
+
+.footer-header {
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #212529;
+  margin-bottom: 2rem;
+}
+
+.footer-socials-box {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.payment-methods-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 3rem;
+}
+
+.logo-payment {
+  /* filter: brightness(80%); */
+  /* opacity: 50%; */
+  background-color: #f6f4f0;
+  height: 1.6rem;
+} 
+
+.logo-visa {
+  background-color: black;
+}
+
+

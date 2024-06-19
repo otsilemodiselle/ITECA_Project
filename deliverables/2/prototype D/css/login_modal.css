@@ -1,0 +1,153 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.login-modal-content {
+  background-color: #f6f4f0;
+  margin: 1% auto;
+  padding: 5rem;
+  border: 0.1rem solid #343a40;
+  width: 40%;
+  height: 90%;
+  display: grid;
+  grid-template-columns:  auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  row-gap: 1.4rem;
+  column-gap: 1.4rem;
+}
+
+
+.close-login {
+  color: #212529;
+  font-size: 5.2rem;
+  font-weight: bold;
+  grid-column: 5 / -1;
+  grid-row: 1 / 1;
+  justify-self: end;
+  cursor: pointer;
+}
+
+.login-logo {
+  font-size: 2rem;
+  grid-column: 1 / -1;
+  grid-row: 2 / 2;
+  justify-self: center;
+}
+
+.login-slogan {
+  grid-column: 1 / -1;
+  grid-row: 3 / 3;
+  justify-self: center;
+  font-size: 1.2rem;
+}
+
+.login-underline {
+  border-bottom: 0.1rem solid #495057;
+  grid-column: 1 / -1;
+  grid-row: 4 / 4;
+}
+
+.login-heading {
+  grid-column: 1 / -1;
+  grid-row: 5 / 5;
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+.login-instruction {
+  grid-column: 1 / -1;
+  grid-row: 6 / 6;
+  justify-self: center;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.login-label-email {
+  grid-column: 1 / 2;
+  grid-row: 7 / 7;
+}
+
+#login-email-box {
+  grid-column: 1 / -1;
+  grid-row: 8 / 8;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  padding: 0.4rem 1.2rem;
+}
+
+#login-email-box:focus {
+  border: none;
+}
+
+#login-email-box::placeholder {
+  color: #f6f4f0;
+}
+
+.login-label-password {
+  grid-column: 1 / 2;
+  grid-row: 9 / 9;
+}
+
+#login-password-box{
+  grid-column: 1 / -1;
+  grid-row: 10 / 10;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  padding: 0.4rem 1.2rem;
+}
+
+#login-password-box:focus {
+  border: none;
+}
+
+.btn-submit-login:link,
+.btn-submit-login:visited {
+  grid-column: 1 / -1;
+  grid-row: 11 / 11;
+  justify-self: center;
+  background-color: #92727a;
+  padding: 0.8rem 4.8rem;
+  color: #f6f4f0;
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.btn-submit-login:hover,
+.btn-submit-login:active {
+  background-color: #665055;
+}
+
+.login-signup-redirect:link,
+.login-signu-redirect:visited {
+  grid-column: 1 / -1;
+  grid-row: 12 / 12;
+  justify-self: center;
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  border-bottom: 0.1rem solid currentColor;
+}
+
+.login-signup-redirect:hover,
+.login-signu-redirect:active {
+  border-bottom: 0.1rem solid transparent;
+}
+
+
+
+

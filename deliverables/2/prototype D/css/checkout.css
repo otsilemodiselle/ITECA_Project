@@ -1,0 +1,66 @@
+.section-checkout {
+    height: 100vh;
+}
+
+.checkout-container {
+    display: flex;
+    gap: 0.8rem;
+}
+
+
+
+.checkout-container td {
+    padding: 0.8rem;
+}
+
+.checkout-details {
+    border: 0.1rem solid #b6b9bc;
+    width: 50%;
+    padding: 2rem;
+}
+
+.delivery-details,
+.payment-details {
+    display: flex;
+    justify-content: space-between;
+    border: 0.1rem solid #b6b9bc;
+    margin: 0.8rem 0;
+    padding: 0.4rem;
+    align-items: center;
+}
+
+.checkout-edit-btn {
+    
+    background-color: #f6f4f0;
+   
+    border: none;
+    cursor: pointer;
+}
+
+.edit-icon {
+    width: 2rem;
+}
+
+.cvc-box {
+    padding: 0.2rem;
+    width: 3.6rem;
+    text-align: center;
+    background-color: #7d836e;
+    color: #f6f4f0;
+}
+
+.cvc-box::placeholder{
+    color: #f6f4f0;
+}
+
+.btn-pay-now {
+    background-color: black;
+    color: #f6f4f0;
+    cursor: not-allowed;
+    text-align: center;
+    font-family: arial;
+    border: none;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 1.2rem;
+}

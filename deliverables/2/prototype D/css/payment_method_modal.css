@@ -1,0 +1,124 @@
+.payment-method-content {
+  background-color: #f6f4f0;
+  margin: 1% auto;
+  padding: 5rem;
+  border: 0.1rem solid #343a40;
+  width: 40%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  row-gap: 1.4rem;
+  column-gap: 1.4rem;
+  
+  align-items: center;
+}
+
+.close-payment-method {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  font-size: 5.2rem;
+  cursor: pointer;
+}
+
+.payment-method-header {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  text-transform: uppercase;
+  justify-self: center;
+  text-align: center;
+}
+
+.lbl-card-name {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  padding: 0.4rem 1.2rem;
+}
+
+#card-name-box {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  padding: 0.4rem 1.2rem;
+}
+
+#lbl-card-number {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  padding: 0.4rem 1.2rem;
+}
+
+#card-number-box {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  padding: 0.4rem 1.2rem;
+}
+
+.card-type-photoframe {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+  overflow: hidden;
+  /* border: 0.1rem solid black; */
+  position: relative;
+  height: 4rem;
+}
+
+.card-type-logo{
+  height: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+
+.lbl-expiry-date {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+  padding: 0.4rem 1.2rem;
+}
+
+#month-selection-box {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  padding: 0.4rem 1.2rem;
+}
+
+#year-selection-box {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  padding: 0.4rem 1.2rem;
+}
+
+.btn-payment-method-save {
+  grid-column: 1 / -1;
+  grid-row: 6 / 6;
+  justify-self: center;
+  background-color: #92727a;
+  padding: 0.8rem 10rem;
+  color: #f6f4f0;
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+  border: none;
+  margin-top: 3rem;
+}

@@ -1,0 +1,170 @@
+.signup-modal-content {
+  background-color: #f6f4f0;
+  margin: 1% auto;
+  padding: 5rem;
+  border: 0.1rem solid #343a40;
+  width: 40%;
+  height: 100%;
+  display: grid;
+  grid-template-columns:  auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  row-gap: 1.4rem;
+  column-gap: 1.4rem;
+}
+
+.close-signup {
+  color: #212529;
+  font-size: 5.2rem;
+  font-weight: bold;
+  font-weight: bold;
+  grid-column: 5 / -1;
+  grid-row: 1 / 1;
+  justify-self: end;
+  cursor: pointer;
+}
+
+.signup-logo {
+  font-size: 2rem;
+  grid-column: 1 / -1;
+  grid-row: 2 / 2;
+  justify-self: center;
+}
+
+.signup-slogan {
+  grid-column: 1 / -1;
+  grid-row: 3 / 3;
+  justify-self: center;
+  font-size: 1.2rem;
+}
+
+.signup-underline {
+  border-bottom: 0.1rem solid #495057;
+  grid-column: 1 / -1;
+  grid-row: 4 / 4;
+}
+
+.signup-heading {
+  grid-column: 1 / -1;
+  grid-row: 5 / 5;
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+.signup-instruction {
+  grid-column: 1 / -1;
+  grid-row: 6 / 6;
+  justify-self: center;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.signup-label-email {
+  grid-column: 1 / 2;
+  grid-row: 7 / 7;
+}
+
+#signup-email-box {
+  grid-column: 1 / -1;
+  grid-row: 8 / 8;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  padding: 0.4rem 1.2rem;
+}
+
+#signup-email-box::placeholder {
+  color: #f6f4f0;
+}
+
+.signup-label-password {
+  grid-column: 1 / 2;
+  grid-row: 9 / 9;
+}
+
+#signup-password-box{
+  grid-column: 1 / -1;
+  grid-row: 10 / 10;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  padding: 0.4rem 1.2rem;
+  color: #f6f4f0;
+}
+
+#signup-password-box:focus {
+  border: none;
+}
+
+.signup-label-name {
+  grid-column: 1 / 2;
+  grid-row: 11 / 11;
+}
+
+#signup-name-box {
+  grid-column: 1 / -1;
+  grid-row: 12 / 12;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  padding: 0.4rem 1.2rem;
+}
+
+.signup-label-surname {
+  grid-column: 1 / 2;
+  grid-row: 13 / 13;
+}
+
+#signup-surname-box {
+  grid-column: 1 / -1;
+  grid-row: 14 / 14;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #7d836e;
+  color: #f6f4f0;
+  padding: 0.4rem 1.2rem;
+}
+
+
+.btn-submit-signup:link,
+.btn-submit-signup:visited {
+  grid-column: 1 / -1;
+  grid-row: 15 / 15;
+  justify-self: center;
+  background-color: #92727a;
+  padding: 0.8rem 4.8rem;
+  color: #f6f4f0;
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.btn-submit-signup:hover,
+.btn-submit-signup:active {
+  background-color: #665055;
+}
+
+.signup-login-redirect:link,
+.signup-login-redirect:visited {
+  grid-column: 1 / -1;
+  grid-row: 16 / 16;
+  justify-self: center;
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  border-bottom: 0.1rem solid currentColor;
+}
+
+.signup-login-redirect:hover,
+.signup-login-redirect:active {
+  border-bottom: 0.1rem solid transparent;
+}
+
+
+
+
