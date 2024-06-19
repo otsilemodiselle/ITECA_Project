@@ -1,23 +1,19 @@
-var loginModal = document.getElementById("address-modal");
+var addressModal = document.getElementById("address-modal");
 
-var btn = document.getElementById("open-address-modal");
+var addressBtn = document.getElementById("open-address-modal");
 
-var span = document.getElementsByClassName("close-address")[0];
+var closeAddressSpan = document.getElementsByClassName("close-address")[0];
 
-btn.onclick = function() {
-  loginModal.style.display = "block";
+addressBtn.onclick = function() {
+  addressModal.style.display = "block";
 }
 
-btn2.onclick = function() {
-  loginModal.style.display = "block";
-}
-
-span.onclick = function() {
-  loginModal.style.display = "none";
+closeAddressSpan.onclick = function() {
+  addressModal.style.display = "none";
 }
 
 window.onclick = function(event)  {
   if (event.target == modal) {
-    modal.style.display = "none";
+    addressModal.style.display = "none";
   }
 }
