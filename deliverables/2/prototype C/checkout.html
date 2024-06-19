@@ -36,7 +36,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg> 
         </button>
-
       </div>
 
       <div class="logo-box">
@@ -298,7 +297,7 @@
       </div>
 
       <div id="address-modal" class="modal">
-        <div class="address-modal-conent">
+        <div class="address-modal-content">
 
           <span class="close-address">&times;</span>
 
@@ -314,7 +313,7 @@
 
           <label class="lbl-suburb"  for="edit-suburb-box">Suburb</label>
 
-          <input type="text" id="edit-street-box">
+          <input type="text" id="edit-suburb-box">
 
           <label class="lbl-province"  for="edit-province-select">Province</label>
 
@@ -336,6 +335,8 @@
 
           <label class="lbl-postal"  for="edit-postal-box">Postal Code</label>
 
+          <input type="text" id="edit-postal-box">
+
           <button class="btn-save-address">
             Save
           </button>
@@ -356,6 +357,10 @@
           <label for="card-nubmer-box" id="lbl-card-number">Card Number</label>
 
           <input type="text" maxlength="16" id="card-number-box">
+
+          <div class="card-type-photoframe">
+            <img class="card-type-logo" src="visa.svg" alt="">
+          </div>
 
           <label for="" class="lbl-expiry-date">Expiry Date</label>
 
@@ -388,6 +393,20 @@
           <button class="btn-payment-method-save">
             Save
           </button>
+        </div>
+      </div>
+
+      <div id="payment-confirmatin" class="modal">
+        <div class="payment-confirmatin-content">
+          
+          <h3>PAYMENT SUCCESSFUL</h3>
+
+          <p>Your order is being fulfilled</p>
+
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+          <button>OK</button>
+
         </div>
       </div>
 
