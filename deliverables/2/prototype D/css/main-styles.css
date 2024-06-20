@@ -84,7 +84,7 @@ main {
   border: 0.4rem solid black;
   font-weight: 700;
   margin-bottom: 3rem;
-  background-image: url("proudly\ large.webp");
+  background-image: url("../images/proudly\ large.webp");
   background-size: cover;
   background-position: center;
   height: 100%;
