@@ -27,6 +27,15 @@
     return $pdo->query($query);
   }
 
+  function cardLoader($prod_id)
+  {
+    $cardLoaderQuery = "SELECT prod_id, prod_img, prod_name, price 
+                        FROM product WHERE prod_id=$prod_id;";
+                        $cardResult = queryMysql($cardLoaderQuery);
+                        $row = $cardResult->fetch();
+                        return $row;
+  }
+
   function sanitizeString($var)
   {
     global $pdo;
