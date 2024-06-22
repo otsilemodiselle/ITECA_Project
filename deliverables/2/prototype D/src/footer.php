@@ -5,7 +5,7 @@
         <section class="section-components">
           
           <div id="login-modal" class="modal">
-            <div class="login-modal-content" >
+            <form class="login-modal-content"  id="login-form" method="post" action="index.php">
               
               <span class="close-login">&times;</span>
               
@@ -20,15 +20,19 @@
               <div class="login-underline"></div>
               <h3 class="login-heading">Login</h3>
               <p class="login-instruction">Enter your email address and password to log in to your account.</p>
-                
+
               <label for="login-email-box" class="login-label-email">Email</label>
-              <input type="text" id="login-email-box" placeholder="me@example.com" required/>
+
+              <input type="text" id="login-email-box" name="inputted-email" placeholder="me@example.com" required/>
+
               <label for="login-password-box" class="login-label-password">Password</label>
-              <input type="password" id="login-password-box" required>
-                
-              <a href="" class="btn-submit-login">Login</a>
+
+              <input type="password" name="inputted-password" id="login-password-box" required>
               
-            </div>
+              <a href="#" onclick="document.getElementById('login-form').submit(); clearLoginEmail(); clearLoginPassword();" class="btn-submit-login">Login</a>
+            </form>
+              
+            </form>
           </div>
 
           <div id="signup-modal" class="modal">
@@ -59,6 +63,120 @@
                 
               <a href="" class="btn-submit-signup">Login</a>
               
+            </div>
+          </div>
+
+          <div id="address-modal" class="modal">
+            <div class="address-modal-content">
+
+              <span class="close-address">&times;</span>
+
+              <h3 class="address-modal-header">Edit Delivery Details</h3>
+
+              <label class="lbl-contact" for="edit-contact-box">Contact Number</label>
+
+              <input type="text" id="edit-contact-box">
+
+              <label class="lbl-street"  for="edit-street-box">Street address</label>
+
+              <input type="text" id="edit-street-box">
+
+              <label class="lbl-suburb"  for="edit-suburb-box">Suburb</label>
+
+              <input type="text" id="edit-suburb-box">
+
+              <label class="lbl-province"  for="edit-province-select">Province</label>
+
+              <select name="province-selection" id="province-select-box">
+                <option value="">Gauteng</option>
+                <option value="">Limpopo</option>
+                <option value="">Western Cape</option>
+                <option value="">KwaZulu-Natal</option>
+                <option value="">Mpumalanga</option>
+                <option value="">Free State</option>
+                <option value="">Northern Cape</option>
+                <option value="">Eastern Cape</option>
+                <option value="">Nothern West</option>
+              </select>
+
+              <label class="lbl-city"  for="edit-city-box">City</label>
+
+              <input type="text" id="edit-city-box">
+
+              <label class="lbl-postal"  for="edit-postal-box">Postal Code</label>
+
+              <input type="text" id="edit-postal-box">
+
+              <button class="btn-save-address">
+                Save
+              </button>
+            </div>
+          </div>
+
+          <div id="payment-method-modal" class="modal">
+            <div class="payment-method-content">
+
+              <span class="close-payment-method">&times;</span>
+
+              <h3 class="payment-method-header">Edit Card Details</h3>
+
+              <label for="card-name-box" class="lbl-card-name">Name on Card</label>
+
+              <input type="text" id="card-name-box">
+
+              <label for="card-nubmer-box" id="lbl-card-number">Card Number</label>
+
+              <input type="text" maxlength="16" id="card-number-box">
+
+              <div class="card-type-photoframe">
+                <img class="card-type-logo" src="images/visa.svg" alt="">
+              </div>
+
+              <label for="" class="lbl-expiry-date">Expiry Date</label>
+
+              <select name="" id="month-selection-box">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+                <option value="">11</option>
+                <option value="">12</option>
+              </select>
+
+              <select name="" id="year-selection-box">
+                <option value="">2024</option>
+                <option value="">2025</option>
+                <option value="">2025</option>
+                <option value="">2026</option>
+                <option value="">2027</option>
+                <option value="">2028</option>
+                <option value="">2029</option>
+                <option value="">2030</option>
+              </select>
+
+              <button class="btn-payment-method-save">
+                Save
+              </button>
+            </div>
+          </div>
+
+          <div id="payment-confirmatin" class="modal">
+            <div class="payment-confirmatin-content">
+              
+              <h3>PAYMENT SUCCESSFUL</h3>
+
+              <p>Your order is being fulfilled</p>
+
+              <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+              <button>OK</button>
+
             </div>
           </div>
 
@@ -125,6 +243,7 @@
 
       </footer>
 
+      <script src="js/general_form_handling.js"></script>
       <script src="js/sub_menu.js"></script>
       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
