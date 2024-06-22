@@ -73,6 +73,7 @@
       <link rel="stylesheet" href="css/login_modal.css">
       <link rel="stylesheet" href="css/signup_modal.css">
       <link rel="stylesheet" href="css/product.css">
+      <link rel="stylesheet" href="css/catelog.css">
       <link rel="stylesheet" href="css/cart.css">
       <link rel="stylesheet" href="css/checkout.css">
       <link rel="stylesheet" href="css/payment_method_modal.css">
@@ -97,7 +98,7 @@
           </div>
 
           <div class="logo-box">
-            <a href="index.html">
+            <a href="index.php">
               <span class="logo-a">Bride</span>
               <span class="logo-b">&</span>
               <span class="logo-c">Joy</span>
@@ -107,16 +108,16 @@
           <div class="category-box">
             <ul class="category-links-list">
               <li>
-                <a class="link-womens" href="#">Womens</a>
+                <a class="link-womens" href="src/catalog_fetch.php?cat=womens">Womens</a>
               </li>
               <li>
-                <a class="link-mens" href="#">Mens</a>
+                <a class="link-mens" href="src/catalog_fetch.php?cat=mens">Mens</a>
               </li>
               <li>
-                <a class="link-girls" href="#">Girls</a>
+                <a class="link-girls" href="src/catalog_fetch.php?cat=girls">Girls</a>
               </li>
               <li>
-                <a class="link-boys" href="#">Boys</a>
+                <a class="link-boys" href="src/catalog_fetch.php?cat=boys">Boys</a>
               </li>
             </ul>
           </div>
@@ -152,63 +153,69 @@
           </div>
   _END;
 
-  if (isset($_SESSION['customer_id'])){
-      $login_name=$_SESSION['forename'];
-      echo <<<_END
-        <div class="utility-box">
-            <ul class="utility-links-list">
-              <li>
-                <a class="link-profile" href="#">$login_name's Profile</a>
-              </li>
-              <li>
-                <a class="link-signup" id="open-signup-modal" href="#">Log-out</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      _END;}
-  else{
-      echo <<<_END
-          <div class="utility-box">
-            <ul class="utility-links-list">
-              <li>
-                <a class="link-login" id="open-login-modal" href="#">Login</a>
-              </li>
-              <li>
-                <a class="link-signup" id="open-signup-modal" href="#">Sign-up</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <div class="sub-menu">
-
-          <ul class="sub-menu-links-list">
+  if (isset($_SESSION['customer_id']))
+  {
+    $login_name=$_SESSION['forename'];
+    echo <<<_END
+      <div class="utility-box">
+          <ul class="utility-links-list">
             <li>
-              <a class="link-womens" href="#">Womens</a>
+              <a class="link-profile" href="#">$login_name's Profile</a>
             </li>
             <li>
-              <a class="link-mens" href="#">Mens</a>
-            </li>
-            <li>
-              <a class="link-girls" href="#">Girls</a>
-            </li>
-            <li>
-              <a class="link-boys" href="#">Boys</a>
-            </li>
-            <li>
-              <a class="link-login" id="open-login-modal-sub" href="#">Login</a>
-            </li>
-            <li>
-              <a class="link-signup" id="open-signup-modal-sub" href="#">Sign-up</a>
-            </li>
-            <li>
-              <a class="link-profile" href="#">Profile</a>
+              <a class="link-signup" id="open-signup-modal" href="src/logout.php">Log-out</a>
             </li>
           </ul>
-
         </div>
+      </nav>
+    _END;
+  }
+  else
+  {
+    echo <<<_END
+        <div class="utility-box">
+          <ul class="utility-links-list">
+            <li>
+              <a class="link-login" id="open-login-modal" href="#">Login</a>
+            </li>
+            <li>
+              <a class="link-signup" id="open-signup-modal" href="#">Sign-up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    _END;
+  }
 
-      </header>
-  _END;}
+
+
+  echo <<<_END
+    <div class="sub-menu">
+
+        <ul class="sub-menu-links-list">
+          <li>
+            <a class="link-womens" href="src/catalog_fetch.php?cat=womens">Womens</a>
+          </li>
+          <li>
+            <a class="link-mens" href="src/catalog_fetch.php?cat=mens">Mens</a>
+          </li>
+          <li>
+            <a class="link-girls" href="src/catalog_fetch.php?cat=girls">Girls</a>
+          </li>
+          <li>
+            <a class="link-boys" href="src/catalog_fetch.php?cat=boys">Boys</a>
+          </li>
+          <li>
+            <a class="link-login" id="open-login-modal-sub" href="#">Login</a>
+          </li>
+          <li>
+            <a class="link-signup" id="open-signup-modal-sub" href="#">Sign-up</a>
+          </li>
+          <li>
+            <a class="link-profile" href="#">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+  _END;
 ?>
