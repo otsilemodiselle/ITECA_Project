@@ -23,6 +23,10 @@
   cursor: pointer;
 }
 
+.close-signup:hover {
+  transform: scale(1.5);
+}
+
 .signup-logo {
   font-size: 2rem;
   grid-column: 1 / -1;

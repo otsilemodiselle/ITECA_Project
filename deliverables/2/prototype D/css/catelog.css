@@ -21,6 +21,7 @@
   display: grid;
   /* grid-template-columns: auto auto auto auto auto auto auto; */
   grid-template-columns: repeat(7, auto);
+  row-gap: 3rem;
   justify-content: space-between;
   margin-bottom: 13rem;
 }
