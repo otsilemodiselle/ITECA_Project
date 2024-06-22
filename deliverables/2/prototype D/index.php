@@ -12,7 +12,7 @@
           <div class="categories">
             
             <figure class="figure-categories">
-              <a href="">
+              <a href="src/src/catalog_fetch.php?cat=womens">
                 <img class="categories" src="images/ornate_empire_traditional_lace.webp" alt="">
               </a>
               <figcaption>Bride Dresses</figcaption>
@@ -20,7 +20,7 @@
           
           
             <figure class="figure-categories">
-              <a href="">
+              <a href="src/catalog_fetch.php?cat=mens">
                 <img src="images/double_breasted_tangerine_groom.webp" alt="">
               </a>
               <figcaption>Groom Suits</figcaption>
@@ -28,7 +28,7 @@
           
           
             <figure class="figure-categories">
-              <a href="">
+              <a href="src/catalog_fetch.php?cat=girls">
                 <img src="images/zulu_royal_ring_bearer.webp" alt="">
               </a>
               <figcaption>Flower Girl Dresses</figcaption>
@@ -36,7 +36,7 @@
           
           
             <figure class="figure-categories">
-              <a href="">
+              <a href="src/catalog_fetch.php?cat=boys">
                 <img src="images/miniature_sabbath_suit.webp" alt="">
               </a>
               <figcaption>Ring Bearer Suits</figcaption>
@@ -88,7 +88,7 @@
 
   echo <<<_END
     <div class="shop-more shop-more-traditional-box">
-              <a class="btn-shop-more " href="#">View All &rarr;</a> 
+              <a class="btn-shop-more " href="src/catalog_fetch.php?cat=traditional">View All &rarr;</a> 
             </div>
 
           </div>
@@ -100,7 +100,7 @@
           <div class="mini-catalog-sales grid grid--7-cols">
 
             <div class="shop-more shop-more-sales-box">
-              <a class="btn-shop-more" href="#">&larr; View All </a> 
+              <a class="btn-shop-more" href="src/catalog_fetch.php?cat=sales">&larr; View All </a> 
             </div>
   _END;
 
@@ -188,7 +188,7 @@
 
   echo <<<_END
     <div class="shop-more shop-more-empire-box">
-              <a class="btn-shop-more" href="#">View All &rarr;</a> 
+              <a class="btn-shop-more" href="src/catalog_fetch.php?cat=empire">View All &rarr;</a> 
             </div>
 
           </div>
@@ -200,7 +200,7 @@
           <div class="mini-catalog-euro-suits grid grid--7-cols">
 
             <div class="shop-more shop-more-euro-suits-box">
-              <a class="btn-shop-more" href="#">&larr; View All </a> 
+              <a class="btn-shop-more" href="src/catalog_fetch.php?cat=mens">&larr; View All </a> 
             </div>
   _END;
 
