@@ -36,6 +36,10 @@
   cursor: pointer;
 }
 
+.close-login:hover {
+  transform: scale(1.5);
+}
+
 .login-logo {
   font-size: 2rem;
   grid-column: 1 / -1;
@@ -108,6 +112,7 @@
   font-size: inherit;
   background-color: #7d836e;
   padding: 0.4rem 1.2rem;
+  color: #f6f4f0;
 }
 
 #login-password-box:focus {

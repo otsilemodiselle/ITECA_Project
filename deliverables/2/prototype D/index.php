@@ -1,5 +1,7 @@
 <?php
+  
   require_once 'src/functions.php';
+  require_once 'src/login.php';
   require_once 'src/header.php';
 
   echo <<<_END
