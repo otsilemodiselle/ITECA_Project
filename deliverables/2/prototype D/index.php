@@ -12,7 +12,7 @@
           <div class="categories">
             
             <figure class="figure-categories">
-              <a href="src/src/catalog_fetch.php?cat=womens">
+              <a href="src/catalog_fetch.php?cat=womens">
                 <img class="categories" src="images/ornate_empire_traditional_lace.webp" alt="">
               </a>
               <figcaption>Bride Dresses</figcaption>
