@@ -1,4 +1,4 @@
-<?php
+d<?php
 
   require_once 'src/functions.php';
   require_once 'src/login.php';
@@ -15,6 +15,7 @@
     $catelog_count = $_SESSION['catelog_count'];
   }
 
+
   echo <<<_END
     <main>
     
@@ -26,6 +27,7 @@
         
         <form method="post" action="catalog.php?cat=$clickedCatalogue" id="form-cat-order">
           <select name="sort" id="sort-options" onchange="document.getElementById('form-cat-order').submit()">
+            <option value="" disabled selected>Click to Sort</option>
             <option value="prod_name ASC">A - Z</option>
             <option value="prod_name DESC">Z - A</option>
             <option value="price ASC">Price Low to High</option>
@@ -48,7 +50,7 @@
                       FROM product p
                       JOIN $clickedCatalogue i 
                       ON p.prod_id = i.prod_id
-                      ORDER BY $orderOption;";
+                      ORDER BY $orderOption;";      
     }
     else
     {
