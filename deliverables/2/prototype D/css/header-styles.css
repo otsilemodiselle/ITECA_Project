@@ -104,9 +104,12 @@ nav {
 
 .btn-search {
   padding: 0.5rem;
-
+  height: 3rem;
   border: none;
   background-color: #92727A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon-search {

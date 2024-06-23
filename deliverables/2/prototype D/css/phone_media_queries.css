@@ -46,10 +46,10 @@
         margin-top: 4rem;
     }
 
-    .categories-container {
-        display: flex;
+    .categories {
         flex-direction: column;
     }
+
 
     .mini-catalog-traditional {
         display: grid;
