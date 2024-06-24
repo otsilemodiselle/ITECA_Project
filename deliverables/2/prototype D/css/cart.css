@@ -62,7 +62,7 @@
 .cart-item {
     border: 0.1rem solid #b6b9bc;
     padding: 2rem;
-    margin: 0 0 0.8rem 0.8rem;
+    margin: 0 0.8rem 0.8rem 0;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
 }
