@@ -32,7 +32,7 @@
       $queryStock = "SELECT stock_id
                     FROM stock
                     WHERE prod_id = $clickedProduct
-                    AND size = $product_size;";
+                    AND size = '$product_size';";
       
       $resultStock = queryMysql($queryStock);
 
