@@ -17,7 +17,7 @@
               </a>
               <figcaption>Bride Dresses</figcaption>
             </figure>
-          
+
           
             <figure class="figure-categories">
               <a href="src/catalog_fetch.php?cat=mens">
@@ -64,7 +64,7 @@
     $cardProdName = trimString($cardInfo['prod_name'], 20);
 
     echo <<<_END
-    <a href="">
+    <a href="product.php?prod_id=$arrTraditional[$i]">
       <div class="shopping-card">
         <div class="shopping-card-photoframe">
           <img src="images/{$cardInfo['prod_img']}" alt="">
@@ -111,7 +111,7 @@
     $cardProdName = trimString($cardInfo['prod_name'], 20);
 
     echo <<<_END
-      <a href="">
+      <a href="product.php?prod_id=$arrSales[$i]">
         <div class="shopping-card on-sale">
           <div class="shopping-card-photoframe">
             <img src="images/{$cardInfo['prod_img']}" alt="">
@@ -135,7 +135,7 @@
 
   echo <<<_END
     <figure class="figure-sales mid-end">
-              <a href="">
+              <a href="product.php?prod_id=40">
                 <img src="images/velvet_ballerina_bride.webp" alt="">
               </a>
             </figure>
@@ -149,7 +149,7 @@
           <div class="mini-catalog-empire grid grid--7-cols">
 
             <figure class="figure-empire start-mid">
-              <a href="">
+              <a href="product.php?prod_id=30">
                 <img src="images/ornate_empire_waist_fairy_sleeveless.webp" alt="">
               </a>
               <figcaption>Best Seller Empire Dresses</figcaption>
@@ -164,7 +164,7 @@
     $cardProdName = trimString($cardInfo['prod_name'], 20);
 
     echo <<<_END
-      <a href="">
+      <a href="product.php?prod_id=$arrEmpire[$i]">
         <div class="shopping-card">
           <div class="shopping-card-photoframe">
             <img src="images/{$cardInfo['prod_img']}" alt="">
@@ -211,7 +211,7 @@
     $cardProdName = trimString($cardInfo['prod_name'], 20);
 
     echo <<<_END
-      <a href="">
+      <a href="product.php?prod_id=$arrEuro[$i]">
         <div class="shopping-card">
           <div class="shopping-card-photoframe">
             <img src="images/{$cardInfo['prod_img']}" alt="">
@@ -235,7 +235,7 @@
 
   echo <<<_END
     <figure class="figure-euro-suits mid-end">
-              <a href="">
+              <a href="product.php?prod_id=49">
                 <img src="images/steel_blue_sports_suit.webp" alt="">
               </a>
               <figcaption>Classic Euro Groom Suits</figcaption>
