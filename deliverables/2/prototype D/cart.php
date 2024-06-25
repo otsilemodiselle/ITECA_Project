@@ -4,6 +4,7 @@
   require_once 'src/login.php';
 
   $invoiceTotal = 0;
+  $itemsCount = 0;
 
   if(isset($_POST['delete-item']))
   {
@@ -27,6 +28,7 @@
         $queryDeleteInCollection = "DELETE FROM collection WHERE coll_id = $coll_id;";
         queryMysql($queryDeleteInCollection);        
         $invoiceTotal -= $price; 
+        $itemsCount--;
       }
       else
       {
@@ -49,6 +51,7 @@
   }
 
   $invoiceTotal = 0;
+  $itemsCount = 0;
 
   require_once 'src/header.php';
 
@@ -57,102 +60,157 @@
     
     <section class="section-cart">
 
-      <form id="cart-form" method="post" action="cart.php">
-
-        <div class="cart-container">
+    <div class="cart-container">
   _END;
 
-  if(isset($_SESSION['customer_id']))
+  if($cart_count > 0)
   {
-    echo <<<_END
+    if(isset($_SESSION['customer_id']))
+    {
+      echo <<<_END
+            <div class="cart-full">
 
-          <div class="cart-full">
+              <div class="cart-items-container">
+      _END;
 
-            <div class="cart-items-container">
-    _END;
-
-    $customer_id = $_SESSION['customer_id'];
-      $query = "SELECT p.prod_id, p.prod_img, p.prod_name, p.price, st.size, st.stock_id
-                FROM product p
-                JOIN collection co ON p.prod_id = co.prod_id
-                JOIN cart ca ON co.coll_id = ca.coll_id
-                JOIN stock st ON ca.stock_id = st.stock_id
-                JOIN customer c ON co.customer_id = c.customer_id
-                WHERE c.customer_id = $customer_id;";
-      $result = queryMysql($query);
-      
-      if ($result->rowCount())
-      {
-        while ($row = $result->fetch())
+        $customer_id = $_SESSION['customer_id'];
+        $query = "SELECT p.prod_id, p.prod_img, p.prod_name, p.price, st.size, st.stock_id
+                  FROM product p
+                  JOIN collection co ON p.prod_id = co.prod_id
+                  JOIN cart ca ON co.coll_id = ca.coll_id
+                  JOIN stock st ON ca.stock_id = st.stock_id
+                  JOIN customer c ON co.customer_id = c.customer_id
+                  WHERE c.customer_id = $customer_id;";
+        $result = queryMysql($query);
+        
+        if ($result->rowCount())
         {
-          $prod_id = $row['prod_id'];
+          while ($row = $result->fetch())
+          {
+            $prod_id = $row['prod_id'];
+            $prod_img = $row['prod_img'];
+            $prod_name = $row['prod_name'];
+            $price = $row['price'];
+            $stock_id = $row['stock_id'];
+            $size = $row['size'];
+            $invoiceTotal += $price;
+            $itemsCount++;
+
+            echo <<<_END
+            <form method="post" action="cart.php" id="cart-item-form">
+                <div class="cart-item">
+                  <div class="cart-item-photocase">
+                    <img src="images/$prod_img" alt="" onclick="">
+                  </div>
+
+                  <input id="cart-remover" type="submit" name="delete-item" value="&times;">
+
+                  <p class="cart-item-title">$prod_name</p>
+
+                  <p class="cart-item-size">$size</p>
+
+                  <p class="cart-item-price">R$price</p>
+                  <input type="hidden" name="prod_id" value="$prod_id">
+                  <input type="hidden" name="price" value="$price">
+                  <input type="hidden" name="stock_id" value="$stock_id">
+                </div>
+            </form>
+          _END;
+        }
+      }
+    }
+    else
+    {
+      if(isset($_SESSION['cart']))
+      {
+        echo <<<_END
+            <div class="cart-full">
+
+              <div class="cart-items-container">
+        _END;
+        
+        foreach($_SESSION['cart'] as $stock_id)
+        {
+          $queryProdData =  "SELECT p.prod_img, p.prod_name, p.price, p.prod_id, s.size
+                            FROM product p
+                            JOIN stock s ON p.prod_id = s.prod_id
+                            WHERE s.stock_id = $stock_id;";
+          $prodDataResult = queryMysql($queryProdData);
+
+          $row = $prodDataResult->fetch();
           $prod_img = $row['prod_img'];
           $prod_name = $row['prod_name'];
           $price = $row['price'];
-          $stock_id = $row['stock_id'];
+          $prod_id = $row['prod_id'];
           $size = $row['size'];
           $invoiceTotal += $price;
+          $itemsCount++;
 
-          echo <<<_END
+          echo<<<_END
+            <form method="post" action="cart.php" id="cart-item-form">
+                  <div class="cart-item">
+                    <div class="cart-item-photocase">
+                      <img src="images/$prod_img" alt="" onclick="">
+                    </div>
 
-              <div class="cart-item">
-                <div class="cart-item-photocase">
-                  <img src="images/$prod_img" alt="" onclick="">
-                </div>
+                    <input id="cart-remover" type="submit" name="delete-item" value="&times;">
 
-                <a href="" name="delete-item" onclick="document.getElementById('cart-form').submit();">&times;
-                </a>
+                    <p class="cart-item-title">$prod_name</p>
 
-                <p class="cart-item-title">$prod_name</p>
+                    <p class="cart-item-size">$size</p>
 
-                <p class="cart-item-size">$size</p>
-
-                <p class="cart-item-price">R$price</p>
-                <input type="hidden" name="prod_id" value="$prod_id">
-                <input type="hidden" name="price" value="$price">
-                <input type="hidden" name="stock_id" value="$stock_id">
-              </div>
-
-        _END;
+                    <p class="cart-item-price">R$price</p>
+                    <input type="hidden" name="prod_id" value="$prod_id">
+                    <input type="hidden" name="price" value="$price">
+                  </div>
+              </form>
+          _END;
+        }
       }
     }
+    echo <<<_END
+      </div>
 
-        echo <<<_END
-          </div>
+        <div class="cart-order-summary">
+          <h3>
+            Order Summary
+          </h3>
+          <table>
+            <tbody>
+              <tr>
+                <td> Cart total</td>
+                <td>R$invoiceTotal</td>
+              </tr>
+              <tr>
+                <td>Delivery fee</td>
+                <td>R0</td>
+              </tr>
+              <tr>
+                <td class="bold-line">Order total</td>
+                <td class="bold-line">R$invoiceTotal</td>
+              </tr>
+              <tr>
+                <td class="table-directive">Total to pay</td>
+                <td class="table-directive">R$invoiceTotal</td>
+              </tr>
+              <tr>
+                <td class="table-directive">Total items</td>
+                <td class="table-directive">$itemsCount</td>
+              </tr>
+            </tbody>
+          </table>
 
-            <div class="cart-order-summary">
-              <h3>
-                Order Summary
-              </h3>
-              <table>
-                <tbody>
-                  <tr>
-                    <td> Cart total</td>
-                    <td>R$invoiceTotal</td>
-                  </tr>
-                  <tr>
-                    <td>Delivery fee</td>
-                    <td>R0</td>
-                  </tr>
-                  <tr>
-                    <td class="bold-line">Order total</td>
-                    <td class="bold-line">R$invoiceTotal</td>
-                  </tr>
-                  <tr>
-                    <td class="table-directive">Total to pay</td>
-                    <td class="table-directive">R$invoiceTotal</td>
-                  </tr>
-                </tbody>
-              </table>
+          <form method="post" action="src/checkout_script.php">
 
-              <button class="btn-checkout">
-                Checkout
-              </button>
-              
-            </div>
+            <input type="hidden" name="invoice_total" value="$invoiceTotal">
+            <input type="hidden" name="items_Count" value="$itemsCount">
+            <input class="btn-checkout" type="submit" class="cart-checkout button" name="checkout" value="Checkout">
 
-          </div>
-        _END;
+          </form>
+        </div>
+
+      </div>
+    _END;
   }
   else
   {
@@ -164,8 +222,6 @@
         </svg>
       </div>
       </div>
-
-      </form>
 
       </section>
 
