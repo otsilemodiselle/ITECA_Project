@@ -36,7 +36,7 @@
           </div>
 
           <div id="signup-modal" class="modal">
-            <div class="signup-modal-content" >
+            <form class="signup-modal-content" method="post" id="signup-form" action="src/sign_up_script.php" >
               
               <span class="close-signup">&times;</span>
               
@@ -53,17 +53,17 @@
               <p class="signup-instruction">Planning for a big day? Sign up</p>
                 
               <label for="signup-email-box" class="signup-label-email">Email</label>
-              <input type="text" id="signup-email-box" placeholder="me@example.com" required/>
+              <input type="text" id="signup-email-box" name="email" required/>
               <label for="signup-password-box" class="signup-label-password">Password</label>
-              <input type="password" id="signup-password-box" required>
+              <input type="password" name="pass" id="signup-password-box" required>
               <label for="signup-name-box" class="signup-label-name">First Name</label>
-              <input type="text" id="signup-name-box" required/>
+              <input type="text" name="name" id="signup-name-box" required/>
               <label for="signup-surname-box" class="signup-label-surname">Last Name</label>
-              <input type="text" id="signup-surname-box" required/> 
+              <input type="text" name="surname" id="signup-surname-box" required/> 
                 
-              <a href="" class="btn-submit-signup">Login</a>
+              <input class="btn-submit-signup" value="Sign up" name="btn-sign-up" type="submit">
               
-            </div>
+            </form>
           </div>
 
           <div id="address-modal" class="modal">
