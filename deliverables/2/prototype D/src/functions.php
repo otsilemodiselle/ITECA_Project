@@ -74,14 +74,13 @@
     return $masked_card_no;
   }
   
-  function add_stakeholder($pdo, $em, $cn)
+  function add_stakeholder($pdo, $em)
   {
-    $stmt = $pdo->prepare('INSERT INTO stakeholders(email, contact_number) VALUES(?,?)');
+    $stmt = $pdo->prepare('INSERT INTO stakeholders(email) VALUES(?)');
 
     $stmt->bindParam(1, $em, PDO::PARAM_STR, 128);
-    $stmt->bindParam(2, $cn, PDO::PARAM_STR, 10);
 
-    $stmt->execute([$em, $cn]);
+    $stmt->execute([$em]);
   }
 
   function add_order($pdo, $wb, $sd, $ci, $ot, $st, $pd)
