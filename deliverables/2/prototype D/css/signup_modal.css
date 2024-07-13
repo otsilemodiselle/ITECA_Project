@@ -152,8 +152,7 @@
   background-color: #665055;
 }
 
-.signup-login-redirect:link,
-.signup-login-redirect:visited {
+.signup-login-redirect {
   grid-column: 1 / -1;
   grid-row: 16 / 16;
   justify-self: center;

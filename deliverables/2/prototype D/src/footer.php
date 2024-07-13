@@ -30,6 +30,8 @@
               <input type="password" name="inputted-password" id="login-password-box" required>
               
               <a href="#" onclick="document.getElementById('login-form').submit(); clearLoginEmail(); clearLoginPassword();" class="btn-submit-login">Login</a>
+
+              <input type="submit" class="signup-redirect" value="Sign-up &rarr;">
             </form>
               
             </form>

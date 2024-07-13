@@ -130,6 +130,7 @@
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
+  font-family: sans-serif;
 }
 
 .btn-submit-login:hover,
@@ -137,20 +138,23 @@
   background-color: #665055;
 }
 
-.login-signup-redirect:link,
-.login-signu-redirect:visited {
+
+.signup-redirect {
   grid-column: 1 / -1;
-  grid-row: 12 / 12;
+  grid-row: 13 / 13;
   justify-self: center;
   color: inherit;
   font-size: inherit;
   text-decoration: none;
   border-bottom: 0.1rem solid currentColor;
+  border: none;
+  cursor: pointer;
+  border-bottom: 0.1rem solid transparent;
+  color: #343a40;
 }
 
-.login-signup-redirect:hover,
-.login-signu-redirect:active {
-  border-bottom: 0.1rem solid transparent;
+.signup-redirect:hover {
+  border-bottom: 0.1rem solid #343a40;
 }
 
 
